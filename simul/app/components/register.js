@@ -61,11 +61,10 @@ var styles = StyleSheet.create({
     height: 50,
     marginTop: 10,
     padding: 4,
-    fontSize: 18,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: '#48bbec'
   },
-
 });
 
 module.exports = Register;
