@@ -13,14 +13,14 @@ import {
   Navigator
 } from 'react-native';
 
-import Root from './root';
+import Main from './app/components/main.js';
 
 class simul extends Component {
-  renderScene(route, navigator) {
-    console.log(route);
-    if(route.name == 'root') {
-     return <Root navigator={navigator} />
-    }
+  // renderScene(route, navigator) {
+  //   console.log(route);
+  //   if(route.name == 'main') {
+  //    return <Main navigator={navigator} />
+  //   }
   //  if(route.name == 'register') {
   //    return <Register navigator={navigator} />
   //  }
@@ -34,18 +34,15 @@ class simul extends Component {
   //    return <Update navigator={navigator} {...route.passProps} />
   //  }
 
-    }
+    // }
   render() {
     return (
-      <View style={styles.container}>
-        <Navigator
-          initialRoute={{name: 'root'}}
-          renderScene={this.renderScene.bind(this)}
-          />
-        <Text style={styles.welcome}>
-          SIMUL
-        </Text>
-      </View>
+      <Navigator
+        initialRoute={{ title: 'Main', index: 0 }}
+        renderScene={(route, navigator) => {
+          return <Main title={route.title} />
+        }}
+      />
     );
   }
 }
