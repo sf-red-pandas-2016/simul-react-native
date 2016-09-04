@@ -10,6 +10,7 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>HOME PAGE YA</Text>
       </View>
     )
   }
