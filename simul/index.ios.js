@@ -24,6 +24,7 @@ import Register from './app/components/register.js';
 import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
 import UserMessages from './app/components/messages.js';
+import Message from './app/components/messages.js';
 
 
 class simul extends Component {
@@ -58,6 +59,7 @@ class simul extends Component {
       {title: 'NewStory', index: 7},
       {title: 'Contact', index: 8},
       {title: 'UserMessages', index: 9},
+      {title: 'Message', index: 10},
     ];
     //Alternative navigator
     // <Navigator
