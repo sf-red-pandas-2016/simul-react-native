@@ -15,6 +15,14 @@ import {
 } from 'react-native';
 
 import Enter from './app/components/enter.js';
+import Home from './app/components/home.js';
+import Contact from './app/components/contact.js';
+import Login from './app/components/login.js';
+import NewStory from './app/components/newStory.js';
+import Profile from './app/components/profile.js';
+import Register from './app/components/register.js';
+import Story from './app/components/story.js';
+import UserStories from './app/components/userStories.js';
 
 class simul extends Component {
   // renderScene(route, navigator) {
@@ -57,21 +65,36 @@ class simul extends Component {
     // />
     return (
       <Navigator
-        initialRoute={routes[0]}
+        initialRoute={routes[3]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
            return <Enter title={route.title} />
           }
-          // if(route.title == 'Home') {
-          //  return <Home title={route.title} />
-          // }
-          // if(route.title == 'Profile') {
-          //  return <Profile title={route.title} />
-          // }
-          // if(route.title == 'UserStories') {
-          //  return <UserStories title={route.title} />
-          // }
+          if(route.title == 'Home') {
+           return <Home title={route.title} />
+          }
+          if(route.title == 'Profile') {
+           return <Profile title={route.title} />
+          }
+          if(route.title == 'UserStories') {
+           return <UserStories title={route.title} />
+          }
+          if(route.title == 'Register') {
+           return <Register title={route.title} />
+          }
+          if(route.title == 'Login') {
+           return <UserStories title={route.title} />
+          }
+          if(route.title == 'Story') {
+           return <Story title={route.title} />
+          }
+          if(route.title == 'NewStory') {
+           return <NewStory title={route.title} />
+          }
+          if(route.title == 'Contact') {
+           return <Contact title={route.title} />
+          }
         }}
       />
       // <Navigator
