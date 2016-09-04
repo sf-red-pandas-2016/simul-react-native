@@ -23,6 +23,8 @@ import Profile from './app/components/profile.js';
 import Register from './app/components/register.js';
 import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
+import Messages from './app/components/messages.js';
+
 
 class simul extends Component {
   // renderScene(route, navigator) {
@@ -94,6 +96,9 @@ class simul extends Component {
           }
           if(route.title == 'Contact') {
            return <Contact title={route.title} />
+          }
+          if(route.title == 'Messages') {
+           return <Messages title={route.title} />
           }
         }}
       />
