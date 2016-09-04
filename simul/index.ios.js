@@ -9,22 +9,41 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
+import Root from './root';
+
 class simul extends Component {
+  renderScene(route, navigator) {
+    console.log(route);
+    if(route.name == 'root') {
+     return <Root navigator={navigator} />
+    }
+  //  if(route.name == 'register') {
+  //    return <Register navigator={navigator} />
+  //  }
+  //  if(route.name == 'login') {
+  //    return <Login navigator={navigator} />
+  //  }
+  //  if(route.name == 'home') {
+  //    return <Home navigator={navigator} {...route.passProps} />
+  //  }
+  //  if(route.name == 'update') {
+  //    return <Update navigator={navigator} {...route.passProps} />
+  //  }
+
+    }
   render() {
     return (
       <View style={styles.container}>
+        <Navigator
+          initialRoute={{name: 'root'}}
+          renderScene={this.renderScene.bind(this)}
+          />
         <Text style={styles.welcome}>
           SIMUL
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
