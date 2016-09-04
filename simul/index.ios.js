@@ -23,8 +23,8 @@ import Profile from './app/components/profile.js';
 import Register from './app/components/register.js';
 import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
-import UserMessages from './app/components/messages.js';
-import Message from './app/components/messages.js';
+import UserMessages from './app/components/userMessages.js';
+import Message from './app/components/message.js';
 
 
 class simul extends Component {
@@ -70,7 +70,7 @@ class simul extends Component {
     // />
     return (
       <Navigator
-        initialRoute={routes[0]}
+        initialRoute={routes[3]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
@@ -89,7 +89,7 @@ class simul extends Component {
            return <Register title={route.title} />
           }
           if(route.title == 'Login') {
-           return <UserStories title={route.title} />
+           return <Login title={route.title} />
           }
           if(route.title == 'Story') {
            return <Story title={route.title} />
