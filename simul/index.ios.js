@@ -19,9 +19,9 @@ import Enter from './app/components/enter.js';
 class simul extends Component {
   // renderScene(route, navigator) {
   //   console.log(route);
-  //   if(route.name == 'enter') {
-  //    return <Enter navigator={navigator} />
-  //   }
+  //    if(route.name == 'enter') {
+  //     return <Enter navigator={navigator} />
+  //    }
   //  if(route.name == 'register') {
   //    return <Register navigator={navigator} />
   //  }
