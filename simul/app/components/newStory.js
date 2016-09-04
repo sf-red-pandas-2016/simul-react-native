@@ -10,6 +10,7 @@ class NewStory extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Write your Story</Text>
       </View>
     )
   }

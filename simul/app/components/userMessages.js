@@ -6,11 +6,11 @@ import {
   View,
 } from 'react-native';
 
-class Profile extends Component{
+class UserMessages  extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Smeagle's Profile</Text>
+        <Text>Smeagles Messages</Text>
       </View>
     )
   }
@@ -29,4 +29,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = Profile;
+module.exports = UserMessages;
