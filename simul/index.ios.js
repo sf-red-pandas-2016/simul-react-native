@@ -23,9 +23,9 @@ import Profile from './app/components/profile.js';
 import Register from './app/components/register.js';
 import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
-import UserMessages from './app/components/messages.js';
-import Message from './app/components/messages.js';
-
+import UserMessages from './app/components/userMessages.js';
+import Message from './app/components/message.js';
+import Nav from './app/components/nav.js'
 
 class simul extends Component {
   // renderScene(route, navigator) {
@@ -60,6 +60,7 @@ class simul extends Component {
       {title: 'Contact', index: 8},
       {title: 'UserMessages', index: 9},
       {title: 'Message', index: 10},
+      {title: 'Nav', index: 11},
     ];
     //Alternative navigator
     // <Navigator
@@ -70,7 +71,7 @@ class simul extends Component {
     // />
     return (
       <Navigator
-        initialRoute={routes[0]}
+        initialRoute={routes[11]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
@@ -103,6 +104,12 @@ class simul extends Component {
           if(route.title == 'UserMessages') {
            return <UserMessages title={route.title} />
           }
+          if(route.title == 'Message'){
+           return <Message title={route.title} />
+         }
+         if(route.title == 'Nav'){
+           return <Nav title={route.title} />
+         }
         }}
       />
       // <Navigator
