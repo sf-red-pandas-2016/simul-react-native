@@ -13,13 +13,13 @@ import {
   Navigator
 } from 'react-native';
 
-import Main from './app/components/main.js';
+import Enter from './app/components/enter.js';
 
 class simul extends Component {
   // renderScene(route, navigator) {
   //   console.log(route);
-  //   if(route.name == 'main') {
-  //    return <Main navigator={navigator} />
+  //   if(route.name == 'enter') {
+  //    return <Enter navigator={navigator} />
   //   }
   //  if(route.name == 'register') {
   //    return <Register navigator={navigator} />
@@ -38,9 +38,9 @@ class simul extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{ title: 'Main', index: 0 }}
+        initialRoute={{ title: 'Enter', index: 0 }}
         renderScene={(route, navigator) => {
-          return <Main title={route.title} />
+          return <Enter title={route.title} />
         }}
       />
     );
