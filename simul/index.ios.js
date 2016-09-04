@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Navigator
+  Navigator,
+  TouchableHighlight
 } from 'react-native';
 
 import Enter from './app/components/enter.js';

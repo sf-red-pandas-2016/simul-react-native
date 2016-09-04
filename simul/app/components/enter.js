@@ -5,14 +5,30 @@ import {
   Text,
   View,
   Image,
+  TouchableHighlight,
 } from 'react-native';
 
+var Home = require('./home')
+
 class Enter extends Component{
+
+  constructor(props) {
+    super(props);
+  }
+
+  _navigate() {
+    this.props.navigator.push({
+      title: 'Home'
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
         <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
         <Text style={styles.title}>SIMUL</Text>
+        <TouchableHighlight onPress={ () => this._navigate()}>
+          <Text>Enter</Text>
+        </TouchableHighlight>
       </View>
     )
   }
