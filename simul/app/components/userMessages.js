@@ -10,6 +10,7 @@ class UserMessages  extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Smeagles Messages</Text>
       </View>
     )
   }

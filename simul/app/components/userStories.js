@@ -10,6 +10,7 @@ class UserStories extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Smeagles Stories</Text>
       </View>
     )
   }

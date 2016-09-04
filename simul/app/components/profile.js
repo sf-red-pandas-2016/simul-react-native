@@ -10,6 +10,7 @@ class Profile extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Smeagle's Profile</Text>
       </View>
     )
   }

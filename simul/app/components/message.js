@@ -10,6 +10,7 @@ class Message extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Message 1</Text>
       </View>
     )
   }
