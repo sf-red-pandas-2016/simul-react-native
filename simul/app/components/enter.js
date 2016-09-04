@@ -4,13 +4,15 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
 } from 'react-native';
 
-class Main extends Component{
+class Enter extends Component{
   render() {
     return (
-      <View>
-        <Text style={styles.title}>MAIN PAGE</Text>
+      <View style={styles.container}>
+        <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
+        <Text style={styles.title}>SIMUL</Text>
       </View>
     )
   }
@@ -22,6 +24,10 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  image: {
+    width: 200,
+    height: 200,
+  },
   title: {
    fontSize: 20,
    alignSelf: 'center',
@@ -29,4 +35,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = Main;
+module.exports = Enter;
