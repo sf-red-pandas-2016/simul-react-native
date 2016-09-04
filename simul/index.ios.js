@@ -103,6 +103,9 @@ class simul extends Component {
           if(route.title == 'UserMessages') {
            return <UserMessages title={route.title} />
           }
+          if(route.title == 'Message'){
+            return <Message title={route.title} />
+          }
         }}
       />
       // <Navigator
