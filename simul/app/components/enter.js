@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 var Home = require('./home')
+import General from '../styles/general.js'
 
 class Enter extends Component{
 
@@ -18,12 +19,13 @@ class Enter extends Component{
 
   _navigate() {
     this.props.navigator.push({
-      title: 'Home'
+      title: 'Home',
+      component: Home
     })
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={General.rootContainer}>
         <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
         <Text style={styles.title}>SIMUL</Text>
         <TouchableHighlight onPress={ () => this._navigate()}>

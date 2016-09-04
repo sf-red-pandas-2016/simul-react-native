@@ -10,6 +10,7 @@ class Login extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Login</Text>
       </View>
     )
   }

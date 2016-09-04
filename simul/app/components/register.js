@@ -10,6 +10,7 @@ class Register extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Register</Text>
       </View>
     )
   }

@@ -10,6 +10,7 @@ class Story extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Text>Story 7</Text>
       </View>
     )
   }
