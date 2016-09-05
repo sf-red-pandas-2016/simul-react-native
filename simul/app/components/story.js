@@ -7,6 +7,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Profile from './profile.js';
+
 class Story extends Component{
 
   onProfilePressed() {
