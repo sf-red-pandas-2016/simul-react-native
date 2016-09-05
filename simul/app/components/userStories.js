@@ -4,6 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
+  ListView,
+  TouchableHighlight,
 } from 'react-native';
 
 class UserStories extends Component{
@@ -11,6 +13,12 @@ class UserStories extends Component{
     return (
       <View style={styles.container}>
         <Text>Smeagles Stories</Text>
+        <ListView
+          style={styles.listItems}
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={styles.listText}>{rowData}</Text></TouchableHighlight>}
+          renderHeader={ () => this.newestStory() }
+        />
       </View>
     )
   }
