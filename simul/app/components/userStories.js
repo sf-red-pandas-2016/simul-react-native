@@ -8,6 +8,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Story from './story';
+
 class UserStories extends Component{
   constructor(props) {
     super(props);
@@ -28,7 +30,7 @@ class UserStories extends Component{
 
   newestStory() {
     return(
-      <View style={{backgroundColor: 'lightgrey'}}>
+      <View style={{backgroundColor: 'powderblue'}}>
         <Text style={{color: 'purple', textAlign: 'left'}}>Monday August 24, 2016</Text>
         <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
         <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
