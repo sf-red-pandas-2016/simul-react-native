@@ -10,7 +10,6 @@ class Contact extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Contact Smeagle</Text>
       </View>
     )
   }

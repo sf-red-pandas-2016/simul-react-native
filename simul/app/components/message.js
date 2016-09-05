@@ -26,12 +26,6 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#27c2dc'
   },
-  from: {
-    alignSelf: 'flex-start',
-    fontSize: 21,
-    marginTop: 10,
-    marginBottom: 5,
-  },
   title: {
    fontSize: 40,
    alignSelf: 'center',
@@ -41,6 +35,7 @@ var styles = StyleSheet.create({
   from: {
     alignSelf: 'flex-start',
     fontSize: 21,
+    fontStyle: 'italic',
     marginTop: 10,
     marginBottom: 5,
   },
