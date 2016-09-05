@@ -8,7 +8,9 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import Search from './search.js'
+import Search from './search'
+import Login from './login'
+
 
 class Home extends Component{
   constructor(props) {
@@ -21,6 +23,10 @@ class Home extends Component{
     };
   }
   _onPressLogin() {
+    this.props.navigator.push({
+      title: 'Login',
+      component: Login
+    })
   }
 
   _onPressRegister() {
