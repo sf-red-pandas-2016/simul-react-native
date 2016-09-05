@@ -12,7 +12,7 @@ class Story extends Component{
   onProfilePressed() {
     this.props.navigator.push({
       title: 'Story',
-      component: Story
+      component: Profile
     })
   }
 
@@ -38,6 +38,16 @@ class Story extends Component{
 };
 
 var styles = StyleSheet.create({
+  button: {
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -53,7 +63,8 @@ var styles = StyleSheet.create({
     fontSize: 21,
     marginTop: 10,
     marginBottom: 5,
-  }
+  },
+
 });
 
 module.exports = Story;
