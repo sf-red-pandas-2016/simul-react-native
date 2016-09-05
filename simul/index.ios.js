@@ -23,8 +23,8 @@ import Profile from './app/components/profile.js';
 import Register from './app/components/register.js';
 import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
-import UserMessages from './app/components/messages.js';
-import Message from './app/components/messages.js';
+import UserMessages from './app/components/userMessages.js';
+import Message from './app/components/message.js';
 
 
 class simul extends Component {
@@ -102,6 +102,9 @@ class simul extends Component {
           }
           if(route.title == 'UserMessages') {
            return <UserMessages title={route.title} />
+          }
+          if(route.title == 'Message') {
+           return <Message title={route.title} />
           }
         }}
       />
