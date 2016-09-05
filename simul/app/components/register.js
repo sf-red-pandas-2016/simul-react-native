@@ -8,36 +8,6 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import I18n from 'react-native-i18n'
-
-I18n.fallbacks = true;
-
-I18n.translations = {
-  en: {
-    username: 'Username',
-    password: 'Password',
-    register: 'Register',
-    name: 'Name',
-    location: 'Location',
-    bio: 'Bio',
-    contactInformation: 'Contact Information',
-    skills: 'Skills',
-    seeking: 'Seeking',
-    resourceRequest: 'Resource Request',
-  },
-  ar: {
-    username: 'اسم المستخدم',
-    password: 'كلمه السر',
-    register: 'تسجيل',
-    name: 'اسم',
-    location: 'موقع',
-    bio: 'سيرة',
-    contactInformation: 'معلومات الاتصال',
-    skills: 'مهارات',
-    seeking: 'فرص تسعى',
-    resourceRequest: 'الموارد أريد',
-  }
-}
 
 class Register extends Component{
   constructor() {
