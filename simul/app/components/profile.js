@@ -11,6 +11,7 @@ class Profile extends Component{
     return (
       <View style={styles.container}>
         <Text>Smeagles Profile</Text>
+        <Text> {JSON.stringify(this.props.users)}</Text>
       </View>
     )
   }
