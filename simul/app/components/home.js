@@ -71,10 +71,12 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>HOME YA</Text>
-        <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login</Text></TouchableHighlight>
-        <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register</Text></TouchableHighlight>
+        <Text style={styles.title}>HOME منزل</Text>
+        <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login دخول</Text></TouchableHighlight>
+        <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register سجل</Text></TouchableHighlight>
         <Search />
+        <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
+
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
