@@ -23,12 +23,14 @@ I18n.translations = {
   en: {
     login: 'Login',
     username: 'Username',
-    password: 'Password'
+    password: 'Password',
+    register: 'Register',
   },
   ar: {
     login: 'دخول',
     username: 'اسم المستخدم',
-    password: 'كلمه السر'
+    password: 'كلمه السر',
+    register: 'تسجيل',
   }
 }
 
@@ -52,7 +54,7 @@ class Home extends Component{
 
   _onPressRegister() {
     this.props.navigator.push({
-      title: 'Register',
+      title: I18n.t('register'),
       component: Register
     })
   }

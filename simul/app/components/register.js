@@ -8,6 +8,37 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    username: 'Username',
+    password: 'Password',
+    register: 'Register',
+    name: 'Name',
+    location: 'Location',
+    bio: 'Bio',
+    contactInformation: 'Contact Information',
+    skills: 'Skills',
+    seeking: 'Seeking',
+    resourceRequest: 'Resource Request',
+  },
+  ar: {
+    username: 'اسم المستخدم',
+    password: 'كلمه السر',
+    register: 'تسجيل',
+    name: 'اسم',
+    location: 'موقع',
+    bio: 'سيرة',
+    contactInformation: 'معلومات الاتصال',
+    skills: 'مهارات',
+    seeking: 'فرص تسعى',
+    resourceRequest: 'الموارد أريد',
+  }
+}
+
 class Register extends Component{
   constructor() {
     super();
@@ -20,6 +51,7 @@ class Register extends Component{
       preferred_contact: "",
       skills: "",
       seeking: "",
+      resource_request: "",
       errors: [],
     }
   }
@@ -41,6 +73,7 @@ class Register extends Component{
             preferred_contact: this.state.preferred_contact,
             skills: this.state.skills,
             seeking: this.state.seeking,
+            resource_request: this.state.resource_request,
           }
         })
       });
@@ -63,38 +96,43 @@ class Register extends Component{
 
         <TextInput
           onChangeText={ (val)=> this.setState({name: val}) }
-          style={styles.input} placeholder="Name"
+          style={styles.input} placeholder={I18n.t("name")}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({username: val}) }
-          style={styles.input} placeholder="Username"
+          style={styles.input} placeholder={I18n.t("username")}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({location: val}) }
-          style={styles.input} placeholder="Location"
+          style={styles.input} placeholder={I18n.t("location")}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({bio: val}) }
-          style={styles.input} placeholder="Bio"
+          style={styles.input} placeholder={I18n.t("bio")}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({preferred_contact: val}) }
-          style={styles.input} placeholder="Contact Information"
+          style={styles.input} placeholder={I18n.t("contactInformation")}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({skills: val}) }
-          style={styles.input} placeholder="Skills"
+          style={styles.input} placeholder={I18n.t("skills")}
         />
 
 
         <TextInput
           onChangeText={ (val)=> this.setState({seeking: val}) }
-          style={styles.input} placeholder="Seeking"
+          style={styles.input} placeholder={I18n.t("seeking")}
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({seeking: val}) }
+          style={styles.input} placeholder={I18n.t("username")}
         />
 
         <TouchableHighlight onPress={this._onPressRegister.bind(this)} style={styles.button}>
