@@ -8,6 +8,24 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    login: 'Login',
+    username: 'Username',
+    password: 'Password'
+  },
+  ar: {
+    login: 'دخول',
+    username: 'اسم المستخدم',
+    password: 'كلمه السر'
+  }
+}
+
+
 class Login extends Component{
   constructor(){
     super();
@@ -56,22 +74,22 @@ class Login extends Component{
       <View style={styles.container}>
 
         <Text>
-        Login
+        {I18n.t('login')}
         </Text>
 
         <TextInput
           onChangeText={ (val)=> this.setState({username: val}) }
-          style={styles.input} placeholder='Username'
+          style={styles.input} placeholder={I18n.t('username')}
         />
 
         <TextInput
           onChangeText={ (val)=> this.setState({password_digest: val}) }
-          style={styles.input} placeholder="Password"
+          style={styles.input} placeholder={I18n.t('password')}
         />
 
         <TouchableHighlight onPress={this._onPressLogin.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
-          Login
+          {I18n.t('login')}
           </Text>
         </TouchableHighlight>
 

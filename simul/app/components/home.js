@@ -15,6 +15,23 @@ import Story from './story';
 import UserStories from './userStories';
 import api from '../Utils/api.js';
 
+import I18n from 'react-native-i18n'
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    login: 'Login',
+    username: 'Username',
+    password: 'Password'
+  },
+  ar: {
+    login: 'دخول',
+    username: 'اسم المستخدم',
+    password: 'كلمه السر'
+  }
+}
+
 
 class Home extends Component{
   constructor(props) {
@@ -28,7 +45,7 @@ class Home extends Component{
   }
   _onPressLogin() {
     this.props.navigator.push({
-      title: 'Login',
+      title: I18n.t('login'),
       component: Login
     })
   }
