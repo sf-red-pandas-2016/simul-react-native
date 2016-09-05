@@ -25,8 +25,28 @@ class Login extends Component{
     }
   }
 
-  async onLoginPressed(){
-    
+  async onLoginPressed() {
+
+    try {
+      let response = await fetch('http:///simulnos.herokuapp.com/api/users', {
+                      method: 'POST',
+                      headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        session:{
+                          username: this.state.username,
+                          password_digest: this.state.password_digest,
+                        }
+                      })
+      });
+
+      let res = await response.text();
+      console.log("res is: " + res)
+    } catch(errors){
+
+    }
 
   }
 
@@ -49,9 +69,9 @@ class Login extends Component{
           style={styles.input} placeholder="Password"
         />
 
-        <TouchableHighlight onPress={this.onRegisterPressed.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={this.onLoginPressed.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
-          Register
+          Login
           </Text>
         </TouchableHighlight>
 
@@ -79,6 +99,16 @@ var styles = StyleSheet.create({
     fontSize: 15,
     borderWidth: 1,
     borderColor: '#48bbec'
+  },
+  button: {
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
   },
 });
 
