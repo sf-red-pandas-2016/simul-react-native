@@ -70,7 +70,7 @@ class simul extends Component {
     // />
     return (
       <Navigator
-        initialRoute={routes[10]}
+        initialRoute={routes[8]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
