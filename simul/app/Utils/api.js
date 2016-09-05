@@ -22,14 +22,13 @@ var api = {
       method: 'post',
       body: JSON.stringify(note)
     }).then((res) => res.json());
-  }
-};
+  },
 
   getUsers() {
     var url = 'https://simulnos.herokuapp.com/api/users'
     return fetch(url).then((res) => res.json())
-  }
-}
+  },
+};
 
 
 module.exports = api;
