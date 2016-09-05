@@ -12,6 +12,27 @@ import {
 import Home from './home.js'
 import General from '../styles/general.js'
 
+import I18n from 'react-native-i18n'
+
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    login: 'Login',
+    username: 'Username',
+    password: 'Password',
+    register: 'Register',
+    enter: 'Enter',
+  },
+  ar: {
+    login: 'دخول',
+    username: 'اسم المستخدم',
+    password: 'كلمه السر',
+    register: 'تسجيل',
+    enter: 'أدخل'
+  }
+}
+
 class Enter extends Component{
 
   constructor(props) {
@@ -30,7 +51,7 @@ class Enter extends Component{
         <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
         <Text style={styles.title}>SIMUL</Text>
         <TouchableHighlight onPress={ () => this._navigate()}>
-          <Text style={styles.enter}>Enter</Text>
+          <Text style={styles.enter}>{I18n.t('enter')}</Text>
         </TouchableHighlight>
       </View>
     )
