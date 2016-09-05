@@ -13,6 +13,7 @@ import Login from './login';
 import Register from './register';
 import Story from './story';
 import UserStories from './userStories';
+import api from '../Utils/api.js';
 
 
 class Home extends Component{
@@ -78,7 +79,7 @@ class Home extends Component{
         <Text style={styles.title}>HOME منزل</Text>
         <Search />
         <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
-
+        <Text> {JSON.stringify(this.state.stories[0].content)}</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
