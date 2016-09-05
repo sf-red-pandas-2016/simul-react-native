@@ -12,6 +12,7 @@ import Search from './search';
 import Login from './login';
 import Register from './register';
 import Story from './story';
+import UserStories from './userStories';
 
 
 class Home extends Component{
@@ -45,10 +46,17 @@ class Home extends Component{
     })
   }
 
+  _onPressUserStories() {
+    this.props.navigator.push({
+      title: 'UserStories',
+      component: UserStories
+    })
+  }
   featuredStory() {
       return(
         <View style={{backgroundColor: 'lightgrey'}}>
         <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
         <Text style={{color: 'purple', textAlign: 'right'}}>-Ahmed</Text>
         </View>
       )
@@ -63,10 +71,12 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>HOME YA</Text>
-        <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login</Text></TouchableHighlight>
-        <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register</Text></TouchableHighlight>
+        <Text style={styles.title}>HOME منزل</Text>
+        <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login دخول</Text></TouchableHighlight>
+        <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register سجل</Text></TouchableHighlight>
         <Search />
+        <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
+
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
