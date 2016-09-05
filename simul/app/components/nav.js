@@ -4,16 +4,30 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
+import Home from './home'
+
 class Nav extends Component{
+
+  _onPressHome() {
+    this.props.navigator.push({
+      title: 'Home',
+      component: Home
+    })
+  }
+
   render() {
     return (
       <View style={styles.rootContainer}>
        <View style ={styles.topContainer}>
+        <TouchableHighlight onPress={ () => this._onPressHome()}>
          <Text style={styles.simulText}>
-         SIMUL
+          SIMUL
          </Text>
+        </TouchableHighlight>
        </View>
 
        <View style ={styles.displayContainer}>
