@@ -11,9 +11,9 @@ import Profile from './profile.js';
 
 class Story extends Component{
 
-  onProfilePressed() {
+  _onPressProfile() {
     this.props.navigator.push({
-      title: 'Story',
+      title: 'Profile',
       component: Profile
     })
   }
@@ -22,7 +22,7 @@ class Story extends Component{
     return (
       <View style={styles.container}>
 
-      <TouchableHighlight onPress={this.onProfilePressed.bind(this)} style={styles.button}>
+      <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
         Ahmeds Profile
         </Text>
