@@ -33,19 +33,27 @@ class Home extends Component{
     // })
   }
 
+  featuredStory() {
+      return(
+        <View style={{backgroundColor: 'lightgrey'}}>
+        <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text style={{color: 'purple', textAlign: 'right'}}>-Ahmed</Text>
+        </View>
+      )
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>HOME YA</Text>
         <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login</Text></TouchableHighlight>
         <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register</Text></TouchableHighlight>
-
+        <Search />
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
              styles.listText}>{rowData}</Text></TouchableHighlight>}
-          renderHeader={ () => <Search />} />
+          renderHeader={ () => this.featuredStory() } />
       </View>
     )
   }
