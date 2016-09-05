@@ -18,15 +18,25 @@ class Home extends Component{
       ])
     };
   }
+
+  _onPressStory() {
+    // this.props.navigator.renderScene(routes[6])({
+    //   title: 'Story',
+    //   component: Story
+    // })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>HOME PAGE YA</Text>
+        <Text style={styles.nav}>Login</Text>
+        <Text style={styles.nav}>Register</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={{
-          textAlign: 'center'}}>{rowData}</Text></TouchableHighlight>}/>
+            textAlign: 'center', }}>{rowData}</Text></TouchableHighlight>}/>
       </View>
     )
   }
