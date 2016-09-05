@@ -73,7 +73,6 @@ class Register extends Component{
           Register
           </Text>
         </TouchableHighlight>
-
       </View>
     );
   }
@@ -97,6 +96,12 @@ var styles = StyleSheet.create({
     fontSize: 15,
     borderWidth: 1,
     borderColor: '#48bbec'
+  },
+  button: {
+
+  },
+  buttonText: {
+
   },
 });
 
