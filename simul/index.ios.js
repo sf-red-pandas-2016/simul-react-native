@@ -26,6 +26,9 @@ import UserStories from './app/components/userStories.js';
 import UserMessages from './app/components/userMessages.js';
 import Message from './app/components/message.js';
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c28dd907ed8754ecea5a849439c171c3c24009e6
 
 =======
 import Nav from './app/components/nav.js'
@@ -75,11 +78,7 @@ class simul extends Component {
     // />
     return (
       <Navigator
-<<<<<<< HEAD
-        initialRoute={routes[3]}
-=======
-        initialRoute={routes[11]}
->>>>>>> 127e9ecefbaa86e306bbf83fa540ec62e4f1dab4
+        initialRoute={routes[0]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
@@ -112,6 +111,11 @@ class simul extends Component {
           if(route.title == 'UserMessages') {
            return <UserMessages title={route.title} />
           }
+<<<<<<< HEAD
+          if(route.title == 'Message') {
+           return <Message title={route.title} />
+          }
+=======
           if(route.title == 'Message'){
 <<<<<<< HEAD
             return <Message title={route.title} />
@@ -123,6 +127,7 @@ class simul extends Component {
            return <Nav title={route.title} />
          }
 >>>>>>> 127e9ecefbaa86e306bbf83fa540ec62e4f1dab4
+>>>>>>> c28dd907ed8754ecea5a849439c171c3c24009e6
         }}
       />
       // <Navigator
