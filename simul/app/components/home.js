@@ -8,9 +8,10 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import Search from './search'
-import Login from './login'
-import Register from './register'
+import Search from './search';
+import Login from './login';
+import Register from './register';
+import Story from './story';
 
 
 class Home extends Component{
@@ -38,10 +39,10 @@ class Home extends Component{
   }
 
   _onPressStory() {
-    // this.props.navigator.push({
-    //   title: 'Story',
-    //   component: Story
-    // })
+    this.props.navigator.push({
+      title: 'Story',
+      component: Story
+    })
   }
 
   featuredStory() {
