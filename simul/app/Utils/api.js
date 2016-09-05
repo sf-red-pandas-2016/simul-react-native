@@ -1,6 +1,6 @@
 var api = {
 
-  getBio(username){
+  getUser(username){
     username = username.toLowerCase().trim();
     var url = `http://simulnos.herokuapp.com/api/users/${user.id}`;
     return fetch(url).then((res) => res.json())
