@@ -10,6 +10,7 @@ import {
 
 import Search from './search'
 import Login from './login'
+import Register from './register'
 
 
 class Home extends Component{
@@ -30,6 +31,10 @@ class Home extends Component{
   }
 
   _onPressRegister() {
+    this.props.navigator.push({
+      title: 'Register',
+      component: Register
+    })
   }
 
   _onPressStory() {
