@@ -28,11 +28,14 @@ import Message from './app/components/message.js';
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> c28dd907ed8754ecea5a849439c171c3c24009e6
 
 =======
+>>>>>>> bd0db10162f82409d0b4f5e82d7f51af727914c5
 import Nav from './app/components/nav.js'
->>>>>>> 127e9ecefbaa86e306bbf83fa540ec62e4f1dab4
+
 
 class simul extends Component {
   // renderScene(route, navigator) {
@@ -78,7 +81,12 @@ class simul extends Component {
     // />
     return (
       <Navigator
+<<<<<<< HEAD
+
+        initialRoute={routes[2]}
+=======
         initialRoute={routes[0]}
+>>>>>>> bd0db10162f82409d0b4f5e82d7f51af727914c5
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
@@ -111,23 +119,13 @@ class simul extends Component {
           if(route.title == 'UserMessages') {
            return <UserMessages title={route.title} />
           }
-<<<<<<< HEAD
           if(route.title == 'Message') {
            return <Message title={route.title} />
           }
-=======
-          if(route.title == 'Message'){
-<<<<<<< HEAD
-            return <Message title={route.title} />
-          }
-=======
-           return <Message title={route.title} />
-         }
          if(route.title == 'Nav'){
            return <Nav title={route.title} />
          }
->>>>>>> 127e9ecefbaa86e306bbf83fa540ec62e4f1dab4
->>>>>>> c28dd907ed8754ecea5a849439c171c3c24009e6
+
         }}
       />
       // <Navigator
