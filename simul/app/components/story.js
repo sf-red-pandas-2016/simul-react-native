@@ -10,7 +10,9 @@ class Story extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Story 7</Text>
+        <Text>Day 7</Text>
+          <Text style={styles.title}> My neighbor Amira </Text>
+          <Text style={styles.content}> Today I met another girl my age named Amira, her family is like mine...</Text>
       </View>
     )
   }
@@ -27,6 +29,12 @@ var styles = StyleSheet.create({
    alignSelf: 'center',
    margin: 40
   },
+  content: {
+    alignSelf: 'center',
+    fontSize: 21,
+    marginTop: 10,
+    marginBottom: 5,
+  }
 });
 
 module.exports = Story;
