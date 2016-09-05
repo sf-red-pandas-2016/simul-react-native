@@ -23,10 +23,21 @@ class Login extends Component{
       errors: [],
     }
   }
+
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Login</Text>
+
+        <Text>
+        Login
+        </Text>
+
+        <TextInput
+          onChangeText={ (text)=> this.setState({username: text}) }
+          style={styles.input} placeholder='Username'>
+        </TextInput>
+
       </View>
     )
   }
