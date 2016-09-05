@@ -71,7 +71,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#27c2dc',
-    paddingTop: 22,
+    paddingTop: 80,
   },
   title: {
     flex: .5,

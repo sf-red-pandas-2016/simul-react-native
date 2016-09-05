@@ -8,7 +8,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-var Home = require('./home')
+// var Home = require('./home')
+import Home from './home.js'
 import General from '../styles/general.js'
 
 class Enter extends Component{
