@@ -5,6 +5,7 @@ import {
   Text,
   View,
   ListView,
+  TouchableHighlight,
 } from 'react-native';
 
 class Home extends Component{
@@ -24,8 +25,8 @@ class Home extends Component{
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text style={{
-          textAlign: 'center'}}>{rowData}</Text>}/>
+          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={{
+          textAlign: 'center'}}>{rowData}</Text></TouchableHighlight>}/>
       </View>
     )
   }
