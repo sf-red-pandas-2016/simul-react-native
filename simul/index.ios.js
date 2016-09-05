@@ -25,15 +25,6 @@ import Story from './app/components/story.js';
 import UserStories from './app/components/userStories.js';
 import UserMessages from './app/components/userMessages.js';
 import Message from './app/components/message.js';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> c28dd907ed8754ecea5a849439c171c3c24009e6
-
-=======
->>>>>>> bd0db10162f82409d0b4f5e82d7f51af727914c5
 import Nav from './app/components/nav.js'
 
 
@@ -81,12 +72,7 @@ class simul extends Component {
     // />
     return (
       <Navigator
-<<<<<<< HEAD
-
         initialRoute={routes[2]}
-=======
-        initialRoute={routes[0]}
->>>>>>> bd0db10162f82409d0b4f5e82d7f51af727914c5
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
