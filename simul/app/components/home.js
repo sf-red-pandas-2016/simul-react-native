@@ -8,6 +8,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Search from './search.js'
+
 class Home extends Component{
   constructor(props) {
     super(props);
@@ -37,11 +39,13 @@ class Home extends Component{
         <Text style={styles.title}>HOME YA</Text>
         <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login</Text></TouchableHighlight>
         <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register</Text></TouchableHighlight>
+
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
-             styles.listText}>{rowData}</Text></TouchableHighlight>}/>
+             styles.listText}>{rowData}</Text></TouchableHighlight>}
+          renderHeader={ () => <Search />} />
       </View>
     )
   }
