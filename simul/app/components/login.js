@@ -25,6 +25,11 @@ class Login extends Component{
     }
   }
 
+  async onLoginPressed(){
+    
+
+  }
+
 
   render() {
     return (
@@ -43,6 +48,13 @@ class Login extends Component{
           onChangeText={ (val)=> this.setState({password_digest: val}) }
           style={styles.input} placeholder="Password"
         />
+
+        <TouchableHighlight onPress={this.onRegisterPressed.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>
+          Register
+          </Text>
+        </TouchableHighlight>
+
 
       </View>
     )
