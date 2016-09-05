@@ -34,14 +34,19 @@ class Home extends Component{
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#27c2dc',
+    paddingTop: 22,
   },
   title: {
-   fontSize: 20,
-   alignSelf: 'center',
-   margin: 40
+    flex: .5,
+    backgroundColor: 'white',
+    fontSize: 20,
+    textAlign: 'center',
   },
+  listItems: {
+    flex: 9.5,
+    backgroundColor: 'powderblue',
+  }
 });
 
 module.exports = Home;
