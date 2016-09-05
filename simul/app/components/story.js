@@ -8,13 +8,17 @@ import {
 } from 'react-native';
 
 import Profile from './profile.js';
+import api from '../Utils/api.js';
 
 class Story extends Component{
 
   _onPressProfile() {
-    this.props.navigator.push({
-      title: 'Profile',
-      component: Profile
+    api.getUsers().then((res) => {
+      this.props.navigator.push({
+        title: 'Profile',
+        component: Profile,
+        passProps: {users: res}
+      })
     })
   }
 
