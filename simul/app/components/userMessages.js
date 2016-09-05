@@ -10,7 +10,19 @@ class UserMessages  extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Smeagles Messages</Text>
+        <Text style={styles.to}>Jim Smith</Text>
+        <Text style={styles.from}>from: Tom Smith</Text>
+        <Text style={styles.from}>date: 08/04/2016</Text>
+        <Text style={styles.title}>Europe</Text>
+        <Text style={styles.from}>from: Tom Smith</Text>
+        <Text style={styles.from}>date: 08/03/2016</Text>
+        <Text style={styles.title}>Another chance</Text>
+        <Text style={styles.from}>from: Tom Smith</Text>
+        <Text style={styles.from}>date: 08/02/2016</Text>
+        <Text style={styles.title}>We leave</Text>
+        <Text style={styles.from}>from: Tom Smith</Text>
+        <Text style={styles.from}>date: 08/01/2016</Text>
+        <Text style={styles.title}>No more food</Text>
       </View>
     )
   }
@@ -21,12 +33,33 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#27c2dc'
   },
   title: {
-   fontSize: 20,
+   fontSize: 40,
    alignSelf: 'center',
-   margin: 40
+   backgroundColor: '#27c2dc',
+   marginBottom: 20,
   },
+  from: {
+    alignSelf: 'flex-start',
+    fontSize: 21,
+    fontStyle: 'italic',
+  },
+  to: {
+    alignSelf: 'flex-end',
+    fontSize: 21,
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginBottom: 60,
+  },
+
+  content: {
+    alignSelf: 'center',
+    fontSize: 21,
+    marginTop: 10,
+    marginBottom: 5,
+  }
 });
 
 module.exports = UserMessages;

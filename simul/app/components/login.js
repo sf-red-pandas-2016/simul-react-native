@@ -25,7 +25,7 @@ class Login extends Component{
     }
   }
 
-  async onLoginPressed() {
+  async _onPressLogin() {
 
     try {
       let response = await fetch('http:///simulnos.herokuapp.com/api/users', {
@@ -69,7 +69,7 @@ class Login extends Component{
           style={styles.input} placeholder="Password"
         />
 
-        <TouchableHighlight onPress={this.onLoginPressed.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={this._onPressLogin.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
           Login
           </Text>

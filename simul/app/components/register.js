@@ -24,7 +24,7 @@ class Register extends Component{
     }
   }
 
-  async onRegisterPressed(){
+  async _onPressRegister(){
     try {
       let response = await fetch('http:///simulnos.herokuapp.com/api/users', {
         method: 'POST',
@@ -97,7 +97,7 @@ class Register extends Component{
           style={styles.input} placeholder="Seeking"
         />
 
-        <TouchableHighlight onPress={this.onRegisterPressed.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={this._onPressRegister.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
           Register
           </Text>

@@ -29,7 +29,7 @@ const Search = (props) => (
   <View style={styles.container}>
     <TextInput
       style={styles.input}
-      placeholder="Search..."
+      placeholder="Search بحث ..."
       onChangeText={(text) => console.log('searching for ', text)}
     />
   </View>
