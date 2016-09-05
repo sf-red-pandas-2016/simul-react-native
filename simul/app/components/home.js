@@ -12,6 +12,7 @@ import Search from './search';
 import Login from './login';
 import Register from './register';
 import Story from './story';
+import UserStories from './userStories';
 
 
 class Home extends Component{
@@ -45,10 +46,17 @@ class Home extends Component{
     })
   }
 
+  _onPressUserStories() {
+    this.props.navigator.push({
+      title: 'UserStories',
+      component: UserStories
+    })
+  }
   featuredStory() {
       return(
         <View style={{backgroundColor: 'lightgrey'}}>
         <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
         <Text style={{color: 'purple', textAlign: 'right'}}>-Ahmed</Text>
         </View>
       )
