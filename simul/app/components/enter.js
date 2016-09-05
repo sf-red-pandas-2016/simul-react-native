@@ -26,7 +26,7 @@ class Enter extends Component{
   }
   render() {
     return (
-      <View style={General.rootContainer}>
+      <View style={styles.container}>
         <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
         <Text style={styles.title}>SIMUL</Text>
         <TouchableHighlight onPress={ () => this._navigate()}>
@@ -57,6 +57,7 @@ var styles = StyleSheet.create({
   enter: {
     fontSize: 15,
     width: 300,
+    textAlign: 'center',
     alignItems: 'center',
     flex: 1,
     backgroundColor: '#27c2dc',
