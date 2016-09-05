@@ -14,7 +14,7 @@ class UserStories extends Component{
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-        'Story 1', 'Story 2', 'Story 3', 'Story 4', 'Story 5', 'Story 6', 'Story 7', 'Story 8', 'Story 9', 'Story 10', 'Story 11'
+        'Tuesday August 23, 2016', 'Wednesday August 10, 2016', 'Wednesday August 3, 2016', 'Thursday July 28, 2016', 'Monday July 18, 2016', 'Thursday July 14, 2016', 'Saturday July 2, 2016', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11',
       ])
     };
   }
@@ -57,10 +57,16 @@ var styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
+   flex: 2,
    fontSize: 20,
    alignSelf: 'center',
    margin: 40
   },
+  listText: {
+    fontSize: 20,
+    flex: 2,
+    textAlign: 'center',
+  }
 });
 
 module.exports = UserStories;
