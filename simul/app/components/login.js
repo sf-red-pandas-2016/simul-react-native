@@ -4,6 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
+  TextInput,
+  TouchableHighlight,
 } from 'react-native';
 
 class Login extends Component{
