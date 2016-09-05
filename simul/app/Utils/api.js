@@ -10,9 +10,11 @@ var api = {
     var url = `http://simulnos.herokuapp.com/api/users/${user.id}/messages`;
     return fetch(url).then((res) => res.json())
   },
-  getAllStories(){
-    var url = `http://simulnos.herokuapp.com/api/`;
-    return fetch(url).then((res) => res.json());
+  getStories(){
+    var url = `http://simulnos.herokuapp.com/api`;
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    });
   },
   getUserStories(username){
     username = username.toLowerCase().trim();
