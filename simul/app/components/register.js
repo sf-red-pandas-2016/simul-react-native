@@ -23,6 +23,9 @@ class Register extends Component{
     }
   }
 
+  onRegisterPressed(){
+    
+  }
 
 
   render() {
@@ -73,6 +76,7 @@ class Register extends Component{
           Register
           </Text>
         </TouchableHighlight>
+
       </View>
     );
   }
@@ -98,7 +102,11 @@ var styles = StyleSheet.create({
     borderColor: '#48bbec'
   },
   button: {
-
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
   },
   buttonText: {
 
