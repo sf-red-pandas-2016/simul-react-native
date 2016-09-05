@@ -35,11 +35,44 @@ class Register extends Component{
         <TextInput
           onChangeText={ (val)=> this.setState({name: val}) }
           style={styles.input} placeholder="Name"
-          />
-        <Text>
-          {this.state.name}
-        </Text>
+        />
 
+        <TextInput
+          onChangeText={ (val)=> this.setState({username: val}) }
+          style={styles.input} placeholder="Username"
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({location: val}) }
+          style={styles.input} placeholder="Location"
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({bio: val}) }
+          style={styles.input} placeholder="Bio"
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({preferred_contact: val}) }
+          style={styles.input} placeholder="Preferred_contact"
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({skills: val}) }
+          style={styles.input} placeholder="Skills"
+        />
+
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({seeking: val}) }
+          style={styles.input} placeholder="Seeking"
+        />
+
+        <TouchableHighlight onPress={this.onRegisterPressed.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>
+          Register
+          </Text>
+        </TouchableHighlight>
 
       </View>
     );
