@@ -73,7 +73,7 @@ class simul extends Component {
     return (
       <Navigator
 
-        initialRoute={routes[3]}
+        initialRoute={routes[2]}
         initialRouteStack={routes}
         renderScene={(route, navigator) => {
           if(route.title == 'Enter') {
@@ -107,11 +107,7 @@ class simul extends Component {
            return <UserMessages title={route.title} />
           }
           if(route.title == 'Message'){
-
-            return <Message title={route.title} />
-          }
-
-           return <Message title={route.title} />
+          return <Message title={route.title} />
          }
          if(route.title == 'Nav'){
            return <Nav title={route.title} />
