@@ -55,8 +55,16 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   listItems: {
-    flex: 9.5,
+    flex: 9,
     backgroundColor: 'powderblue',
+  },
+  nav: {
+    flex: .25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    color: 'white',
+    fontFamily: 'Farah',
+    backgroundColor: '#FFB30F'
   }
 });
 
