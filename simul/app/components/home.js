@@ -50,6 +50,7 @@ class Home extends Component{
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#27c2dc',
     paddingTop: 22,
   },
@@ -63,13 +64,17 @@ var styles = StyleSheet.create({
     flex: 9,
     backgroundColor: 'powderblue',
   },
+  listText: {
+    color: '#32161F',
+    textAlign: 'center',
+  },
   nav: {
     flex: .25,
-    flexDirection: 'row',
     alignItems: 'center',
     color: 'white',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F'
+    backgroundColor: '#FFB30F',
+    textAlign: 'center',
   }
 });
 
