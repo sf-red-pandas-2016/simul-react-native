@@ -71,9 +71,11 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+          <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>Login دخول</Text></TouchableHighlight>
+          <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>Register سجل</Text></TouchableHighlight>
+        </View>
         <Text style={styles.title}>HOME منزل</Text>
-        <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.nav}>Login دخول</Text></TouchableHighlight>
-        <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.nav}>Register سجل</Text></TouchableHighlight>
         <Search />
         <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
 
@@ -109,14 +111,24 @@ var styles = StyleSheet.create({
     color: '#32161F',
     textAlign: 'center',
   },
-  nav: {
+  navLeft: {
     flex: .25,
-    alignItems: 'center',
     color: 'white',
     fontFamily: 'Farah',
     backgroundColor: '#FFB30F',
     textAlign: 'center',
-  }
+    marginRight: 110,
+    padding: 10,
+  },
+  navRight: {
+    flex: .25,
+    color: 'white',
+    fontFamily: 'Farah',
+    backgroundColor: '#FFB30F',
+    textAlign: 'center',
+    marginLeft: 110,
+    padding: 10,
+  },
 });
 
 module.exports = Home;
