@@ -20,11 +20,37 @@ class Register extends Component{
       preferred_contact: "",
       skills: "",
       seeking: "",
+      errors: [],
     }
   }
 
-  onRegisterPressed(){
-    
+  async onRegisterPressed(){
+    try {
+      let response = await fetch('http:///simulnos.herokuapp.com/api/users', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            name: this.state.name,
+            username: this.state.username,
+            location: this.state.location,
+            bio: this.state.bio,
+            preferred_contact: this.state.preferred_contact,
+            skills: this.state.skills,
+            seeking: this.state.seeking,
+          }
+        })
+      });
+
+      let res = await response.text();
+      console.log("res is: " + res)
+    } catch(errors){
+
+
+    }
   }
 
 
@@ -57,7 +83,7 @@ class Register extends Component{
 
         <TextInput
           onChangeText={ (val)=> this.setState({preferred_contact: val}) }
-          style={styles.input} placeholder="Preferred_contact"
+          style={styles.input} placeholder="Contact Information"
         />
 
         <TextInput
@@ -109,7 +135,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonText: {
-
+    textAlign: 'center',
   },
 });
 
