@@ -7,6 +7,11 @@ import {
 } from 'react-native';
 
 class Home extends Component{
+  fetchUserData() {
+    fetch('http:///simulnos.herokuapp.com/api/users').then(function(response){
+      return response.json()
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
