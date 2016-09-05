@@ -9,6 +9,20 @@ import {
 } from 'react-native';
 
 class Login extends Component{
+  constructor(){
+    super();
+
+    this.state = {
+      name: "",
+      username: "",
+      location: "",
+      bio: "",
+      preferred_contact: "",
+      skills: "",
+      seeking: "",
+      errors: [],
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
