@@ -15,6 +15,7 @@ class Login extends Component{
     this.state = {
       name: "",
       username: "",
+      password_digest: "",
       location: "",
       bio: "",
       preferred_contact: "",
@@ -34,9 +35,14 @@ class Login extends Component{
         </Text>
 
         <TextInput
-          onChangeText={ (text)=> this.setState({username: text}) }
-          style={styles.input} placeholder='Username'>
-        </TextInput>
+          onChangeText={ (val)=> this.setState({username: val}) }
+          style={styles.input} placeholder='Username'
+        />
+
+        <TextInput
+          onChangeText={ (val)=> this.setState({password_digest: val}) }
+          style={styles.input} placeholder="Password"
+        />
 
       </View>
     )
@@ -53,6 +59,14 @@ var styles = StyleSheet.create({
    fontSize: 20,
    alignSelf: 'center',
    margin: 40
+  },
+  input: {
+    height: 50,
+    marginTop: 10,
+    padding: 4,
+    fontSize: 15,
+    borderWidth: 1,
+    borderColor: '#48bbec'
   },
 });
 
