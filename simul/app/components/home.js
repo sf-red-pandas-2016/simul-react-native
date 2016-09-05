@@ -8,7 +8,11 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import Search from './search.js'
+import Search from './search';
+import Login from './login';
+import Register from './register';
+import Story from './story';
+
 
 class Home extends Component{
   constructor(props) {
@@ -21,16 +25,24 @@ class Home extends Component{
     };
   }
   _onPressLogin() {
+    this.props.navigator.push({
+      title: 'Login',
+      component: Login
+    })
   }
 
   _onPressRegister() {
+    this.props.navigator.push({
+      title: 'Register',
+      component: Register
+    })
   }
 
   _onPressStory() {
-    // this.props.navigator.push({
-    //   title: 'Story',
-    //   component: Story
-    // })
+    this.props.navigator.push({
+      title: 'Story',
+      component: Story
+    })
   }
 
   featuredStory() {
@@ -71,7 +83,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#27c2dc',
-    paddingTop: 22,
+    paddingTop: 80,
   },
   title: {
     flex: .5,
