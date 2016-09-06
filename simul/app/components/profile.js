@@ -39,10 +39,12 @@ class Profile extends Component{
     })
   }
 
-  featuredStory() {
+  latestStory() {
 
   }
+  _onPressUserStories() {
 
+  }
   _onPressContact(){
     this.props.navigator.push({
       title: I18n.t('contact'),
@@ -113,10 +115,10 @@ var styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
   },
-  featuredStory: {
+  newestStory: {
   backgroundColor: 'lightgrey',
   },
-  featuredStoryArabic: {
+  newestStoryArabic: {
     backgroundColor: 'lightgrey',
   },
 
