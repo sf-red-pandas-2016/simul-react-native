@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import Story from './story';
+import I18n from 'react-native-i18n'
 
 class UserStories extends Component{
   constructor(props) {
@@ -23,7 +24,7 @@ class UserStories extends Component{
 
   _onPressStory() {
     this.props.navigator.push({
-      title: 'Story',
+      title: I18n.t('story'),
       component: Story
     })
   }

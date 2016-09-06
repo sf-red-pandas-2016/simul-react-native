@@ -6,6 +6,8 @@ import {
   View,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
 class Message extends Component{
   render() {
     return (
