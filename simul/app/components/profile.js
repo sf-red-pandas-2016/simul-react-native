@@ -45,7 +45,17 @@ var styles = StyleSheet.create({
   },
   body: {
     flex: 0.1,
-  }
+  },
+  button: {
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
+  },
 });
 
 module.exports = Profile;
