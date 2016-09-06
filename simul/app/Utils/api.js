@@ -1,7 +1,7 @@
 var api = {
 
-  getUser(username){
-    username = username.toLowerCase().trim();
+  getUser(userId){
+    var userId = userId;
     var url = `http://simulnos.herokuapp.com/api/users/${user.id}`;
     return fetch(url).then((res) => res.json())
   },
@@ -16,9 +16,9 @@ var api = {
     console.log(error);
     });
   },
-  getUserStories(username){
-    username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/${user.id}/stories`;
+  getUserStories(userId){
+    var userId = userId;
+    var url = `http://simulnos.herokuapp.com/api/${userId}/stories`;
     return fetch(url).then((res) => res.json())
   },
   addMessage(username, message){
