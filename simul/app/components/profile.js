@@ -25,7 +25,6 @@ _onPressViewMessages(){
   }
 
 
-
   render() {
     return (
       <View style={styles.container}>
@@ -52,6 +51,8 @@ _onPressViewMessages(){
         <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> This will be a list of user stories </Text>
         <Text> {JSON.stringify(this.props.user)}</Text>
+
+        <Text> blablabla </Text>
       </View>
     )
   }
