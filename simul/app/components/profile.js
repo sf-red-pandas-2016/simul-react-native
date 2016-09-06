@@ -6,11 +6,13 @@ import {
   View,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
 class Profile extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Smeagles Profile</Text>
+        <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
         <Text> {JSON.stringify(this.props.users)}</Text>
       </View>
     )
@@ -24,6 +26,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
+   marginTop: 25,
    fontSize: 20,
    alignSelf: 'center',
    margin: 40
