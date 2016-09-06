@@ -32,6 +32,7 @@ I18n.translations = {
     message: 'Message',
     messages: 'Messages',
     profile: 'Profile',
+    createAccount: 'Create a Simul Account',
   },
   ar: {
     login: 'دخول',
