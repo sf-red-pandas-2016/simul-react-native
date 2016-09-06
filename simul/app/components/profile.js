@@ -25,6 +25,10 @@ featuredStory() {
 
   }
 
+_onPressContact(){
+
+}
+
   render() {
     console.log(this.props.user.name)
     return (
@@ -35,25 +39,26 @@ featuredStory() {
         <Text style={styles.featuredStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
         <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
-
         <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        Add Story
-        </Text>
+          <Text style={styles.buttonText}>
+          Add Story
+          </Text>
         </TouchableHighlight>
 
         <TouchableHighlight onPress={this._onPressViewMessages.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        View Messages
-        </Text>
+          <Text style={styles.buttonText}>
+          View Messages
+          </Text>
         </TouchableHighlight>
 
-
-        <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> This will be a list of user stories </Text>
 
         <Text> Personal Info </Text>
-        <Text> Contact Info </Text>
+        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>
+          Contact
+          </Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -71,6 +76,28 @@ var styles = StyleSheet.create({
    alignSelf: 'center',
    margin: 40
   },
-});
+  body: {
+   flex: 0.1,
+   borderColor: 'black',
+   borderWidth: 1,
+ },
+  button: {
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
+  },
+  featuredStory: {
+  backgroundColor: 'lightgrey',
+  },
+  featuredStoryArabic: {
+    backgroundColor: 'lightgrey',
+  },
+
+  });
 
 module.exports = Profile;
