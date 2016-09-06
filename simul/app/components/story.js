@@ -13,11 +13,11 @@ import api from '../Utils/api.js';
 class Story extends Component{
 
   _onPressProfile() {
-    api.getUsers().then((res) => {
+    api.getUser(2).then((res) => {
       this.props.navigator.push({
         title: 'Profile',
         component: Profile,
-        passProps: {users: res}
+        passProps: {user: res}
       })
     })
   }
@@ -32,11 +32,10 @@ class Story extends Component{
         </Text>
       </TouchableHighlight>
 
-        <Text>Day 7</Text>
-        <Text style={styles.title}> My neighbor Amira </Text>
-        <Text style={styles.content}> Today I met another girl my age named Amira, her family is like mine...</Text>
-
-
+      <Text>Created at:</Text>
+      <Text>{this.props.story.created_at}</Text>
+      <Text style={styles.title}>{this.props.story.title}</Text>
+      <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
 
 

@@ -63,7 +63,7 @@ class Contact extends Component{
     this.setState({
       message: ''
     });
-    api.addMessage(this.props.userInfo.login, message)
+    api.createMessage(this.props.userInfo.login, message)
       .then((data) => {
         api.getUserMessages(this.props.userInfo.login)
           .then((data) => {

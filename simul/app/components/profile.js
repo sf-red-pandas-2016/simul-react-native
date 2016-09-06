@@ -31,7 +31,6 @@ _onPressViewMessages(){
       <View style={styles.container}>
         <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
 
-
         <Text style={styles.featuredStory}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
         <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
@@ -52,6 +51,7 @@ _onPressViewMessages(){
 
         <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> This will be a list of user stories </Text>
+        <Text> {JSON.stringify(this.props.user)}</Text>
       </View>
     )
   }
