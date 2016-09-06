@@ -16,9 +16,15 @@ _onPressAddStory(){
 
   }
 
+_onPressViewMessages(){
+
+}
+
   featuredStory() {
 
   }
+
+
 
   render() {
     return (
@@ -30,15 +36,22 @@ _onPressAddStory(){
         <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
 
+
         <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
         Add Story
         </Text>
         </TouchableHighlight>
 
+        <TouchableHighlight onPress={this._onPressViewMessages.bind(this)} style={styles.button}>
+        <Text style={styles.buttonText}>
+        View Messages
+        </Text>
+        </TouchableHighlight>
+
 
         <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
-        <Text style={styles.body}> Temporary for styling Skeleton </Text>
+        <Text style={styles.body}> This will be a list of user stories </Text>
       </View>
     )
   }
@@ -75,7 +88,6 @@ var styles = StyleSheet.create({
   featuredStoryArabic: {
     backgroundColor: 'lightgrey',
   },
-  
 });
 
 module.exports = Profile;
