@@ -2,7 +2,7 @@ var api = {
 
   getUser(userId){
     var userId = userId;
-    var url = `http://simulnos.herokuapp.com/api/users/${userId}`;
+    var url = `https://simulnos.herokuapp.com/api/users/${userId}`;
     console.log(url)
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
@@ -12,7 +12,7 @@ var api = {
   getUserMessages(userId){
     var username = "Username".toLowerCase().trim();
     var userId = userId
-    var url = `http://simulnos.herokuapp.com/api/users/${userId}/messages`;
+    var url = `https://simulnos.herokuapp.com/api/users/${userId}/messages`;
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
@@ -27,7 +27,7 @@ var api = {
   },
   getUserStories(userId){
     var userId = userId;
-    var url = `http://simulnos.herokuapp.com/api/${userId}/stories`;
+    var url = `https://simulnos.herokuapp.com/api/${userId}/stories`;
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
@@ -35,7 +35,7 @@ var api = {
   },
   createMessage(username, message){
     username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/${user.id}.json`;
+    var url = `https://simulnos.herokuapp.com/api/${user.id}.json`;
     return fetch(url, {
       method: 'post',
       body: JSON.stringify({
@@ -60,10 +60,11 @@ var api = {
     alert(error.message);
     });
   },
-  getStory(user, story){
+  getStory(){
     var user = {id: 5}
     var story = {id: 1}
-    var url = 'https://simulnos.herokuapp.com/api/users/$(user.id)/stories/$(story.id)'
+    var url = `https://simulnos.herokuapp.com/api/users/5/stories/1`;
+    console.log(url);
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
