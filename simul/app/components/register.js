@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
 
 class Register extends Component{
   constructor() {
@@ -61,56 +62,44 @@ class Register extends Component{
 
     return (
       <View style={styles.container}>
-
         <Text>Register with Simul today</Text>
-
         <TextInput
           onChangeText={ (val)=> this.setState({name: val}) }
           style={styles.input} placeholder={I18n.t("name")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({username: val}) }
           style={styles.input} placeholder={I18n.t("username")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({location: val}) }
           style={styles.input} placeholder={I18n.t("location")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({bio: val}) }
           style={styles.input} placeholder={I18n.t("bio")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({preferred_contact: val}) }
           style={styles.input} placeholder={I18n.t("contactInformation")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({skills: val}) }
           style={styles.input} placeholder={I18n.t("skills")}
         />
-
-
         <TextInput
           onChangeText={ (val)=> this.setState({seeking: val}) }
           style={styles.input} placeholder={I18n.t("seeking")}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({seeking: val}) }
-          style={styles.input} placeholder={I18n.t("username")}
+          style={styles.input} placeholder={I18n.t("resourceRequest")}
         />
-
         <TouchableHighlight onPress={this._onPressRegister.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
           Register
           </Text>
         </TouchableHighlight>
-
       </View>
     );
   }

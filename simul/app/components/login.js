@@ -10,21 +10,6 @@ import {
 
 import I18n from 'react-native-i18n'
 
-I18n.fallbacks = true;
-
-I18n.translations = {
-  en: {
-    login: 'Login',
-    username: 'Username',
-    password: 'Password'
-  },
-  ar: {
-    login: 'دخول',
-    username: 'اسم المستخدم',
-    password: 'كلمه السر'
-  }
-}
-
 
 class Login extends Component{
   constructor(){
