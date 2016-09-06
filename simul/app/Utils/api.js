@@ -1,38 +1,74 @@
 var api = {
 
-  getUser(username){
-    username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/users/${user.id}`;
-    return fetch(url).then((res) => res.json())
+  getUser(userId){
+    var userId = userId;
+    var url = `https://simulnos.herokuapp.com/api/users/${userId}`;
+    console.log(url)
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
   },
-  getUserMessages(username){
-    username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/users/${user.id}/messages`;
-    return fetch(url).then((res) => res.json())
+  getUserMessages(userId){
+    var username = "Username".toLowerCase().trim();
+    var userId = userId
+    var url = `https://simulnos.herokuapp.com/api/users/${userId}/messages`;
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
   },
   getStories(){
     var url = 'https://simulnos.herokuapp.com/api'
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
+    alert(error.message);
     });
   },
-  getUserStories(username){
-    username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/${user.id}/stories`;
-    return fetch(url).then((res) => res.json())
+  getUserStories(userId){
+    var userId = userId;
+    var url = `https://simulnos.herokuapp.com/api/${userId}/stories`;
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
   },
-  addMessage(username, message){
+  createMessage(username, message){
     username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/${user.id}.json`;
+    var url = `https://simulnos.herokuapp.com/api/${user.id}.json`;
     return fetch(url, {
       method: 'post',
-      body: JSON.stringify(note)
-    }).then((res) => res.json());
+      body: JSON.stringify({
+        username: '',
+        name: '',
+        location: '',
+        bio: '',
+        resource_request: '',
+        skills: '',
+        seeking: '',
+        preferred_contact
+      })
+    }).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
   },
-
   getUsers() {
     var url = 'https://simulnos.herokuapp.com/api/users'
-    return fetch(url).then((res) => res.json())
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
+  },
+  getStory(){
+    var user = {id: 5}
+    var story = {id: 1}
+    var url = `https://simulnos.herokuapp.com/api/users/5/stories/1`;
+    console.log(url);
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
   },
 };
 
