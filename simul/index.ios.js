@@ -33,6 +33,11 @@ I18n.translations = {
     messages: 'Messages',
     profile: 'Profile',
     createAccount: 'Create a Simul Account',
+    from: 'From:',
+    date: 'Date:',
+    subject: 'Subject:',
+    content: 'Content:',
+    senderContact: "Sender's contact info:",
   },
   ar: {
     login: 'دخول',
@@ -55,6 +60,11 @@ I18n.translations = {
     messages: 'رسائل',
     profile: 'الملف الشخصي',
     createAccount: 'إصنع حساب',
+    from: 'من',
+    date: 'كان',
+    subject: 'موضوع',
+    content: 'محتوى',
+    senderContact: '',
   }
 }
 
