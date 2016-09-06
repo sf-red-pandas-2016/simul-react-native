@@ -8,30 +8,9 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-// var Home = require('./home')
 import Home from './home.js'
 import General from '../styles/general.js'
-
 import I18n from 'react-native-i18n'
-
-I18n.fallbacks = true;
-
-I18n.translations = {
-  en: {
-    login: 'Login',
-    username: 'Username',
-    password: 'Password',
-    register: 'Register',
-    enter: 'Enter',
-  },
-  ar: {
-    login: 'دخول',
-    username: 'اسم المستخدم',
-    password: 'كلمه السر',
-    register: 'تسجيل',
-    enter: 'أدخل'
-  }
-}
 
 class Enter extends Component{
 
