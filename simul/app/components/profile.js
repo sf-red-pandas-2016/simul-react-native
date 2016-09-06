@@ -60,12 +60,12 @@ class Profile extends Component{
         <Text>{I18n.t('username') + ": " + this.props.user.username}</Text>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-        <Text style={styles.featuredStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+        <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
-          Add Story
+          {I18n.t('addStory')}
           </Text>
         </TouchableHighlight>
 
@@ -75,12 +75,14 @@ class Profile extends Component{
           </Text>
         </TouchableHighlight>
 
-        <Text style={styles.body}> This will be a list of user stories </Text>
+        <TouchableHighlight onPress={() => this._onPressUserStories()}>
+          <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+        </TouchableHighlight>
 
         <Text> Personal Info </Text>
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
-            Contact
+            {I18n.t('contact')}
           </Text>
         </TouchableHighlight>
       </View>
