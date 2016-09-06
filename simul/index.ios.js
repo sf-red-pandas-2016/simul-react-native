@@ -39,6 +39,7 @@ I18n.translations = {
     subject: 'Subject:',
     content: 'Content:',
     senderContact: "Sender's contact info:",
+    newStory: 'New Story',
   },
   ar: {
     login: 'دخول',
@@ -67,6 +68,7 @@ I18n.translations = {
     subject: 'موضوع',
     content: 'محتوى',
     senderContact: '',
+    newStory: '',
   }
 }
 

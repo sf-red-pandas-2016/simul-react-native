@@ -12,13 +12,18 @@ import I18n from 'react-native-i18n'
 // <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
 
+var userId = this.props.user.id
 
 _onPressAddStory(){
-
+    this.props.navigator.push({
+      title: I18n.t('newStory'),
+      component: newStory,
+      passProps: {userId: userId},
+    })
   }
 
 _onPressViewMessages(){
-
+  
 }
 
 featuredStory() {
