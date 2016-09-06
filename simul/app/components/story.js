@@ -17,7 +17,7 @@ class Story extends Component{
       this.props.navigator.push({
         title: 'Profile',
         component: Profile,
-        passProps: {user: res.user}
+        passProps: {user: res.user, messages: res.messages, stories: res.stories}
       })
     })
   }
