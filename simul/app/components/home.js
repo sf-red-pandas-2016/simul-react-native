@@ -22,11 +22,23 @@ class Home extends Component{
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([
-        'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli','Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli'
-      ])
+      stories: '?',
+      dataSource: ds.cloneWithRows(['harry', 'potter']),
     };
   }
+  componentDidMount() {
+      this.fetchData().done()
+  }
+  async fetchData() {
+      var url = 'https://simulnos.herokuapp.com/api'
+      const response = await fetch(url)
+      const json = await response.json()
+      const stories = json.stories
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      this.setState({dataSource: ds.cloneWithRows(stories),
+      stories: stories})
+  }
+
   _onPressLogin() {
     this.props.navigator.push({
       title: I18n.t('login'),
@@ -41,10 +53,12 @@ class Home extends Component{
     })
   }
 
-  _onPressStory() {
+  _onPressStory(clickedStory) {
+    console.log(clickedStory)
     this.props.navigator.push({
       title: I18n.t('story'),
       component: Story,
+      passProps: {story: clickedStory},
     })
   }
 
@@ -54,6 +68,7 @@ class Home extends Component{
       component: UserStories
     })
   }
+
   featuredStory() {
       return(
         <View style={{backgroundColor: 'lightgrey'}}>
@@ -77,15 +92,23 @@ class Home extends Component{
           <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>{I18n.t('login')}</Text></TouchableHighlight>
           <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
         </View>
+
         <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
-        <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
+
+        <TouchableHighlight onPress={ () => this._onPressUserStories()}>
+          <Text style={styles.nav}>Ahmeds Stories</Text>
+        </TouchableHighlight>
+
         <ListView
-          style={styles.listItems}
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
-             styles.listText}>{rowData}</Text></TouchableHighlight>}
-          renderHeader={ () => this.featuredStory() } />
+            style={styles.listItems}
+            dataSource={this.state.dataSource}
+            renderRow={(rowData) =>
+              <TouchableHighlight
+                onPress={ () => this._onPressStory(rowData)}>
+                <Text style={styles.listText}>{rowData.title}</Text>
+              </TouchableHighlight>}
+            renderHeader={ () => this.featuredStory() } />
       </View>
     )
   }
@@ -111,6 +134,9 @@ var styles = StyleSheet.create({
   listText: {
     color: '#32161F',
     textAlign: 'center',
+    borderWidth: 1,
+    borderColor: 'white',
+    marginBottom: 5,
   },
   navLeft: {
     flex: .25,
