@@ -12,12 +12,13 @@ import api from '../Utils/api.js';
 
 class Story extends Component{
 
+
   _onPressProfile() {
-    api.getUsers().then((res) => {
+    api.getUser(this.props.story.user_id).then((res) => {
       this.props.navigator.push({
         title: 'Profile',
         component: Profile,
-        passProps: {users: res}
+        passProps: {user: res}
       })
     })
   }
