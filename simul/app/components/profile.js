@@ -9,7 +9,6 @@ import {
 import I18n from 'react-native-i18n'
 
 class Profile extends Component{
-<<<<<<< HEAD
 
 
 _onPressAddStory(){
@@ -24,8 +23,6 @@ featuredStory() {
 
   }
 
-=======
->>>>>>> 368e1febe1a770523d3731e2186015d96216ee20
   render() {
     return (
       <View style={styles.container}>
