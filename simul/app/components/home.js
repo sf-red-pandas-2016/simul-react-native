@@ -134,6 +134,9 @@ var styles = StyleSheet.create({
   listText: {
     color: '#32161F',
     textAlign: 'center',
+    borderWidth: 1,
+    borderColor: 'white',
+    marginBottom: 5,
   },
   navLeft: {
     flex: .25,
