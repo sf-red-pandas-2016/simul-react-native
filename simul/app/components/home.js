@@ -18,6 +18,7 @@ import api from '../Utils/api.js';
 import I18n from 'react-native-i18n'
 
 class Home extends Component{
+
   constructor(props) {
     super(props);
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -25,6 +26,11 @@ class Home extends Component{
       dataSource: this.ds.cloneWithRows(api.getStories())
     };
   }
+
+
+
+
+
   _onPressLogin() {
     this.props.navigator.push({
       title: I18n.t('login'),

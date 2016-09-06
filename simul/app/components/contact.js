@@ -23,7 +23,7 @@ class Contact extends Component{
             style={styles.searchInput}
             placeholder='Subject'/>
           <TextInput
-            style={styles.searchInput}
+            style={styles.message}
             placeholder='Message'/>
         <TouchableHighlight
           style={styles.button}
@@ -57,6 +57,16 @@ var styles = StyleSheet.create({
     borderRadius: 8,
     color: 'white'
   },
+  message: {
+    height: 200,
+    padding: 4,
+    marginRight: 5,
+    fontSize: 23,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 8,
+    color: 'white'
+  },
   buttonText: {
     fontSize: 18,
     color: '#111',
@@ -78,7 +88,7 @@ var styles = StyleSheet.create({
     alignSelf: 'flex-end',
     fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 200,
+    marginBottom: 100,
   },
 });
 

@@ -6,9 +6,17 @@ import {
   View,
 } from 'react-native';
 
+import Home from './home.js'
 import I18n from 'react-native-i18n'
 
 class Message extends Component{
+  _navigate() {
+    this.props.navigator.push({
+      title: I18n.t('home'),
+      component: Home
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>

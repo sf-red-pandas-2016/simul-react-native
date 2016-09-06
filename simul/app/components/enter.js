@@ -11,6 +11,8 @@ import {
 import Home from './home.js'
 import General from '../styles/general.js'
 import I18n from 'react-native-i18n'
+import Message from './message.js'
+import Contact from './contact.js'
 
 class Enter extends Component{
 
@@ -20,8 +22,8 @@ class Enter extends Component{
 
   _navigate() {
     this.props.navigator.push({
-      title: I18n.t('home'),
-      component: Home
+      title: I18n.t('contact'),
+      component: Contact
     })
   }
   render() {
