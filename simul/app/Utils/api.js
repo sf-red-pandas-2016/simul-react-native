@@ -67,7 +67,7 @@ var api = {
     console.log(error);
     alert(error.message);
     });
-  }
+  },
   getUsers() {
     var url = 'https://simulnos.herokuapp.com/api/users'
     return fetch(url).then((res) => res.json()).catch(error => {
