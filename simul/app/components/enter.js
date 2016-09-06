@@ -8,9 +8,9 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-// var Home = require('./home')
 import Home from './home.js'
 import General from '../styles/general.js'
+import I18n from 'react-native-i18n'
 
 class Enter extends Component{
 
@@ -20,7 +20,7 @@ class Enter extends Component{
 
   _navigate() {
     this.props.navigator.push({
-      title: 'Home',
+      title: I18n.t('home'),
       component: Home
     })
   }
@@ -30,7 +30,7 @@ class Enter extends Component{
         <Image source={require('../images/simul_icon1.png')} style={styles.image}/>
         <Text style={styles.title}>SIMUL</Text>
         <TouchableHighlight onPress={ () => this._navigate()}>
-          <Text style={styles.enter}>Enter</Text>
+          <Text style={styles.enter}>{I18n.t('enter')}</Text>
         </TouchableHighlight>
       </View>
     )

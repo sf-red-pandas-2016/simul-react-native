@@ -7,6 +7,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -29,7 +31,7 @@ const Search = (props) => (
   <View style={styles.container}>
     <TextInput
       style={styles.input}
-      placeholder="Search بحث ..."
+      placeholder={I18n.t('search')}
       onChangeText={(text) => console.log('searching for ', text)}
     />
   </View>
