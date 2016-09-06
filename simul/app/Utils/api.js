@@ -9,9 +9,10 @@ var api = {
     alert(error.message);
     });
   },
-  getUserMessages(username){
-    username = username.toLowerCase().trim();
-    var url = `http://simulnos.herokuapp.com/api/users/${user.id}/messages`;
+  getUserMessages(userId){
+    var username = "Username".toLowerCase().trim();
+    var userId = userId
+    var url = `http://simulnos.herokuapp.com/api/users/${userId}/messages`;
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
@@ -37,15 +38,32 @@ var api = {
     var url = `http://simulnos.herokuapp.com/api/${user.id}.json`;
     return fetch(url, {
       method: 'post',
-      body: JSON.stringify(note)
+      body: JSON.stringify({
+        username: '',
+        name: '',
+        location: '',
+        bio: '',
+        resource_request: '',
+        skills: '',
+        seeking: '',
+        preferred_contact
+      })
     }).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
     });
   },
-
   getUsers() {
     var url = 'https://simulnos.herokuapp.com/api/users'
+    return fetch(url).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
+  },
+  getStory(user, story){
+    var user = {id: 5}
+    var story = {id: 1}
+    var url = 'https://simulnos.herokuapp.com/api/users/$(user.id)/stories/$(story.id)'
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
