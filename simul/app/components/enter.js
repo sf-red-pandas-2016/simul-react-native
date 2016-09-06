@@ -20,7 +20,7 @@ class Enter extends Component{
 
   _navigate() {
     this.props.navigator.push({
-      title: 'Home',
+      title: I18n.t('home'),
       component: Home
     })
   }
