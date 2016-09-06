@@ -32,7 +32,7 @@ var api = {
     alert(error.message);
     });
   },
-  addMessage(username, message){
+  createMessage(username, message){
     username = username.toLowerCase().trim();
     var url = `http://simulnos.herokuapp.com/api/${user.id}.json`;
     return fetch(url, {
