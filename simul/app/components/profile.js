@@ -24,6 +24,10 @@ featuredStory() {
 
   }
 
+_onPressContact(){
+  
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -33,19 +37,24 @@ featuredStory() {
 
 
         <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        Add Story
-        </Text>
+          <Text style={styles.buttonText}>
+          Add Story
+          </Text>
         </TouchableHighlight>
 
         <TouchableHighlight onPress={this._onPressViewMessages.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        View Messages
-        </Text>
+          <Text style={styles.buttonText}>
+          View Messages
+          </Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>
+          Contact
+          </Text>
         </TouchableHighlight>
 
 
-        <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> This will be a list of user stories </Text>
 
         <Text> Personal Info </Text>
@@ -70,6 +79,8 @@ var styles = StyleSheet.create({
   },
   body: {
    flex: 0.1,
+   borderColor: 'black',
+   borderWidth: 1,
  },
   button: {
     height: 50,
@@ -83,11 +94,11 @@ var styles = StyleSheet.create({
   },
   featuredStory: {
   backgroundColor: 'lightgrey',
-},
-featuredStoryArabic: {
-  backgroundColor: 'lightgrey',
-},
+  },
+  featuredStoryArabic: {
+    backgroundColor: 'lightgrey',
+  },
 
-});
+  });
 
 module.exports = Profile;
