@@ -18,19 +18,13 @@ import api from '../Utils/api.js';
 import I18n from 'react-native-i18n'
 
 class Home extends Component{
-  // constructor(props) {
-  //   super(props);
-  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  //   this.state = {
-  //     dataSource: ds.cloneWithRows([
-  //       'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli','Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli'
-  //     ])
-  //   };
-  // }
-
   constructor(props) {
     super(props);
-    this.state = {stories: '?'}
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      stories: '?',
+      dataSource: ds.cloneWithRows(['harry', 'potter']),
+    };
   }
   componentDidMount() {
       this.fetchData().done()
@@ -40,9 +34,11 @@ class Home extends Component{
       const response = await fetch(url)
       const json = await response.json()
       const stories = json.stories
-      console.log(stories[0].content);
-      this.setState({stories: stories})
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      this.setState({dataSource: ds.cloneWithRows(stories),
+      stories: stories})
   }
+
   _onPressLogin() {
     this.props.navigator.push({
       title: I18n.t('login'),
@@ -70,6 +66,7 @@ class Home extends Component{
       component: UserStories
     })
   }
+
   featuredStory() {
       return(
         <View style={{backgroundColor: 'lightgrey'}}>
@@ -94,21 +91,19 @@ class Home extends Component{
           <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
         </View>
         <Text style={styles.title}>{I18n.t('home')}</Text>
-
-        <Text>{this.state.stories[0].content}</Text>
         <Search />
         <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
+        <ListView
+          style={styles.listItems}
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
+            styles.listText}>{rowData.title}</Text></TouchableHighlight>}
+            renderHeader={ () => this.featuredStory() } />
       </View>
     )
   }
 };
 
-// <ListView
-//   style={styles.listItems}
-//   dataSource={this.state.dataSource}
-//   renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
-//     styles.listText}>{rowData}</Text></TouchableHighlight>}
-//     renderHeader={ () => this.featuredStory() } />
 var styles = StyleSheet.create({
   container: {
     flex: 1,
