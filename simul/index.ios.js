@@ -48,7 +48,7 @@ I18n.translations = {
     register: 'تسجيل',
     home: 'منزل',
     search: 'بحث',
-    bio: 'سيرة',
+    bio: 'سيرة ذاتية',
     location: 'موقع',
     contactInformation: 'معلومات الاتصال',
     skills: 'مهارات',
