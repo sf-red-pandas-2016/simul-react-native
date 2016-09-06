@@ -44,13 +44,13 @@ _onPressContact(){
         <Text style={styles.featuredStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
         <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
-        <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={() => this._onPressAddStory())} style={styles.button}>
           <Text style={styles.buttonText}>
           Add Story
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={this._onPressViewMessages.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={() => this._onPressViewMessages())} style={styles.button}>
           <Text style={styles.buttonText}>
           View Messages
           </Text>
@@ -59,7 +59,7 @@ _onPressContact(){
         <Text style={styles.body}> This will be a list of user stories </Text>
 
         <Text> Personal Info </Text>
-        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={() => this._onPressContact())} style={styles.button}>
           <Text style={styles.buttonText}>
           Contact
           </Text>
