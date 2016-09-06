@@ -54,7 +54,6 @@ class Home extends Component{
   }
 
   _onPressStory(clickedStory) {
-    console.log(clickedStory)
     this.props.navigator.push({
       title: I18n.t('story'),
       component: Story,
