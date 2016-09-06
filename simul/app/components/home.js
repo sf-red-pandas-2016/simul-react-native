@@ -53,10 +53,12 @@ class Home extends Component{
     })
   }
 
-  _onPressStory() {
+  _onPressStory(clickedStory) {
+    console.log(clickedStory)
     this.props.navigator.push({
       title: I18n.t('story'),
       component: Story,
+      passProps: {story: clickedStory},
     })
   }
 
@@ -90,14 +92,22 @@ class Home extends Component{
           <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>{I18n.t('login')}</Text></TouchableHighlight>
           <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
         </View>
+
         <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
-        <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
+
+        <TouchableHighlight onPress={ () => this._onPressUserStories()}>
+          <Text style={styles.nav}>Ahmeds Stories</Text>
+        </TouchableHighlight>
+
         <ListView
-          style={styles.listItems}
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={
-            styles.listText}>{rowData.title}</Text></TouchableHighlight>}
+            style={styles.listItems}
+            dataSource={this.state.dataSource}
+            renderRow={(rowData) =>
+              <TouchableHighlight
+                onPress={ () => this._onPressStory(rowData)}>
+                <Text style={styles.listText}>{rowData.title}</Text>
+              </TouchableHighlight>}
             renderHeader={ () => this.featuredStory() } />
       </View>
     )
