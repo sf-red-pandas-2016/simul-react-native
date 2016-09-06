@@ -8,31 +8,48 @@ import {
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
+import NewStory from './newStory';
+import UserMessages from './userMessages';
+import Contact from './contact';
+
 
 // <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      userId: this.props.user.user_id,
+      messages: this.props.messages,
+    }
+  }
 
-var userId = this.props.user.id
+  _onPressAddStory(){
+      this.props.navigator.push({
+        title: I18n.t('newStory'),
+        component: NewStory,
+        passProps: {userId: this.state.userId},
+      })
+    }
 
-_onPressAddStory(){
+  _onPressViewMessages(){
     this.props.navigator.push({
-      title: I18n.t('newStory'),
-      component: newStory,
-      passProps: {userId: userId},
+      title: I18n.t('messages'),
+      component: UserMessages,
+      passProps: { userId: this.state.userId, messages: this.state.messages },
     })
   }
 
-_onPressViewMessages(){
-  
-}
-
-featuredStory() {
+  featuredStory() {
 
   }
 
-_onPressContact(){
-
-}
+  _onPressContact(){
+    this.props.navigator.push({
+      title: I18n.t('contact'),
+      component: Contact,
+      passProps: { userId: this.state.userId },
+    })
+  }
 
   render() {
     console.log(this.props.user.name)
