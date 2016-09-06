@@ -15,17 +15,30 @@ class Profile extends Component{
 _onPressAddStory(){
 
   }
+
+  featuredStory() {
+
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
+
+
+        <Text style={styles.featuredStory}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+
+
+        <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
+        <Text style={styles.buttonText}>
+        Add Story
+        </Text>
+        </TouchableHighlight>
+
+
         <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> Temporary for styling Skeleton </Text>
-        <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
-          <Text style={styles.buttonText}>
-          Add Story
-          </Text>
-        </TouchableHighlight>
       </View>
     )
   }
@@ -56,6 +69,13 @@ var styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
   },
+  featuredStory: {
+    backgroundColor: 'lightgrey',
+  },
+  featuredStoryArabic: {
+    backgroundColor: 'lightgrey',
+  },
+  
 });
 
 module.exports = Profile;
