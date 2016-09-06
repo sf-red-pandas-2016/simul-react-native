@@ -25,7 +25,7 @@ featuredStory() {
   }
 
 _onPressContact(){
-  
+
 }
 
   render() {
@@ -48,18 +48,16 @@ _onPressContact(){
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
-          <Text style={styles.buttonText}>
-          Contact
-          </Text>
-        </TouchableHighlight>
 
 
         <Text style={styles.body}> This will be a list of user stories </Text>
 
         <Text> Personal Info </Text>
-        <Text> Contact Info </Text>
-
+        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
+        <Text style={styles.buttonText}>
+        Contact
+        </Text>
+        </TouchableHighlight>
       </View>
     )
   }
