@@ -17,24 +17,6 @@ import api from '../Utils/api.js';
 
 import I18n from 'react-native-i18n'
 
-I18n.fallbacks = true;
-
-I18n.translations = {
-  en: {
-    login: 'Login',
-    username: 'Username',
-    password: 'Password',
-    register: 'Register',
-  },
-  ar: {
-    login: 'دخول',
-    username: 'اسم المستخدم',
-    password: 'كلمه السر',
-    register: 'تسجيل',
-  }
-}
-
-
 class Home extends Component{
   constructor(props) {
     super(props);
