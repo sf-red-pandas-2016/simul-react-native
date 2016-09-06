@@ -53,6 +53,21 @@ var api = {
     alert(error.message);
     });
   },
+  //NOTE: NOT tested
+  createStory(user_id, title, content){
+    var url = `https://simulnos.herokuapp.com/api/${user.id}.json`;
+    return fetch(url, {
+      method: 'post',
+      body: JSON.stringify({
+        user_id: user_id,
+        title: title,
+        content: content,
+      })
+    }).then((res) => res.json()).catch(error => {
+    console.log(error);
+    alert(error.message);
+    });
+  }
   getUsers() {
     var url = 'https://simulnos.herokuapp.com/api/users'
     return fetch(url).then((res) => res.json()).catch(error => {
