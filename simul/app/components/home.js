@@ -21,7 +21,8 @@ class Home extends Component{
 
   constructor(props) {
     super(props);
-    this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+  
     this.state = {
       stories: '?',
       dataSource: ds.cloneWithRows(['harry', 'potter']),

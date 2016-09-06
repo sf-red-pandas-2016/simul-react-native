@@ -22,8 +22,8 @@ class Enter extends Component{
 
   _navigate() {
     this.props.navigator.push({
-      title: I18n.t('contact'),
-      component: Contact
+      title: I18n.t('home'),
+      component: Home
     })
   }
   render() {
