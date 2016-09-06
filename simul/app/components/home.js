@@ -44,7 +44,7 @@ class Home extends Component{
   _onPressStory() {
     this.props.navigator.push({
       title: I18n.t('story'),
-      component: Story
+      component: Story,
     })
   }
 
