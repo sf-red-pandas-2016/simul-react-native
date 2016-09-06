@@ -13,7 +13,7 @@ class Profile extends Component{
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
-        <Text> {JSON.stringify(this.props.users)}</Text>
+        <Text> {JSON.stringify(this.props.user)}</Text>
       </View>
     )
   }
