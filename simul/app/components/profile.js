@@ -12,10 +12,8 @@ import I18n from 'react-native-i18n'
 class Profile extends Component{
 
 
-  async _onPressAddStory(){
-    try {
-      
-    }
+_onPressAddStory(){
+
   }
   render() {
     return (
@@ -23,9 +21,10 @@ class Profile extends Component{
         <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
         <Text style={styles.body}> {JSON.stringify(this.props.users)}</Text>
         <Text style={styles.body}> Temporary for styling Skeleton </Text>
-        <TouchableHighlight onPress={this._onPressAddStory}.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        </Text>
+        <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
+          <Text style={styles.buttonText}>
+          Add Story
+          </Text>
         </TouchableHighlight>
       </View>
     )
