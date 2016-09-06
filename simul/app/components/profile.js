@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
@@ -67,6 +68,26 @@ var styles = StyleSheet.create({
    alignSelf: 'center',
    margin: 40
   },
+  body: {
+   flex: 0.1,
+ },
+  button: {
+    height: 50,
+    backgroundColor: '#48BBEC',
+    alignSelf: 'stretch',
+    marginTop: 10,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
+  },
+  featuredStory: {
+  backgroundColor: 'lightgrey',
+},
+featuredStoryArabic: {
+  backgroundColor: 'lightgrey',
+},
+
 });
 
 module.exports = Profile;
