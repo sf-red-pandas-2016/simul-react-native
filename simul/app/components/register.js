@@ -8,6 +8,8 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+
 class Register extends Component{
   constructor() {
     super();
@@ -20,6 +22,7 @@ class Register extends Component{
       preferred_contact: "",
       skills: "",
       seeking: "",
+      resource_request: "",
       errors: [],
     }
   }
@@ -41,6 +44,7 @@ class Register extends Component{
             preferred_contact: this.state.preferred_contact,
             skills: this.state.skills,
             seeking: this.state.seeking,
+            resource_request: this.state.resource_request,
           }
         })
       });
@@ -48,61 +52,51 @@ class Register extends Component{
       let res = await response.text();
       console.log("res is: " + res)
     } catch(errors){
-
-
     }
   }
-
 
   render() {
 
     return (
       <View style={styles.container}>
-
-        <Text>Register with Simul today</Text>
-
+        <Text>{I18n.t('createAccount')}</Text>
         <TextInput
           onChangeText={ (val)=> this.setState({name: val}) }
-          style={styles.input} placeholder="Name"
+          style={styles.input} placeholder={I18n.t('name')}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({username: val}) }
-          style={styles.input} placeholder="Username"
+          style={styles.input} placeholder={I18n.t('username')}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({location: val}) }
-          style={styles.input} placeholder="Location"
+          style={styles.input} placeholder={I18n.t('location')}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({bio: val}) }
-          style={styles.input} placeholder="Bio"
+          style={styles.input} placeholder={I18n.t('bio')}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({preferred_contact: val}) }
-          style={styles.input} placeholder="Contact Information"
+          style={styles.input} placeholder={I18n.t('contactInformation')}
         />
-
         <TextInput
           onChangeText={ (val)=> this.setState({skills: val}) }
-          style={styles.input} placeholder="Skills"
+          style={styles.input} placeholder={I18n.t('skills')}
         />
-
-
         <TextInput
           onChangeText={ (val)=> this.setState({seeking: val}) }
-          style={styles.input} placeholder="Seeking"
+          style={styles.input} placeholder={I18n.t('seeking')}
         />
-
+        <TextInput
+          onChangeText={ (val)=> this.setState({seeking: val}) }
+          style={styles.input} placeholder={I18n.t('resourceRequest')}
+        />
         <TouchableHighlight onPress={this._onPressRegister.bind(this)} style={styles.button}>
           <Text style={styles.buttonText}>
-          Register
+          {I18n.t('register')}
           </Text>
         </TouchableHighlight>
-
       </View>
     );
   }
@@ -113,11 +107,12 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 30,
   },
   title: {
    fontSize: 20,
    alignSelf: 'center',
-   margin: 40
+   margin: 40,
   },
   input: {
     height: 50,

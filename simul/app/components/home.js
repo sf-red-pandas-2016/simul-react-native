@@ -15,6 +15,7 @@ import Story from './story';
 import UserStories from './userStories';
 import api from '../Utils/api.js';
 
+import I18n from 'react-native-i18n'
 
 class Home extends Component{
   constructor(props) {
@@ -26,7 +27,7 @@ class Home extends Component{
   }
   _onPressLogin() {
     this.props.navigator.push({
-      title: 'Login',
+      title: I18n.t('login'),
       component: Login
     })
   }
@@ -54,21 +55,21 @@ class Home extends Component{
 
   _onPressRegister() {
     this.props.navigator.push({
-      title: 'Register',
+      title: I18n.t('register'),
       component: Register
     })
   }
 
   _onPressStory() {
     this.props.navigator.push({
-      title: 'Story',
+      title: I18n.t('story'),
       component: Story
     })
   }
 
   _onPressUserStories() {
     this.props.navigator.push({
-      title: 'UserStories',
+      title: I18n.t('stories'),
       component: UserStories
     })
   }
@@ -94,13 +95,12 @@ class Home extends Component{
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>Login دخول</Text></TouchableHighlight>
-          <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>Register سجل</Text></TouchableHighlight>
+          <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>{I18n.t('login')}</Text></TouchableHighlight>
+          <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
         </View>
-        <Text style={styles.title}>HOME منزل</Text>
+        <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
         <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
-        <Text> </Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
