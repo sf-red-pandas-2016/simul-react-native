@@ -19,11 +19,9 @@ import api from '../Utils/api.js';
 class Home extends Component{
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([
-        'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli','Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli', 'Bilbo', 'Aragorn', 'Frodo', 'Legolas', 'Saruman', 'Elrond', 'Smeagol', 'Gimli'
-      ])
+      dataSource: this.ds.cloneWithRows(api.getStories())
     };
   }
   _onPressLogin() {
@@ -32,6 +30,27 @@ class Home extends Component{
       component: Login
     })
   }
+
+  handleSubmit(){
+    var note = this.state.note;
+    this.setState({
+      note: ''
+    });
+    api.addNote(this.props.userInfo.login, note)
+      .then((data) => {
+        api.getNotes(this.props.userInfo.login)
+          .then((data) => {
+            this.setState({
+              dataSource: this.ds.cloneWithRows(data)
+            })
+          });
+      })
+      .catch((error) => {
+        console.log('Request failed', error);
+        this.setState({error})
+      });
+  }
+
 
   _onPressRegister() {
     this.props.navigator.push({
@@ -70,6 +89,8 @@ class Home extends Component{
   }
 
   render() {
+    console.log(api.getStories())
+    console.log(this.state.dataSource)
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
@@ -79,7 +100,7 @@ class Home extends Component{
         <Text style={styles.title}>HOME منزل</Text>
         <Search />
         <TouchableHighlight onPress={ () => this._onPressUserStories()}><Text style={styles.nav}>Ahmeds Stories</Text></TouchableHighlight>
-        <Text> {JSON.stringify(this.state.stories[0].content)}</Text>
+        <Text> </Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
