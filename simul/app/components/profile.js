@@ -8,12 +8,14 @@ import {
 
 import I18n from 'react-native-i18n'
 
+// <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
   render() {
+    console.log(this.props.user.name)
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
-        <Text> {JSON.stringify(this.props.user)}</Text>
+        <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
+        <Text>{I18n.t('username') + ": " + this.props.user.username}</Text>
       </View>
     )
   }
