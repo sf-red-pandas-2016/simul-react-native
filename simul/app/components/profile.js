@@ -19,7 +19,7 @@ class Profile extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      userId: this.props.user.user_id,
+      userId: this.props.user.id,
       username: this.props.user.username,
       messages: this.props.messages,
     }
@@ -48,7 +48,7 @@ class Profile extends Component{
     this.props.navigator.push({
       title: this.state.username,
       component: userStories,
-      passProps: {userId: this.state.userId},
+      passProps: { userId: this.state.userId },
     })
   }
   _onPressContact(){
