@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 import {
   StyleSheet,
   Text,
@@ -7,6 +9,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Avatar from 'react-native-interactive-avatar';
 import I18n from 'react-native-i18n'
 import NewStory from './newStory';
 import UserMessages from './userMessages';
@@ -16,6 +19,7 @@ import userStories from './userStories';
 
 // <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
+
   constructor(props) {
     super(props)
     this.state = {
@@ -63,6 +67,12 @@ class Profile extends Component{
   render() {
     return (
       <View style={styles.container}>
+        <Avatar
+             source={'https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif'}
+             size={'medium'}
+             interactive={true}
+             onChange={this.handleImageChange}
+         />
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
@@ -113,6 +123,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 60,
   },
   title: {
    marginTop: 25,
