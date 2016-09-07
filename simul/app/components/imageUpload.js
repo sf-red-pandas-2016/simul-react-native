@@ -206,7 +206,7 @@ class ImageUpload extends Component{
   var styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#27c2dc',
       padding: 20,
       paddingTop: 40,
     },
