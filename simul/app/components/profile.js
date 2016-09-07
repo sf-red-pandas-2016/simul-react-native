@@ -43,6 +43,7 @@ class Profile extends Component{
 
   latestStory() {
   }
+  
   _onPressUserStories() {
     this.props.navigator.push({
       title: this.state.username,

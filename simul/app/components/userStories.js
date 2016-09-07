@@ -43,10 +43,15 @@ class UserStories extends Component{
     return (
       <View style={styles.container}>
         <Text>Smeagles Stories</Text>
+        <Text> {this.props.userId}</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={styles.listText}>{rowData}</Text></TouchableHighlight>}
+          renderRow={(rowData) =>
+            <TouchableHighlight onPress={ () => this._onPressStory()}>
+              <Text style={styles.listText}>Date: {rowData.created_at} Title: {rowData.title}</Text>
+            </TouchableHighlight>
+          }
           renderHeader={ () => this.newestStory() }
         />
       </View>
@@ -59,6 +64,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 60,
   },
   title: {
    flex: 2,

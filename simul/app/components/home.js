@@ -26,9 +26,11 @@ class Home extends Component{
       dataSource: ds.cloneWithRows(['harry', 'potter']),
     };
   }
+
   componentDidMount() {
       this.fetchData().done()
   }
+
   async fetchData() {
       var url = 'https://simulnos.herokuapp.com/api'
       const response = await fetch(url)
