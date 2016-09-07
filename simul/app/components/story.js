@@ -40,9 +40,6 @@ class Story extends Component{
     })
   }
 
-
-
-
   render() {
     return (
       <View style={styles.container}>
@@ -73,13 +70,17 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: '#48BBEC',
-    alignSelf: 'flex-start',
-    marginTop: 10,
-    justifyContent: 'center'
+    backgroundColor: '#27c2dc',
+    // alignSelf: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 4
   },
   buttonText: {
     textAlign: 'center',
+    padding: 10,
+    color: 'white',
   },
   title: {
    fontSize: 20,
