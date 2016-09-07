@@ -26,9 +26,11 @@ class Home extends Component{
       dataSource: ds.cloneWithRows(['harry', 'potter']),
     };
   }
+
   componentDidMount() {
       this.fetchData().done()
   }
+
   async fetchData() {
       var url = 'https://simulnos.herokuapp.com/api'
       const response = await fetch(url)
@@ -70,10 +72,10 @@ class Home extends Component{
 
   featuredStory() {
       return(
-        <View style={{backgroundColor: 'lightgrey'}}>
-        <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
-        <Text style={{color: 'purple', textAlign: 'right'}}>-Ahmed</Text>
+        <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+          <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+          <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+          <Text style={{textAlign: 'right'}}>-Ahmed</Text>
         </View>
       )
   }
@@ -87,17 +89,17 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>{I18n.t('login')}</Text></TouchableHighlight>
-          <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
+          <TouchableHighlight onPress={ () => this._onPressLogin()}>
+            <Text style={styles.navLeft}> {I18n.t('login')} </Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={ () => this._onPressRegister()}>
+            <Text style={styles.navRight}> {I18n.t('register')} </Text>
+          </TouchableHighlight>
         </View>
 
-        <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
-
-        <TouchableHighlight onPress={ () => this._onPressUserStories()}>
-          <Text style={styles.nav}>Ahmeds Stories</Text>
-        </TouchableHighlight>
 
         <ListView
             style={styles.listItems}
@@ -117,8 +119,8 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#27c2dc',
-    paddingTop: 80,
+    backgroundColor: 'white',
+    paddingTop: 60,
   },
   title: {
     flex: .5,
@@ -127,19 +129,22 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   listItems: {
-    flex: 9,
-    backgroundColor: 'powderblue',
+    flex: 9.5,
   },
   listText: {
-    color: '#32161F',
+    backgroundColor: 'white',
+    color: 'black',
     textAlign: 'center',
-    borderWidth: 1,
-    borderColor: 'white',
+    borderWidth: 2,
+    borderColor: '#27c2dc',
+    borderRadius: 4,
     marginBottom: 5,
+    padding: 10,
+    height: 50,
   },
   navLeft: {
     flex: .25,
-    color: 'white',
+    color: 'black',
     fontFamily: 'Farah',
     backgroundColor: '#FFB30F',
     textAlign: 'center',
@@ -148,7 +153,7 @@ var styles = StyleSheet.create({
   },
   navRight: {
     flex: .25,
-    color: 'white',
+    color: 'black',
     fontFamily: 'Farah',
     backgroundColor: '#FFB30F',
     textAlign: 'center',

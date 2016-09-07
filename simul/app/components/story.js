@@ -15,7 +15,7 @@ class Story extends Component{
   _onPressProfile() {
     api.getUser(this.props.story.user_id).then((res) => {
       this.props.navigator.push({
-        title: 'Profile',
+        title: res.user.username,
         component: Profile,
         passProps: {user: res.user, messages: res.messages, stories: res.stories}
       })

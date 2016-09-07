@@ -11,6 +11,7 @@ import I18n from 'react-native-i18n'
 import NewStory from './newStory';
 import UserMessages from './userMessages';
 import Contact from './contact';
+import userStories from './userStories';
 
 
 // <Text> {JSON.stringify(this.props.user)}</Text>
@@ -19,6 +20,7 @@ class Profile extends Component{
     super(props)
     this.state = {
       userId: this.props.user.user_id,
+      username: this.props.user.username,
       messages: this.props.messages,
     }
   }
@@ -40,10 +42,14 @@ class Profile extends Component{
   }
 
   latestStory() {
-
   }
+  
   _onPressUserStories() {
-
+    this.props.navigator.push({
+      title: this.state.username,
+      component: userStories,
+      passProps: {userId: this.state.userId},
+    })
   }
   _onPressContact(){
     this.props.navigator.push({
@@ -57,7 +63,6 @@ class Profile extends Component{
     console.log(this.props.user.name)
     return (
       <View style={styles.container}>
-        <Text>{I18n.t('username') + ": " + this.props.user.username}</Text>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
@@ -71,7 +76,7 @@ class Profile extends Component{
 
         <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
           <Text style={styles.buttonText}>
-          View Messages
+          {I18n.t('messages')}
           </Text>
         </TouchableHighlight>
 
@@ -79,7 +84,7 @@ class Profile extends Component{
           <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> Personal Info </Text>
+        <Text> {I18n.t('about')} </Text>
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
             {I18n.t('contact')}
