@@ -70,10 +70,10 @@ class Home extends Component{
 
   featuredStory() {
       return(
-        <View style={{backgroundColor: 'lightgrey'}}>
-        <Text>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+        <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
         <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
-        <Text style={{color: 'purple', textAlign: 'right'}}>-Ahmed</Text>
+        <Text style={{textAlign: 'right'}}>-Ahmed</Text>
         </View>
       )
   }
@@ -94,11 +94,6 @@ class Home extends Component{
 
         <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
-
-        <TouchableHighlight onPress={ () => this._onPressUserStories()}>
-          <Text style={styles.nav}>Ahmeds Stories</Text>
-        </TouchableHighlight>
-
         <ListView
             style={styles.listItems}
             dataSource={this.state.dataSource}
@@ -117,7 +112,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#27c2dc',
+    backgroundColor: 'white',
     paddingTop: 80,
   },
   title: {
@@ -127,28 +122,31 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   listItems: {
-    flex: 9,
-    backgroundColor: 'powderblue',
+    flex: 9.5,
   },
   listText: {
-    color: '#32161F',
+    backgroundColor: 'white',
+    color: 'black',
     textAlign: 'center',
-    borderWidth: 1,
-    borderColor: 'white',
+    borderWidth: 2,
+    borderColor: '#27c2dc',
+    borderRadius: 4,
     marginBottom: 5,
+    padding: 10,
+    height: 50,
   },
   navLeft: {
     flex: .25,
-    color: 'white',
+    color: 'black',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F',
+    backgroundColor: '#F7E967',
     textAlign: 'center',
     marginRight: 110,
     padding: 10,
   },
   navRight: {
     flex: .25,
-    color: 'white',
+    color: 'black',
     fontFamily: 'Farah',
     backgroundColor: '#FFB30F',
     textAlign: 'center',
