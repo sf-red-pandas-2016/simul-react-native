@@ -86,7 +86,7 @@ class Profile extends Component{
 
 
         <View style={styles.personalInfo}>
-        <Text style={styles.personalInfoHeading}> {I18n.t('about')}: </Text>
+        <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
         <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
         <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
         <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
