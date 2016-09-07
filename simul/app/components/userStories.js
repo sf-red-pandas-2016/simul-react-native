@@ -56,8 +56,7 @@ class UserStories extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text>Smeagles Stories</Text>
-        <Text> `TEST TO CALL USERID PROPS!!!!!! ${this.props.userId}`</Text>
+        <Text style={{marginTop: 25}}>{I18n.t('storiesBy') + " " + this.state.name}</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
