@@ -118,7 +118,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'white',
-    paddingTop: 80,
+    paddingTop: 60,
   },
   title: {
     flex: .5,
