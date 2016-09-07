@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  Mapview,
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
@@ -12,6 +13,7 @@ import NewStory from './newStory';
 import UserMessages from './userMessages';
 import Contact from './contact';
 import userStories from './userStories';
+import MapView from 'react-native-maps';
 
 
 // <Text> {JSON.stringify(this.props.user)}</Text>
@@ -158,6 +160,10 @@ var styles = StyleSheet.create({
   },
   personalInfoBio: {
     fontSize: 10,
+  },
+  googleMap: {
+    height: 200,
+    margin: 40,
   },
 
   });
