@@ -126,7 +126,7 @@ var styles = StyleSheet.create({
  },
   button: {
     height: 50,
-    backgroundColor: '#48BBEC',
+    backgroundColor: '#27c2dc',
     alignSelf: 'stretch',
     marginTop: 10,
     justifyContent: 'center'

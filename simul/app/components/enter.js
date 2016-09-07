@@ -42,25 +42,34 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'powderblue'
+    backgroundColor: 'white',
   },
   image: {
     width: 200,
     height: 200,
   },
   title: {
-   fontSize: 20,
+   fontSize: 40,
    alignSelf: 'center',
-   margin: 40,
+   margin: 30,
    backgroundColor: 'white',
+   padding: 10,
+   borderRadius: 6,
+   fontFamily: 'Avenir-Roman'
   },
   enter: {
-    fontSize: 15,
+    fontSize: 25,
     width: 300,
     textAlign: 'center',
+    padding: 10,
     alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
     flex: 1,
+    borderRadius: 6,
     backgroundColor: '#27c2dc',
+    fontFamily: 'Avenir-Roman'
+
   }
 });
 
