@@ -39,6 +39,10 @@ I18n.translations = {
     subject: 'Subject:',
     content: 'Content:',
     senderContact: "Sender's contact info:",
+    newStory: 'New Story',
+    addStory: '+ Story',
+    contact: 'Contact',
+    send: 'Send',
   },
   ar: {
     login: 'دخول',
@@ -49,7 +53,7 @@ I18n.translations = {
     register: 'تسجيل',
     home: 'منزل',
     search: 'بحث',
-    bio: 'سيرة',
+    bio: 'سيرة ذاتية',
     location: 'موقع',
     contactInformation: 'معلومات الاتصال',
     skills: 'مهارات',
@@ -67,6 +71,10 @@ I18n.translations = {
     subject: 'موضوع',
     content: 'محتوى',
     senderContact: '',
+    newStory: 'قصة جديدة',
+    addStory: '+ قصة',
+    contact: 'اتصال',
+    send: 'إرسال',
   }
 }
 
