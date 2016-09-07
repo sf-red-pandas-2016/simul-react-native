@@ -20,6 +20,52 @@ var api = {
   },
   getStories(){
     var url = 'https://simulnos.herokuapp.com/api'
+    var content_array = [];
+    fetch(url)
+      .then(function(res){
+        return res.json();
+      })
+      .then(function(jsonRes){
+        return jsonRes.stories
+      })
+      .then(function(stories_array){
+        for (var i = 0; i<stories_array.length; i++){
+          content_array.push(stories_array[i].content)
+        }
+      })
+      .done();
+      console.log(content_array);
+      return content_array;
+  },
+  getStories3(){
+    var url = 'https://simulnos.herokuapp.com/api'
+    var content_array = [];
+    fetch(url)
+      .then(function(res){
+        return res.json();
+      })
+      .then(function(jsonRes){
+        return jsonRes.stories
+      })
+      .then(function(stories_array){
+        for (var i = 0; i<stories_array.length; i++){
+          content_array.push(stories_array[i].content)
+        }
+      })
+      .done();
+      console.log(content_array);
+      return content_array;
+  },
+  getStoriesContent(){
+    var stories_array = getStories();
+    var content_array = [];
+    for (var i = 0; i<stories_array.length; i++){
+      content_array.push(stories_array[i].content);
+    }
+    return content_array;
+  },
+  getStories2(){
+    var url = 'https://simulnos.herokuapp.com/api'
     return fetch(url).then((res) => res.json()).catch(error => {
     console.log(error);
     alert(error.message);
