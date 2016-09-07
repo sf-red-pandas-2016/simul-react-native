@@ -5,9 +5,63 @@ import {
   Text,
   View,
   TextInput,
+  ListView,
+  TouchableHighlight,
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
+
+class Search extends Component {
+
+  constructor(props) {
+    super(props);
+
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      stories: '?',
+      dataSource: ds.cloneWithRows([]),
+    };
+  }
+
+  componentDidMount() {
+      this.fetchData().done()
+  }
+
+  async fetchData() {
+      var url = 'https://simulnos.herokuapp.com/api'
+      const response = await fetch(url)
+      const json = await response.json()
+      const stories = json.stories
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      this.setState({dataSource: ds.cloneWithRows(stories),
+      stories: stories})
+
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+          <TextInput
+            style={styles.input}
+            placeholder={I18n.t('search')}
+            onChangeText={(text) => console.log('searching for ', text)}
+          />
+        </View>
+
+      // <View style={styles.container}>
+      //   <ListView
+      //     style={styles.listItems}
+      //     dataSource={this.state.dataSource}
+      //     renderRow={(rowData) =>
+      //       <TouchableHighlight
+      //         onPress={ () => this._onPressStory(rowData)}>
+      //         <Text style={styles.listText}>{rowData.title}</Text>
+      //       </TouchableHighlight>}
+      //     />
+      // </View>
+    )
+  }
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -27,14 +81,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const Search = (props) => (
-  <View style={styles.container}>
-    <TextInput
-      style={styles.input}
-      placeholder={I18n.t('search')}
-      onChangeText={(text) => console.log('searching for ', text)}
-    />
-  </View>
-);
+// const Search = (props) => (
+//   <View style={styles.container}>
+//     <TextInput
+//       style={styles.input}
+//       placeholder={I18n.t('search')}
+//       onChangeText={(text) => console.log('searching for ', text)}
+//     />
+//   </View>
+// );
 
 module.exports = Search;
