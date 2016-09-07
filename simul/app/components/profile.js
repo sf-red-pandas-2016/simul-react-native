@@ -136,19 +136,19 @@ var styles = StyleSheet.create({
     marginBottom: 20
   },
   personalInfoLocation: {
-
+    fontSize: 10,
   },
   personalInfoResources: {
-
+    fontSize: 10,
   },
   personalInfoSeeking: {
-
+    fontSize: 10,
   },
   personalInfoSkills: {
-
+    fontSize: 10,
   },
   personalInfoBio: {
-
+    fontSize: 10,
   },
 
   });
