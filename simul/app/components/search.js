@@ -24,9 +24,9 @@ class Search extends Component {
     };
   }
 
-  onSearchTextChanged(event) {
+  onSearchTextChanged(text) {
   console.log('onSearchTextChanged');
-  this.setState({ searchString: event.nativeEvent.text });
+  this.setState({ searchString: text });
   console.log(this.state.searchString);
   }
 
@@ -50,6 +50,7 @@ class Search extends Component {
   }
 
   render() {
+    console.log('Search.render');
     return (
       <View style={styles.container}>
           <TextInput
