@@ -8,27 +8,74 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+import UserMessages from './userMessages';
+
 class Contact extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user_Id: this.props.user.id,
+      username: this.props.user.name,
+      subject: "",
+      author: "",
+      content: "",
+      author_contact: "",
+      errors: [],
+    }
+  }
+
+  async _onPressRegister(){
+    try {
+      let response = await fetch('https:///simulnos.herokuapp.com/api/users/${this.state.user_Id}/messages', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: {
+            user_id: this.state.user_Id,
+            subject: this.state.subject,
+            author: this.state.author,
+            content: this.state.content,
+            author_contact: this.state.author_contact,
+          }
+        })
+      });
+      let res = await response.text();
+    } catch(errors){
+    }
+  }
+
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>Jim Smith</Text>
+        <Text style={styles.to}>{this.state.username}</Text>
         <Text style={styles.title}>
-          Leave me a message.
+          {I18n.t('Leave me a message.')}
         </Text>
         <TextInput
+          onChangeText={ (val)=> this.setState({name: val}) }
           style={styles.searchInput}
-          placeholder='From'/>
-          <TextInput
-            style={styles.searchInput}
-            placeholder='Subject'/>
-          <TextInput
-            style={styles.message}
-            placeholder='Message'/>
+          placeholder={I18n.t('From')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({name: val}) }
+          style={styles.searchInput}
+          placeholder={I18n.t('Contact')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({name: val}) }
+          style={styles.searchInput}
+          placeholder={I18n.t('Subject')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({name: val}) }
+          style={styles.message}
+          placeholder={I18n.t('Message')}/>
         <TouchableHighlight
           style={styles.button}
           underlayColor="white">
-            <Text style={styles.buttonText}>Send</Text>
+            <Text style={styles.buttonText}>{I18n.t(Send)}</Text>
         </TouchableHighlight>
       </View>
     )
