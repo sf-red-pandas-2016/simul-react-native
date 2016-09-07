@@ -75,7 +75,7 @@ class Profile extends Component{
 
         <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
           <Text style={styles.buttonText}>
-          View Messages
+          {I18n.t('messages')}
           </Text>
         </TouchableHighlight>
 
@@ -83,7 +83,7 @@ class Profile extends Component{
           <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> Personal Info </Text>
+        <Text> {I18n.t('about')} </Text>
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
             {I18n.t('contact')}
