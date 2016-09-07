@@ -79,16 +79,29 @@ class Profile extends Component{
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this._onPressUserStories()}>
-          <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+        <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
+          <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> {I18n.t('about')} </Text>
+
+        <View style={styles.personalInfo}>
+        <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
+        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
+        <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
+        <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
+        <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
+        <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
+        </View>
+
+
+
+
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
             {I18n.t('contact')}
           </Text>
         </TouchableHighlight>
+
       </View>
     )
   }
@@ -126,6 +139,25 @@ var styles = StyleSheet.create({
   },
   newestStoryArabic: {
     backgroundColor: 'lightgrey',
+  },
+  personalInfoHeading: {
+    textAlign: 'left',
+    marginBottom: 20
+  },
+  personalInfoLocation: {
+    fontSize: 10,
+  },
+  personalInfoResources: {
+    fontSize: 10,
+  },
+  personalInfoSeeking: {
+    fontSize: 10,
+  },
+  personalInfoSkills: {
+    fontSize: 10,
+  },
+  personalInfoBio: {
+    fontSize: 10,
   },
 
   });
