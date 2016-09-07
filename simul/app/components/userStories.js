@@ -22,10 +22,11 @@ class UserStories extends Component{
     };
   }
 
-  _onPressStory() {
+  _onPressStory(clickedStory) {
     this.props.navigator.push({
       title: I18n.t('story'),
-      component: Story
+      component: Story,
+      passProps: {story: clickedStory},
     })
   }
 

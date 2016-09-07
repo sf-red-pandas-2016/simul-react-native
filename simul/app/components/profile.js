@@ -8,55 +8,82 @@ import {
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
+import NewStory from './newStory';
+import UserMessages from './userMessages';
+import Contact from './contact';
 
+
+// <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
-
-
-_onPressAddStory(){
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      userId: this.props.user.user_id,
+      messages: this.props.messages,
+    }
   }
 
-_onPressViewMessages(){
+  _onPressAddStory(){
+      this.props.navigator.push({
+        title: I18n.t('newStory'),
+        component: NewStory,
+        passProps: {userId: this.state.userId},
+      })
+    }
 
-}
-
-featuredStory() {
-
+  _onPressViewMessages(){
+    this.props.navigator.push({
+      title: I18n.t('messages'),
+      component: UserMessages,
+      passProps: { userId: this.state.userId, messages: this.state.messages },
+    })
   }
 
-_onPressContact(){
+  latestStory() {
 
-}
+  }
+  _onPressUserStories() {
+
+  }
+  _onPressContact(){
+    this.props.navigator.push({
+      title: I18n.t('contact'),
+      component: Contact,
+      passProps: { userId: this.state.userId },
+    })
+  }
 
   render() {
+    console.log(this.props.user.name)
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Smeagles {I18n.t('profile')}</Text>
-        <Text style={styles.featuredStory}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text style={styles.featuredStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+        <Text>{I18n.t('username') + ": " + this.props.user.username}</Text>
+        <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
+        <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+        <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
-        <TouchableHighlight onPress={this._onPressAddStory.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
-          Add Story
+          {I18n.t('addStory')}
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={this._onPressViewMessages.bind(this)} style={styles.button}>
+        <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
           <Text style={styles.buttonText}>
           View Messages
           </Text>
         </TouchableHighlight>
 
-
-
-        <Text style={styles.body}> This will be a list of user stories </Text>
+        <TouchableHighlight onPress={() => this._onPressUserStories()}>
+          <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+        </TouchableHighlight>
 
         <Text> Personal Info </Text>
-        <TouchableHighlight onPress={this._onPressContact.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        Contact
-        </Text>
+        <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
+          <Text style={styles.buttonText}>
+            {I18n.t('contact')}
+          </Text>
         </TouchableHighlight>
       </View>
     )
@@ -90,10 +117,10 @@ var styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
   },
-  featuredStory: {
+  newestStory: {
   backgroundColor: 'lightgrey',
   },
-  featuredStoryArabic: {
+  newestStoryArabic: {
     backgroundColor: 'lightgrey',
   },
 
