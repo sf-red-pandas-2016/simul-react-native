@@ -16,10 +16,24 @@ class UserStories extends Component{
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([
-        'Tuesday August 23, 2016', 'Wednesday August 10, 2016', 'Wednesday August 3, 2016', 'Thursday July 28, 2016', 'Monday July 18, 2016', 'Thursday July 14, 2016', 'Saturday July 2, 2016', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11', 'Story 8', 'Story 9', 'Story 10', 'Story 11',
-      ])
+      userId: this.props.userId,
+      dataSource: ds.cloneWithRows(['mama', 'mia', 'pizzeria'])
     };
+  }
+
+  componentDidMount() {
+      this.fetchData().done()
+  }
+
+  async fetchData() {
+      var userId = this.state.userId
+      var url = `https://simulnos.herokuapp.com/api/users/5/stories`
+      console.log(url)
+      const response = await fetch(url)
+      const json = await response.json()
+      const stories = json.stories
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      this.setState({dataSource: ds.cloneWithRows(stories)})
   }
 
   _onPressStory(clickedStory) {
@@ -43,10 +57,18 @@ class UserStories extends Component{
     return (
       <View style={styles.container}>
         <Text>Smeagles Stories</Text>
+        <Text> `TEST TO CALL USERID PROPS!!!!!! ${this.props.userId}`</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <TouchableHighlight onPress={ () => this._onPressStory()}><Text style={styles.listText}>{rowData}</Text></TouchableHighlight>}
+          renderRow={(rowData) =>
+            <View>
+              <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
+              <TouchableHighlight onPress={ () => this._onPressStory()}>
+                <Text style={styles.listText}> {rowData.title} </Text>
+              </TouchableHighlight>
+            </View>
+          }
           renderHeader={ () => this.newestStory() }
         />
       </View>
@@ -59,6 +81,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 60,
   },
   title: {
    flex: 2,

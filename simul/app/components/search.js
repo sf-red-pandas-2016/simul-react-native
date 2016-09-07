@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'powderblue',
+    backgroundColor: '#27c2dc',
   },
   input: {
     height: 30,
