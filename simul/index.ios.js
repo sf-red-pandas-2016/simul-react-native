@@ -43,6 +43,7 @@ I18n.translations = {
     addStory: '+ Story',
     contact: 'Contact',
     send: 'Send',
+    about: 'About',
   },
   ar: {
     login: 'دخول',
@@ -75,6 +76,7 @@ I18n.translations = {
     addStory: '+ قصة',
     contact: 'اتصال',
     send: 'إرسال',
+    about: 'عن',
   }
 }
 

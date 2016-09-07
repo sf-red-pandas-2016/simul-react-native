@@ -11,6 +11,7 @@ import I18n from 'react-native-i18n'
 import NewStory from './newStory';
 import UserMessages from './userMessages';
 import Contact from './contact';
+import userStories from './userStories';
 
 
 // <Text> {JSON.stringify(this.props.user)}</Text>
@@ -19,6 +20,7 @@ class Profile extends Component{
     super(props)
     this.state = {
       userId: this.props.user.user_id,
+      username: this.props.user.username,
       messages: this.props.messages,
     }
   }
@@ -40,10 +42,14 @@ class Profile extends Component{
   }
 
   latestStory() {
-
   }
-  _onPressUserStories() {
 
+  _onPressUserStories() {
+    this.props.navigator.push({
+      title: this.state.username,
+      component: userStories,
+      passProps: {userId: this.state.userId},
+    })
   }
   _onPressContact(){
     this.props.navigator.push({
@@ -54,10 +60,8 @@ class Profile extends Component{
   }
 
   render() {
-    console.log(this.props.user.name)
     return (
       <View style={styles.container}>
-        <Text>{I18n.t('username') + ": " + this.props.user.username}</Text>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
@@ -71,20 +75,33 @@ class Profile extends Component{
 
         <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
           <Text style={styles.buttonText}>
-          View Messages
+          {I18n.t('messages')}
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this._onPressUserStories()}>
-          <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+        <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
+          <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> Personal Info </Text>
+
+        <View style={styles.personalInfo}>
+        <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
+        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
+        <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
+        <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
+        <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
+        <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
+        </View>
+
+
+
+
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
             {I18n.t('contact')}
           </Text>
         </TouchableHighlight>
+
       </View>
     )
   }
@@ -109,7 +126,7 @@ var styles = StyleSheet.create({
  },
   button: {
     height: 50,
-    backgroundColor: '#48BBEC',
+    backgroundColor: '#27c2dc',
     alignSelf: 'stretch',
     marginTop: 10,
     justifyContent: 'center'
@@ -122,6 +139,25 @@ var styles = StyleSheet.create({
   },
   newestStoryArabic: {
     backgroundColor: 'lightgrey',
+  },
+  personalInfoHeading: {
+    textAlign: 'left',
+    marginBottom: 20
+  },
+  personalInfoLocation: {
+    fontSize: 10,
+  },
+  personalInfoResources: {
+    fontSize: 10,
+  },
+  personalInfoSeeking: {
+    fontSize: 10,
+  },
+  personalInfoSkills: {
+    fontSize: 10,
+  },
+  personalInfoBio: {
+    fontSize: 10,
   },
 
   });

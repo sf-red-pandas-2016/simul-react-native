@@ -11,11 +11,29 @@ import Profile from './profile.js';
 import api from '../Utils/api.js';
 
 class Story extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: '?',
+    };
+  }
+
+  componentDidMount() {
+    this.fetchData().done()
+  }
+
+  async fetchData() {
+    var url = "https://simulnos.herokuapp.com/api/users/" + this.props.story.user_id
+    const response = await fetch(url)
+    const json = await response.json()
+    const user = json.user
+    this.setState({user: user})
+    }
 
   _onPressProfile() {
     api.getUser(this.props.story.user_id).then((res) => {
       this.props.navigator.push({
-        title: 'Profile',
+        title: res.user.username,
         component: Profile,
         passProps: {user: res.user, messages: res.messages, stories: res.stories}
       })
@@ -28,7 +46,7 @@ class Story extends Component{
 
       <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
-        Ahmeds Profile
+        {this.state.user.name} Profile
         </Text>
       </TouchableHighlight>
 
@@ -52,13 +70,17 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: '#48BBEC',
-    alignSelf: 'flex-start',
-    marginTop: 10,
-    justifyContent: 'center'
+    backgroundColor: '#27c2dc',
+    // alignSelf: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 10,
+    justifyContent: 'center',
+    borderRadius: 4
   },
   buttonText: {
     textAlign: 'center',
+    padding: 10,
+    color: 'white',
   },
   title: {
    fontSize: 20,
