@@ -71,9 +71,9 @@ class Home extends Component{
   featuredStory() {
       return(
         <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
-        <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
-        <Text style={{textAlign: 'right'}}>-Ahmed</Text>
+          <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+          <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+          <Text style={{textAlign: 'right'}}>-Ahmed</Text>
         </View>
       )
   }
@@ -87,13 +87,18 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <TouchableHighlight onPress={ () => this._onPressLogin()}><Text style={styles.navLeft}>{I18n.t('login')}</Text></TouchableHighlight>
-          <TouchableHighlight onPress={ () => this._onPressRegister()}><Text style={styles.navRight}>{I18n.t('register')}</Text></TouchableHighlight>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
+          <TouchableHighlight onPress={ () => this._onPressLogin()}>
+            <Text style={styles.navLeft}> {I18n.t('login')} </Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={ () => this._onPressRegister()}>
+            <Text style={styles.navRight}> {I18n.t('register')} </Text>
+          </TouchableHighlight>
         </View>
 
-        <Text style={styles.title}>{I18n.t('home')}</Text>
         <Search />
+
         <ListView
             style={styles.listItems}
             dataSource={this.state.dataSource}
@@ -139,7 +144,7 @@ var styles = StyleSheet.create({
     flex: .25,
     color: 'black',
     fontFamily: 'Farah',
-    backgroundColor: '#F7E967',
+    backgroundColor: '#FFB30F',
     textAlign: 'center',
     marginRight: 110,
     padding: 10,
