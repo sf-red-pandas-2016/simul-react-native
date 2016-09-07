@@ -18,9 +18,16 @@ class Search extends Component {
 
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
+      searchString: '',
       stories: '?',
       dataSource: ds.cloneWithRows([]),
     };
+  }
+
+  onSearchTextChanged(event) {
+  console.log('onSearchTextChanged');
+  this.setState({ searchString: event.nativeEvent.text });
+  console.log(this.state.searchString);
   }
 
   componentDidMount() {
