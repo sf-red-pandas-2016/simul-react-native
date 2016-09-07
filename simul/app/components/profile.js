@@ -79,7 +79,7 @@ class Profile extends Component{
           <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> {this.props.user.name + "'s Personal Info:"} </Text>
+        <Text style={styles.personalInfoHeading}> {this.props.user.name + "'s Personal Info:"} </Text>
 
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
@@ -123,6 +123,10 @@ var styles = StyleSheet.create({
   },
   newestStoryArabic: {
     backgroundColor: 'lightgrey',
+  },
+  personalInfoHeading: {
+    textAlign: 'left',
+    marginBottom: 20
   },
 
   });
