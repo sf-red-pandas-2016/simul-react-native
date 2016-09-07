@@ -44,7 +44,7 @@ class ImageUpload extends Component{
           first: 25,
       };
 
-      CameraRoll.getPhotos( fetchParams, (data)=>{
+      CameraRoll.getPhotos(fetchParams, (data)=>{
         const assets = data.edges;
         const index = parseInt( Math.random() * ( assets.length ) );
         const randomImage = assets[ index ];
