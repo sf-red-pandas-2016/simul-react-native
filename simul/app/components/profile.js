@@ -75,11 +75,12 @@ class Profile extends Component{
           </Text>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this._onPressUserStories()}>
-          <Text style={styles.body}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+        <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
+          <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
-        <Text> Personal Info </Text>
+        <Text> {this.props.user.name + "'s Personal Info:"} </Text>
+
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
             {I18n.t('contact')}
