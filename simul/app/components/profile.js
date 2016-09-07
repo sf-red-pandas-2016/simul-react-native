@@ -80,6 +80,7 @@ class Profile extends Component{
         </TouchableHighlight>
 
         <Text style={styles.personalInfoHeading}> {this.props.user.name + "'s Personal Info:"} </Text>
+        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location} </Text>
 
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
