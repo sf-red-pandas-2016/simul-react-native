@@ -79,8 +79,14 @@ class Profile extends Component{
           <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
+        <View style={styles.personalInfo}>
         <Text style={styles.personalInfoHeading}> {this.props.user.name + "'s Personal Info:"} </Text>
-        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location} </Text>
+        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
+        <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
+        <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
+        <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
+        <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
+        </View>
 
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
           <Text style={styles.buttonText}>
@@ -128,6 +134,21 @@ var styles = StyleSheet.create({
   personalInfoHeading: {
     textAlign: 'left',
     marginBottom: 20
+  },
+  personalInfoLocation: {
+
+  },
+  personalInfoResources: {
+
+  },
+  personalInfoSeeking: {
+
+  },
+  personalInfoSkills: {
+
+  },
+  personalInfoBio: {
+
   },
 
   });
