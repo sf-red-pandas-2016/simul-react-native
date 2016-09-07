@@ -16,7 +16,7 @@ class UserStories extends Component{
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      userId: this.props.userId,
+      // userId: this.props.userId,
       dataSource: ds.cloneWithRows(['mama', 'mia', 'pizzeria'])
     };
   }
@@ -26,8 +26,7 @@ class UserStories extends Component{
   }
 
   async fetchData() {
-      var userId = this.state.userId
-      var url = `https://simulnos.herokuapp.com/api/users/5/stories`
+      var url = "https://simulnos.herokuapp.com/api/users/" + this.props.userId + "/stories"
       console.log(url)
       const response = await fetch(url)
       const json = await response.json()
