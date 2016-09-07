@@ -11,6 +11,24 @@ import Profile from './profile.js';
 import api from '../Utils/api.js';
 
 class Story extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: '?',
+    };
+  }
+
+  componentDidMount() {
+    this.fetchData().done()
+  }
+
+  async fetchData() {
+    var url = "https://simulnos.herokuapp.com/api/users/" + this.props.story.user_id
+    const response = await fetch(url)
+    const json = await response.json()
+    const user = json.user
+    this.setState({user: user})
+    }
 
   _onPressProfile() {
     api.getUser(this.props.story.user_id).then((res) => {
@@ -22,13 +40,16 @@ class Story extends Component{
     })
   }
 
+
+
+
   render() {
     return (
       <View style={styles.container}>
 
       <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
-        Ahmeds Profile
+        {this.state.user.name} Profile
         </Text>
       </TouchableHighlight>
 

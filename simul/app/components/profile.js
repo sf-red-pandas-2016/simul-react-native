@@ -43,7 +43,7 @@ class Profile extends Component{
 
   latestStory() {
   }
-  
+
   _onPressUserStories() {
     this.props.navigator.push({
       title: this.state.username,
@@ -60,7 +60,6 @@ class Profile extends Component{
   }
 
   render() {
-    console.log(this.props.user.name)
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
