@@ -55,7 +55,7 @@ class Search extends Component {
           <TextInput
             style={styles.input}
             placeholder={I18n.t('search')}
-            onChangeText={(text) => console.log('searching for ', text)}
+            onChangeText={this.onSearchTextChanged.bind(this)}
           />
         </View>
 
