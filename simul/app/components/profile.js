@@ -60,7 +60,6 @@ class Profile extends Component{
   }
 
   render() {
-    console.log(this.props.user.name)
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
