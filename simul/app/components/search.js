@@ -36,6 +36,10 @@ class Search extends Component {
       this.setState({dataSource: ds.cloneWithRows(stories),
       stories: stories})
 
+      if (stories[0].id === 1) {
+        console.log('match');
+      }
+
   }
 
   render() {
