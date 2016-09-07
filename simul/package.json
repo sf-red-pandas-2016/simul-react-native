@@ -9,6 +9,10 @@
     "react": "15.3.1",
     "react-native": "0.32.0",
     "react-native-i18n": "^0.1.1",
+<<<<<<< HEAD
     "react-native-maps": "^0.8.0"
+=======
+    "react-native-uploader": "0.0.9"
+>>>>>>> 9a45a77afe0fe7e804ddf530522de9ada3b3d9aa
   }
 }
