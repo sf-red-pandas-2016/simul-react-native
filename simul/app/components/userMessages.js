@@ -4,31 +4,37 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
 } from 'react-native';
 
 class UserMessages  extends Component{
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.to}>Jim Smith</Text>
-        <Text style={styles.from}>from: Tom Smith</Text>
-        <Text style={styles.from}>date: 08/04/2016</Text>
-        <Text style={styles.title}>Europe</Text>
-        <Text style={styles.from}>from: Tom Smith</Text>
-        <Text style={styles.from}>date: 08/03/2016</Text>
-        <Text style={styles.title}>Another chance</Text>
-        <Text style={styles.from}>from: Tom Smith</Text>
-        <Text style={styles.from}>date: 08/02/2016</Text>
-        <Text style={styles.title}>We leave</Text>
-        <Text style={styles.from}>from: Tom Smith</Text>
-        <Text style={styles.from}>date: 08/01/2016</Text>
-        <Text style={styles.title}>No more food</Text>
-      </View>
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.container}>
+          <Text style={styles.to}>Jim Smith</Text>
+          <Text style={styles.from}>from: Tom Smith</Text>
+          <Text style={styles.from}>date: 08/04/2016</Text>
+          <Text style={styles.title}>Europe</Text>
+          <Text style={styles.from}>from: Tom Smith</Text>
+          <Text style={styles.from}>date: 08/03/2016</Text>
+          <Text style={styles.title}>Another chance</Text>
+          <Text style={styles.from}>from: Tom Smith</Text>
+          <Text style={styles.from}>date: 08/02/2016</Text>
+          <Text style={styles.title}>We leave</Text>
+          <Text style={styles.from}>from: Tom Smith</Text>
+          <Text style={styles.from}>date: 08/01/2016</Text>
+          <Text style={styles.title}>No more food</Text>
+        </View>
+      </ScrollView>
     )
   }
 };
 
 var styles = StyleSheet.create({
+  superContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
