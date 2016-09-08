@@ -72,37 +72,33 @@ class Home extends Component{
   }
 
   _onPressFeaturedStory() {
+
   }
 
   _onPressFeaturedProfile() {
+
   }
 
   featuredStory() {
     var recentStory = this.state.stories.slice(-1)[0];
 
-
     if (recentStory.photo !== null) {
       var photo = recentStory.photo
     }
 
+    console.log(recentStory);
+
       return(
         <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
 
-
         <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
-
 
           <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
             <Text style={{color: 'white'}}>{ recentStory.content }</Text>
           </TouchableHighlight>
 
-          <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
-            <Text style={{textAlign: 'right'}}>{}</Text>
-          </TouchableHighlight>
-
         <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
             <Text style={{textAlign: 'right'}}></Text>
-
           </TouchableHighlight>
         </View>
       )
@@ -115,10 +111,6 @@ class Home extends Component{
   }
 
   render() {
-    var recentStory = this.state.stories.slice(-1)[0];
-    if (recentStory.photo !== null) {
-      var photo = recentStory.photo
-    }
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
@@ -142,9 +134,7 @@ class Home extends Component{
                 <Text style={styles.listText}>{rowData.title}</Text>
               </TouchableHighlight>}
             renderHeader={ () => this.featuredStory() } />
-      </View>
-
-
+        </View>
     )
   }
 };
