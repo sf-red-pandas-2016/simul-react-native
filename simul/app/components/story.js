@@ -7,6 +7,7 @@ import {
   View,
   TouchableHighlight,
   Image,
+  ScrollView,
 } from 'react-native';
 
 import Profile from './profile.js';
