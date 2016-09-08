@@ -34,12 +34,13 @@ class UserMessages  extends Component{
 var styles = StyleSheet.create({
   superContainer: {
     flex: 1,
+    backgroundColor: '#27c2dc',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#27c2dc'
+    backgroundColor: '#27c2dc',
   },
   title: {
    fontSize: 40,
