@@ -53,25 +53,17 @@ class Profile extends Component{
 
   }
 
-  _onPressStory(){
-
-  }
-
   latestStory() {
-      var recentStory = this.state.stories.slice(-1)[0]
-      return(
-      <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+    var recentStory = this.state.userId.stories.slice(-1)[0]
+    return(
+    <View style={{backgroundColor: '#FFB30F', borderWidth: 10, height: 100, width: 100, borderColor: '#27c2dc', padding: 10}}>
+      <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
+      <Text style={{color: 'white'}}>{recentStory.content}</Text>
+      </TouchableHighlight>
+      <Text style={{textAlign: 'right'}}>{recentStory.name}</Text>
+    </View>
+  )
 
-
-        <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
-        <Text style={{color: 'white'}}>{recentStory.content}</Text>
-        </TouchableHighlight>
-
-        <Image source={{uri: recentStory.photo}} style={{width: 100, height: 100}}/>
-
-        <Text style={{textAlign: 'right'}}>-{recentStory.name}</Text>
-      </View>
-    )
   }
 
   _onPressStory(clickedStory) {
@@ -98,6 +90,7 @@ class Profile extends Component{
   }
 
   render() {
+    var recentStory = this.state.userId.stories.slice(-1)[0]
     return (
       <View style={styles.container}>
         <Avatar
@@ -105,16 +98,9 @@ class Profile extends Component{
              size={'medium'}
              interactive={true}
              onChange={this.handleImageChange}
-
          />
-        <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-        <View
-           style={styles.listItems}
-             <TouchableHighlight
-               onPress={ () => this._onPressStory(rowData)}>
-             </TouchableHighlight>}
-           renderHeader={ () => this.latestStory() } />
+        <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
@@ -131,7 +117,6 @@ class Profile extends Component{
         <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
           <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
-
 
         <View style={styles.personalInfo}>
         <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
@@ -210,9 +195,6 @@ var styles = StyleSheet.create({
   googleMap: {
     height: 200,
     margin: 40,
-  },
-  listItems: {
-    flex: 9.5,
   },
 
   });
