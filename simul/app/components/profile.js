@@ -83,7 +83,7 @@ class Profile extends Component{
     var recentStory = this.props.stories.slice(-1)[0].content
 
     if (this.props.user.photo !== null) {
-      var photo = thi s.props.user.photo
+      var photo = this.props.user.photo
     }
 
     return (
