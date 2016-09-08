@@ -53,6 +53,10 @@ class NewStory extends Component{
   }
 };
 var styles = StyleSheet.create({
+  superContainer: {
+   flex: 1,
+   backgroundColor: '#27c2dc',
+ },
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
