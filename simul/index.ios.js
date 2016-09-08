@@ -45,6 +45,12 @@ I18n.translations = {
     send: 'Send',
     about: 'About',
     storiesBy: 'Stories by',
+    post: 'Post',
+    writeStoryHere: 'Write your story here.',
+    photo: 'Photo',
+    addPhoto: '+ Photo',
+    upload: 'Upload',
+    addImage: 'Add Image',
   },
   ar: {
     login: 'دخول',
@@ -79,6 +85,12 @@ I18n.translations = {
     send: 'إرسال',
     about: 'عن',
     storiesBy: 'قصص من',
+    post: 'تابع',
+    writeStoryHere: 'إرسال قصتك هنا.',
+    photo: 'تصوير',
+    addPhoto: '+ صورة',
+    upload: 'تحميل',
+    addImage: 'إضافة صورة',
   }
 }
 

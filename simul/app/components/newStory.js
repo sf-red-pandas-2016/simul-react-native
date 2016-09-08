@@ -63,7 +63,7 @@ var styles = StyleSheet.create({
     color: '#fff'
   },
   searchInput: {
-    height: 50,
+    height: 100,
     padding: 4,
     marginRight: 5,
     fontSize: 23,
