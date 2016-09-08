@@ -91,7 +91,7 @@ class Profile extends Component{
         <View style={styles.container}>
           <Avatar
              source={photo}
-             size={'medium'}
+             size={'default'}
              interactive={true}
              onChange={this.handleImageChange}
          />
