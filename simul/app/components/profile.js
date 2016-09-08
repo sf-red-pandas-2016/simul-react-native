@@ -66,14 +66,18 @@ class Profile extends Component{
 
 // fake person that works https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnl2wCrCFBw9PnHukDYg6weIBSIMdSi8vSguLE6tjaRcps8OOw
   render() {
+    if (this.props.user.photo !== null){
+      var photo = this.props.user.photo
+    }
     return (
       <View style={styles.container}>
         <Avatar
-             source={'https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif'}
-             size={'medium'}
-             interactive={true}
-             onChange={this.handleImageChange}
-         />
+               source={photo}
+               size={'medium'}
+               interactive={true}
+               onChange={this.handleImageChange}
+        />
+
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>

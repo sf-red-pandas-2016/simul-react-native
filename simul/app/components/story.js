@@ -82,6 +82,7 @@ var styles = StyleSheet.create({
     // alignSelf: 'flex-start',
     alignItems: 'center',
     marginBottom: 10,
+    marginTop: 100,
     justifyContent: 'center',
     borderRadius: 4
   },
