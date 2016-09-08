@@ -90,6 +90,7 @@ class Profile extends Component{
   }
 
   render() {
+
     var recentStory = this.state.userId.stories.slice(-1)[0]
     return (
       <View style={styles.container}>
@@ -100,8 +101,20 @@ class Profile extends Component{
              onChange={this.handleImageChange}
          />
 
+    if (this.props.user.photo !== null){
+      var photo = this.props.user.photo
+    }
+    return (
+      <View style={styles.container}>
+        <Avatar
+               source={photo}
+               size={'medium'}
+               interactive={true}
+               onChange={this.handleImageChange}
+        />
+
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
-        
+
 
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
