@@ -11,10 +11,9 @@ import {
   ScrollView,
 } from 'react-native';
 
-import I18n from 'react-native-i18n'
 import UserStories from './userStories';
 import Story from './story2';
-import ImageUpload from './imageUpload';
+
 
 class NewStory extends Component{
 

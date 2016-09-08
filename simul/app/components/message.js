@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 import Home from './home.js'
-import I18n from 'react-native-i18n'
 
 class Message extends Component{
 
