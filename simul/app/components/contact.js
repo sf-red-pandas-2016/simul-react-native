@@ -52,7 +52,7 @@ class Contact extends Component{
         this.props.navigator.push({
           title: I18n.t('message'),
           component: Message,
-          passProps: { userId: this.state.user_Id, messageId: res.message.id },
+          passProps: { userId: this.state.user_Id, message: res.message, name: this.state.name},
         })
   }
 
