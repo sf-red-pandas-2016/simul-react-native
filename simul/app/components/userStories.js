@@ -6,6 +6,7 @@ import {
   View,
   ListView,
   TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 import Story from './story';
