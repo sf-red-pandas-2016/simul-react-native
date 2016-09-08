@@ -46,24 +46,19 @@ class Story extends Component{
     if (this.props.story.photo !== null){
       var photo = this.props.story.photo
     }
-
     return (
       <View style={styles.container}>
-
-      <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        {this.state.user.name + "'s " + I18n.t('profile')}
-        </Text>
-      </TouchableHighlight>
-
       <Text>Created at:</Text>
       <Text>{this.props.story.created_at}</Text>
-
       <Text style={styles.title}>{this.props.story.title}</Text>
       <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
+      <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
+      <Text style={styles.buttonText}>
+      {this.state.user.name + "'s " + I18n.t('profile')}
+      </Text>
+      </TouchableHighlight>
       <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
-
 
     )
   }
