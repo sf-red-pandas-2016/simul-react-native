@@ -10,7 +10,7 @@ import {
 
 import I18n from 'react-native-i18n'
 import UserStories from './userStories';
-import Story from './story';
+import Story from './story2';
 
 class NewStory extends Component{
 
@@ -19,6 +19,7 @@ class NewStory extends Component{
 
     this.state = {
       user_Id: this.props.userId,
+      name: this.props.name,
       title: "",
       content: "",
       errors: [],
@@ -39,11 +40,11 @@ class NewStory extends Component{
         })
       })
       let res = await response.json();
-      console.log(res);
+      console.log(res.story);
         this.props.navigator.push({
           title: I18n.t('story'),
           component: Story,
-          passProps: { story: res.story.story},
+          passProps: { story: res.story, userId: this.state.user_Id, name: this.state.name},
         })
   }
 
