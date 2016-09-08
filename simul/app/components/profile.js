@@ -7,20 +7,16 @@ import {
   Text,
   View,
   TouchableHighlight,
-  Mapview,
-  ListView,
+  Image,
 } from 'react-native';
 
 import Avatar from 'react-native-interactive-avatar';
-import I18n from 'react-native-i18n';
+import I18n from 'react-native-i18n'
 import NewStory from './newStory';
 import UserMessages from './userMessages';
 import Contact from './contact';
 import userStories from './userStories';
-import MapView from 'react-native-maps';
 
-
-// <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
 
   constructor(props) {
@@ -30,6 +26,7 @@ class Profile extends Component{
       name: this.props.user.name,
       username: this.props.user.username,
       messages: this.props.messages,
+      // stories: this.props.stories,
     }
   }
 
@@ -49,12 +46,8 @@ class Profile extends Component{
     })
   }
 
-  _onPressFeaturedStory(){
-
-  }
-
   latestStory() {
-    var recentStory = this.state.userId.stories.slice(-1)[0]
+    // var recentStory = this.state.userId.stories.slice(-1)[0]
     return(
     <View style={{backgroundColor: '#FFB30F', borderWidth: 10, height: 100, width: 100, borderColor: '#27c2dc', padding: 10}}>
       <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
@@ -64,14 +57,6 @@ class Profile extends Component{
     </View>
   )
 
-  }
-
-  _onPressStory(clickedStory) {
-    this.props.navigator.push({
-      title: I18n.t('story'),
-      component: Story,
-      passProps: {story: clickedStory},
-    })
   }
 
   _onPressUserStories() {
@@ -88,10 +73,18 @@ class Profile extends Component{
       passProps: { userId: this.state.userId },
     })
   }
+  // cat avatar works https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif
+  // dino avatar works https://media.giphy.com/media/13MGgJHu1nYAkE/giphy.gif
 
+// fake person that works https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnl2wCrCFBw9PnHukDYg6weIBSIMdSi8vSguLE6tjaRcps8OOw
   render() {
 
-    var recentStory = this.state.userId.stories.slice(-1)[0]
+    var recentStory = this.props.stories.slice(-1)[0].content
+
+    if (recentStory.photo !== null) {
+      var photo = recentStory.photo
+    }
+
     return (
       <View style={styles.container}>
         <Avatar
@@ -100,22 +93,11 @@ class Profile extends Component{
              interactive={true}
              onChange={this.handleImageChange}
          />
-
-    if (this.props.user.photo !== null){
-      var photo = this.props.user.photo
-    }
-    return (
-      <View style={styles.container}>
-        <Avatar
-               source={photo}
-               size={'medium'}
-               interactive={true}
-               onChange={this.handleImageChange}
-        />
-
+        <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-
+        <Text style={styles.newestStory}>{ recentStory }</Text>
+        <Text style={styles.newestStoryArabic}></Text>
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
@@ -133,6 +115,7 @@ class Profile extends Component{
           <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
         </TouchableHighlight>
 
+
         <View style={styles.personalInfo}>
         <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
         <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
@@ -141,6 +124,8 @@ class Profile extends Component{
         <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
         <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
         </View>
+
+
 
 
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
@@ -206,10 +191,6 @@ var styles = StyleSheet.create({
   },
   personalInfoBio: {
     fontSize: 10,
-  },
-  googleMap: {
-    height: 200,
-    margin: 40,
   },
 
   });
