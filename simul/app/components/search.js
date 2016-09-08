@@ -38,6 +38,10 @@ class Search extends Component {
   executeQuery(searchString) {
   console.log(searchString);
   this.setState({ isLoading: true });
+  //iterate through storries contents
+  //find a regex match for searchString
+  //grab all matches
+  //show matches
   }
 
   async fetchData() {
@@ -48,11 +52,6 @@ class Search extends Component {
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       this.setState({dataSource: ds.cloneWithRows(stories),
       stories: stories})
-
-      // if (stories[0].id === 1) {
-      //   console.log('match');
-      // }
-
   }
 
   render() {
@@ -64,7 +63,7 @@ class Search extends Component {
             placeholder={I18n.t('Search')}
             onChangeText={this.onSearchTextChanged.bind(this)}
           />
-          <TouchableHighlight style={styles.button} onPress={ () => this.executeQuery()}>
+          <TouchableHighlight style={styles.button} onPress={ () => this.executeQuery(this.state.searchString)}>
             <Text style={styles.buttonText}>Go</Text>
           </TouchableHighlight>
         </View>
