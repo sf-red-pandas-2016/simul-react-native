@@ -7,7 +7,8 @@ import {
   Text,
   View,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 class NewStory extends Component{
@@ -27,29 +28,35 @@ class NewStory extends Component{
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <Text style={styles.title}>
-          {I18n.t('newStory')}
-        </Text>
-        <TextInput
-          style={styles.searchInput}
-          placeholder={I18n.t('writeStoryHere')}/>
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.mainContainer}>
+          <Text style={styles.title}>
+            {I18n.t('newStory')}
+          </Text>
+          <TextInput
+            style={styles.searchInput}
+            placeholder={I18n.t('writeStoryHere')}/>
+            <TouchableHighlight
+              onPress={() => this._onPressAddPhoto()}
+              style={styles.button}
+              underlayColor="white">
+                <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
+            </TouchableHighlight>
           <TouchableHighlight
-            onPress={() => this._onPressAddPhoto()}
             style={styles.button}
             underlayColor="white">
-              <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
+              <Text style={styles.buttonText}>{I18n.t('post')}</Text>
           </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.button}
-          underlayColor="white">
-            <Text style={styles.buttonText}>{I18n.t('post')}</Text>
-        </TouchableHighlight>
-      </View>
+        </View>
+      </ScrollView>
     )
   }
 };
 var styles = StyleSheet.create({
+  superContainer: {
+    flex: 1,
+    backgroundColor: '#27c2dc',
+  },
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
