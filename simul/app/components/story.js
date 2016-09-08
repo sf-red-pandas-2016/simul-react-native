@@ -9,6 +9,8 @@ import {
 
 import Profile from './profile.js';
 import api from '../Utils/api.js';
+import Home from './home.js'
+import I18n from 'react-native-i18n'
 
 class Story extends Component{
   constructor(props) {

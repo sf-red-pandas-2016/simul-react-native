@@ -7,6 +7,8 @@ import {
   TextInput,
   TouchableHighlight
 } from 'react-native';
+
+import I18n from 'react-native-i18n'
 import UserStories from './userStories';
 import Story from './story';
 
@@ -17,7 +19,6 @@ class NewStory extends Component{
 
     this.state = {
       user_Id: this.props.userId,
-      name: this.props.name,
       title: "",
       content: "",
       errors: [],
@@ -38,10 +39,11 @@ class NewStory extends Component{
         })
       })
       let res = await response.json();
+      console.log(res);
         this.props.navigator.push({
           title: I18n.t('story'),
           component: Story,
-          passProps: { userId: this.state.user_Id, story: res.story, name: this.state.name},
+          passProps: { story: res.story.story},
         })
   }
 
@@ -49,17 +51,19 @@ class NewStory extends Component{
   render() {
     return (
       <View style={styles.mainContainer}>
-      <Text style={styles.to}>{this.state.name}</Text>
-        <Text style={styles.title}>
-          New story.
-        </Text>
-        <TextInput
-          style={styles.searchInput}
-          Test/>
-        <TouchableHighlight
-          style={styles.button}
-          underlayColor="white">
-            <Text style={styles.buttonText}>Post</Text>
+      <TextInput
+        onChangeText={ (val)=> this.setState({title: val}) }
+        style={styles.searchInput}
+        placeholder={I18n.t('subject')}/>
+      <TextInput
+        onChangeText={ (val)=> this.setState({content: val}) }
+        style={styles.message}
+        placeholder={I18n.t('content')}/>
+      <TouchableHighlight
+        onPress={() => this._onPressSend()}
+        style={styles.button}
+        underlayColor="white">
+          <Text style={styles.buttonText}>{I18n.t('send')}</Text>
         </TouchableHighlight>
       </View>
     )
@@ -88,6 +92,16 @@ var styles = StyleSheet.create({
     borderRadius: 8,
     color: 'white'
   },
+  message: {
+    height: 200,
+    padding: 4,
+    marginRight: 5,
+    fontSize: 23,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 8,
+    color: 'white'
+  },
   buttonText: {
     fontSize: 18,
     color: '#111',
@@ -107,9 +121,10 @@ var styles = StyleSheet.create({
   },
   to: {
     alignSelf: 'flex-end',
+    marginTop: 10,
     fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 200,
+    marginBottom: 10,
   },
 });
 
