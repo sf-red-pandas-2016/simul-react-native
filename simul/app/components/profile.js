@@ -63,7 +63,10 @@ class Profile extends Component{
       passProps: { userId: this.state.userId },
     })
   }
+  // cat avatar works https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif
+  // dino avatar works https://media.giphy.com/media/13MGgJHu1nYAkE/giphy.gif
 
+// fake person that works https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnl2wCrCFBw9PnHukDYg6weIBSIMdSi8vSguLE6tjaRcps8OOw
   render() {
     return (
       <View style={styles.container}>
