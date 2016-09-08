@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import I18n from 'react-native-i18n'
 
 import {
   StyleSheet,
   Text,
   View,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 
 import Profile from './profile.js';
@@ -41,18 +43,24 @@ class Story extends Component{
   }
 
   render() {
+    if (this.props.story.photo !== null){
+      var photo = this.props.story.photo
+    }
+
     return (
       <View style={styles.container}>
 
       <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
-        {this.state.user.name} Profile
+        {this.state.user.name + "'s " + I18n.t('profile')}
         </Text>
       </TouchableHighlight>
 
       <Text>Created at:</Text>
       <Text>{this.props.story.created_at}</Text>
+
       <Text style={styles.title}>{this.props.story.title}</Text>
+      <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
       <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
 
