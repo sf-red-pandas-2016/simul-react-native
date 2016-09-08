@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import I18n from 'react-native-i18n'
 
 import {
   StyleSheet,
@@ -12,7 +13,6 @@ import {
   Modal,
 } from 'react-native';
 
-import I18n from 'react-native-i18n'
 var RNUploader = require('NativeModules').RNUploader;
 
 class ImageUpload extends Component{
@@ -154,7 +154,7 @@ class ImageUpload extends Component{
         <View style={styles.container}>
 
           <Text style={ styles.title }>
-            react-native-uploader example
+            Image Uploader
           </Text>
 
           <Modal
@@ -170,11 +170,11 @@ class ImageUpload extends Component{
 
           <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
             <TouchableOpacity style={ styles.button } onPress={ this._addImage.bind( this ) }>
-              <Text>Add Image</Text>
+              <Text>{I18n.t('addImage')}</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={ styles.button } onPress={ this._uploadImages.bind( this ) }>
-              <Text>Upload</Text>
+              <Text>{I18n.t('upload')}</Text>
             </TouchableOpacity>
 
           </View>
