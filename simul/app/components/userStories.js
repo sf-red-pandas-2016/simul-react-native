@@ -57,27 +57,32 @@ class UserStories extends Component{
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={{marginTop: 25}}>{I18n.t('storiesBy') + " " + this.state.name}</Text>
-        <ListView
-          style={styles.listItems}
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) =>
-            <View>
-              <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
-              <TouchableHighlight onPress={ () => this._onPressStory(rowData)}>
-                <Text style={styles.listText}> {rowData.title} </Text>
-              </TouchableHighlight>
-            </View>
-          }
-          renderHeader={ () => this.newestStory() }
-        />
-      </View>
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.container}>
+          <Text style={{marginTop: 25}}>{I18n.t('storiesBy') + " " + this.state.name}</Text>
+          <ListView
+            style={styles.listItems}
+            dataSource={this.state.dataSource}
+            renderRow={(rowData) =>
+              <View>
+                <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
+                <TouchableHighlight onPress={ () => this._onPressStory(rowData)}>
+                  <Text style={styles.listText}> {rowData.title} </Text>
+                </TouchableHighlight>
+              </View>
+            }
+            renderHeader={ () => this.newestStory() }
+          />
+        </View>
+      </ScrollView>
     )
   }
 };
 
 var styles = StyleSheet.create({
+  superContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
