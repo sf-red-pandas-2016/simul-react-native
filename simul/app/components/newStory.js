@@ -20,6 +20,7 @@ class NewStory extends Component{
     this.state = {
       user_Id: this.props.userId,
       name: this.props.name,
+      username: this.props.username,
       title: "",
       content: "",
       errors: [],
@@ -44,7 +45,13 @@ class NewStory extends Component{
         this.props.navigator.push({
           title: I18n.t('story'),
           component: Story,
-          passProps: { story: res.story, userId: this.state.user_Id, name: this.state.name},
+          passProps: {
+             story_created_at: res.story.created_at,
+             story_title: res.story.title,
+             story_content: res.story.content,
+             userId: this.state.user_Id,
+             name: this.state.name,
+           },
         })
   }
 

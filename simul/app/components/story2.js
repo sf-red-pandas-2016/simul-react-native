@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-import Profile from './profile.js';
+import Profile from './profile2.js';
 import api from '../Utils/api.js';
 import Home from './home.js'
 import I18n from 'react-native-i18n'
@@ -18,7 +18,9 @@ class Story extends Component{
     this.state = {
       user_Id: this.props.userId,
       name: this.props.name,
-      story: this.props.story,
+      story_created_at: this.props.story_created_at,
+      story_title: this.props.story_title,
+      story_content: this.props.story_content,
     };
   }
 
@@ -29,29 +31,30 @@ class Story extends Component{
     })
   }
   _onPressProfile() {
-    api.getUser(this.state.user_Id).then((res) => {
       this.props.navigator.push({
-        title: res.user.username,
+        title: this.state.name,
         component: Profile,
-        passProps: {user: res.user, messages: res.messages, stories: res.stories}
+        passProps: {
+           userId: this.state.user_Id,
+           name: this.state.name,
+         },
       })
-    })
   }
 
   render() {
     return (
       <View style={styles.container}>
 
-      <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
+      <TouchableHighlight onPress={() => this._onPressProfile()} style={styles.button}>
         <Text style={styles.buttonText}>
         {this.state.name} {I18n.t('profile')}
         </Text>
       </TouchableHighlight>
 
       <Text>Created at:</Text>
-      <Text>{this.props.story.created_at}</Text>
-      <Text style={styles.title}>{this.props.story.title}</Text>
-      <Text style={styles.content}>{this.props.story.content}</Text>
+      <Text>{this.props.story_created_at}</Text>
+      <Text style={styles.title}>{this.props.story_title}</Text>
+      <Text style={styles.content}>{this.props.story_content}</Text>
       </View>
 
 
