@@ -29,16 +29,14 @@ class Message extends Component{
   }
 
   render() {
+    console.log(this.state.message.author)
     return (
       <View style={styles.container}>
-        <Text>{I18n.t('message')}</Text>
         <Text style={styles.to}>{this.state.name}</Text>
         <Text style={styles.from}>{I18n.t('from')} {this.state.message.author}</Text>
-        <Text>{I18n.t('senderContact')}</Text>
-        <Text>{this.state.message.author_contact}</Text>
+        <Text style={styles.from}>{I18n.t('senderContact')} {this.state.message.author_contact}</Text>
         <Text style={styles.from}>{I18n.t('date')} {this.state.message.created_at}</Text>
         <Text style={styles.title}>{I18n.t('subject')} {this.state.message.subject}</Text>
-        <Text>{I18n.t('content')}</Text>
         <Text style={styles.content}>{this.state.message.content}</Text>
       </View>
     )
@@ -52,14 +50,15 @@ var styles = StyleSheet.create({
     backgroundColor: '#27c2dc'
   },
   title: {
-   fontSize: 40,
+   fontSize: 17,
    alignSelf: 'center',
+   fontWeight: 'bold',
    margin: 40,
    backgroundColor: '#27c2dc',
   },
   from: {
     alignSelf: 'flex-start',
-    fontSize: 21,
+    fontSize: 15,
     fontStyle: 'italic',
     marginTop: 10,
     marginBottom: 5,
@@ -73,7 +72,7 @@ var styles = StyleSheet.create({
   },
   content: {
     alignSelf: 'center',
-    fontSize: 21,
+    fontSize: 17,
     marginTop: 10,
     marginBottom: 5,
   }
