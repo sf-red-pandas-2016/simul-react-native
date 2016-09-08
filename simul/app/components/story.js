@@ -5,6 +5,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 
 import Profile from './profile.js';
