@@ -7,6 +7,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 import Avatar from 'react-native-interactive-avatar';
@@ -70,60 +71,65 @@ class Profile extends Component{
       var photo = this.props.user.photo
     }
     return (
-      <View style={styles.container}>
-        <Avatar
-               source={photo}
-               size={'medium'}
-               interactive={true}
-               onChange={this.handleImageChange}
-        />
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.container}>
+          <Avatar
+                 source={photo}
+                 size={'medium'}
+                 interactive={true}
+                 onChange={this.handleImageChange}
+          />
 
-        <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
+          <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-        <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+          <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+          <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
 
-        <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
-          <Text style={styles.buttonText}>
-          {I18n.t('addStory')}
-          </Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
+            <Text style={styles.buttonText}>
+            {I18n.t('addStory')}
+            </Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
-          <Text style={styles.buttonText}>
-          {I18n.t('messages')}
-          </Text>
-        </TouchableHighlight>
+          <TouchableHighlight onPress={() => this._onPressViewMessages()} style={styles.button}>
+            <Text style={styles.buttonText}>
+            {I18n.t('messages')}
+            </Text>
+          </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
-          <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
-        </TouchableHighlight>
-
-
-        <View style={styles.personalInfo}>
-        <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
-        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
-        <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
-        <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
-        <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
-        <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
-        </View>
+          <TouchableHighlight onPress={() => this._onPressUserStories()} style={styles.button}>
+            <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
+          </TouchableHighlight>
 
 
+          <View style={styles.personalInfo}>
+          <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
+          <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
+          <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
+          <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
+          <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
+          <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
+          </View>
 
 
-        <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
-          <Text style={styles.buttonText}>
-            {I18n.t('contact')}
-          </Text>
-        </TouchableHighlight>
+
+
+          <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
+            <Text style={styles.buttonText}>
+              {I18n.t('contact')}
+            </Text>
+          </TouchableHighlight>
 
       </View>
+    </ScrollView>
     )
   }
 };
 
 var styles = StyleSheet.create({
+  superContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
