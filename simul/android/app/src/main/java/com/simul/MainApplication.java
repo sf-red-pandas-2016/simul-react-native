@@ -4,7 +4,11 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.airbnb.android.react.maps.MapsPackage;
+=======
+import com.imagepicker.ImagePickerPackage;
+>>>>>>> cf49ec8dcce07a6b3a70384e781772ea0bacf883
 import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -26,7 +30,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+<<<<<<< HEAD
             new MapsPackage(),
+=======
+            new ImagePickerPackage(),
+>>>>>>> cf49ec8dcce07a6b3a70384e781772ea0bacf883
             new ReactNativeI18n()
       );
     }

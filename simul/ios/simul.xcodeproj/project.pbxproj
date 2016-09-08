@@ -25,6 +25,7 @@
 		33FB816460164C4FAF78ED4F /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1303449E852B4830B3A268D7 /* libRNI18n.a */; };
 		AC7C1B1D23714FF28C22CB24 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCDB6CB1D0F4D9D82B8A3D6 /* libAirMaps.a */; };
 		9FCA7FDF79E2435AA406B5DC /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D49D05C8D04D8DAF417593 /* libRNUploader.a */; };
+		4ECF83B238364C5FA23193BF /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B9A65CE57F4008AA2D7B14 /* libRNImagePicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,10 @@
 		ECB78FE388E3475D98D0A50C /* RNUploader.xcodeproj */ = {isa = PBXFileReference; name = "RNUploader.xcodeproj"; path = "../node_modules/react-native-uploader/RNUploader/RNUploader.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		81D49D05C8D04D8DAF417593 /* libRNUploader.a */ = {isa = PBXFileReference; name = "libRNUploader.a"; path = "libRNUploader.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 
+
+
+		4999057238D24852A8BD7562 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		44B9A65CE57F4008AA2D7B14 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +174,7 @@
 
 				9FCA7FDF79E2435AA406B5DC /* libRNUploader.a in Frameworks */,
 
+				4ECF83B238364C5FA23193BF /* libRNImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +302,10 @@
 				CA5DD2B623A14D7FB435775A /* AirMaps.xcodeproj */,
 
 				ECB78FE388E3475D98D0A50C /* RNUploader.xcodeproj */,
+
+
+
+				4999057238D24852A8BD7562 /* RNImagePicker.xcodeproj */,
 
 			);
 			name = Libraries;
@@ -613,6 +623,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -631,6 +642,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -645,7 +657,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
+
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+
 				);
 				INFOPLIST_FILE = "simul/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -667,7 +683,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
+
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+
 				);
 				INFOPLIST_FILE = "simul/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -719,7 +739,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
+
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -761,7 +785,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/RNI18n",
+
 					"$(SRCROOT)/../node_modules/react-native-maps/ios/AirMaps/**",
+
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
