@@ -7,7 +7,6 @@ import {
   View,
   TouchableHighlight,
   Image,
-  ScrollView,
 } from 'react-native';
 
 import Profile from './profile.js';
@@ -48,31 +47,25 @@ class Story extends Component{
       var photo = this.props.story.photo
     }
     return (
-      <ScrollView style={styles.superContainer}>
-        <View style={styles.container}>
+      <View style={styles.container}>
+      <Text>Created at:</Text>
+      <Text>{this.props.story.created_at}</Text>
+      <Text style={styles.title}>{this.props.story.title}</Text>
+      <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
+      <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
+      <Text style={styles.buttonText}>
+      {this.state.user.name + "'s " + I18n.t('profile')}
+      </Text>
+      </TouchableHighlight>
+      <Text style={styles.content}>{this.props.story.content}</Text>
+      </View>
 
-          <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
-            <Text style={styles.buttonText}>
-            {this.state.user.name + "'s " + I18n.t('profile')}
-            </Text>
-          </TouchableHighlight>
-
-          <Text>Created at:</Text>
-          <Text>{this.props.story.created_at}</Text>
-
-          <Text style={styles.title}>{this.props.story.title}</Text>
-          <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
-          <Text style={styles.content}>{this.props.story.content}</Text>
-        </View>
-      </ScrollView>
     )
   }
 };
 
 var styles = StyleSheet.create({
-  superContainer: {
-    flex: 1,
-  },
+
   container: {
     flex: 1,
     justifyContent: 'center',
