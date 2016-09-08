@@ -12,7 +12,7 @@ import Story from './story';
 import I18n from 'react-native-i18n'
 
 class UserStories extends Component{
-  constructor(props) {
+    constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
@@ -53,6 +53,7 @@ class UserStories extends Component{
       </View>
     )
   }
+
   render() {
     return (
       <View style={styles.container}>
