@@ -22,7 +22,7 @@ class Home extends Component{
   constructor(props) {
     super(props);
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  
+
     this.state = {
       stories: '?',
       dataSource: ds.cloneWithRows(['harry', 'potter']),
@@ -110,8 +110,6 @@ class Home extends Component{
   }
 
   render() {
-    console.log(api.getStories())
-    console.log(this.state.dataSource)
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>

@@ -34,7 +34,6 @@ var api = {
         }
       })
       .done();
-      console.log(content_array);
       return content_array;
   },
   getStories3(){

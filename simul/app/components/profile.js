@@ -56,7 +56,7 @@ class Profile extends Component{
     this.props.navigator.push({
       title: I18n.t('contact'),
       component: Contact,
-      passProps: { userId: this.state.userId },
+      passProps: { userId: this.state.userId, name: this.state.name },
     })
   }
 

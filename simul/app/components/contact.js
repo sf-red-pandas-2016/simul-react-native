@@ -10,14 +10,15 @@ import {
 
 import I18n from 'react-native-i18n'
 import UserMessages from './userMessages';
+import Message from './message';
 
 class Contact extends Component{
   constructor(props) {
     super(props);
 
     this.state = {
-      user_Id: this.props.user.id,
-      username: this.props.user.name,
+      user_Id: this.props.userId,
+      name: this.props.name,
       subject: "",
       author: "",
       content: "",
@@ -26,56 +27,64 @@ class Contact extends Component{
     }
   }
 
-  async _onPressRegister(){
-    try {
-      let response = await fetch('https:///simulnos.herokuapp.com/api/users/${this.state.user_Id}/messages', {
+  async _onPressSend(){
+    console.log(this.state.user_Id)
+    console.log(this.state.subject)
+    console.log(this.state.author)
+    console.log(this.state.content)
+    console.log(this.state.author_contact)
+      let response = await fetch(`https://simulnos.herokuapp.com/api/users/${this.state.user_Id}/messages`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          message: {
             user_id: this.state.user_Id,
             subject: this.state.subject,
             author: this.state.author,
             content: this.state.content,
-            author_contact: this.state.author_contact,
-          }
+            author_contact: this.state.author_contact
         })
-      });
-      let res = await response.text();
-    } catch(errors){
-    }
+      })
+      let res = await response.json();
+      console.log(res.message.id);
+        this.props.navigator.push({
+          title: I18n.t('message'),
+          component: Message,
+          passProps: { userId: this.state.user_Id, messageId: res.message.id },
+        })
   }
 
   render() {
+    console.log(this.state.name);
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>{this.state.username}</Text>
+        <Text style={styles.to}>{this.state.name}</Text>
         <Text style={styles.title}>
-          {I18n.t('Leave me a message.')}
+          {I18n.t('contact')}
         </Text>
         <TextInput
-          onChangeText={ (val)=> this.setState({name: val}) }
+          onChangeText={ (val)=> this.setState({author: val}) }
           style={styles.searchInput}
-          placeholder={I18n.t('From')}/>
+          placeholder={I18n.t('from')}/>
         <TextInput
-          onChangeText={ (val)=> this.setState({name: val}) }
+          onChangeText={ (val)=> this.setState({author_contact: val}) }
           style={styles.searchInput}
-          placeholder={I18n.t('Contact')}/>
+          placeholder={I18n.t('contactInformation')}/>
         <TextInput
-          onChangeText={ (val)=> this.setState({name: val}) }
+          onChangeText={ (val)=> this.setState({subject: val}) }
           style={styles.searchInput}
-          placeholder={I18n.t('Subject')}/>
+          placeholder={I18n.t('subject')}/>
         <TextInput
-          onChangeText={ (val)=> this.setState({name: val}) }
+          onChangeText={ (val)=> this.setState({content: val}) }
           style={styles.message}
-          placeholder={I18n.t('Message')}/>
+          placeholder={I18n.t('message')}/>
         <TouchableHighlight
+          onPress={() => this._onPressSend()}
           style={styles.button}
           underlayColor="white">
-            <Text style={styles.buttonText}>{I18n.t(Send)}</Text>
+            <Text style={styles.buttonText}>{I18n.t('send')}</Text>
         </TouchableHighlight>
       </View>
     )
@@ -135,7 +144,7 @@ var styles = StyleSheet.create({
     alignSelf: 'flex-end',
     fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 100,
+    marginBottom: 10,
   },
 });
 
