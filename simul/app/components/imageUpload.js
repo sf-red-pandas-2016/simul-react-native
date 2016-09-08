@@ -233,7 +233,7 @@ class ImageUpload extends Component{
       borderColor: '#DDD',
       padding: 20,
       borderRadius: 12,
-      backgroundColor: 'lightyellow',
+      backgroundColor: '#27c2dc',
       justifyContent: 'center',
       alignItems: 'center',
     },
