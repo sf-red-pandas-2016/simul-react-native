@@ -35,7 +35,8 @@ class Profile extends Component{
       this.props.navigator.push({
         title: I18n.t('newStory'),
         component: NewStory,
-        passProps: {userId: this.state.userId},
+        passProps: {userId: this.state.userId, name: this.state.name, username: this.state.username,
+        },
       })
     }
 
@@ -43,7 +44,7 @@ class Profile extends Component{
     this.props.navigator.push({
       title: I18n.t('messages'),
       component: UserMessages,
-      passProps: { userId: this.state.userId, messages: this.state.messages },
+      passProps: { userId: this.state.userId, name: this.state.name, messages: this.state.messages },
     })
   }
 
@@ -71,7 +72,7 @@ class Profile extends Component{
     this.props.navigator.push({
       title: I18n.t('contact'),
       component: Contact,
-      passProps: { userId: this.state.userId },
+      passProps: { userId: this.state.userId, name: this.state.name },
     })
   }
   // cat avatar works https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif

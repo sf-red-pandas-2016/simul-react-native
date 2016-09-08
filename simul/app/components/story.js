@@ -12,6 +12,7 @@ import {
 
 import Profile from './profile.js';
 import api from '../Utils/api.js';
+import Home from './home.js'
 
 class Story extends Component{
   constructor(props) {

@@ -8,27 +8,77 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import I18n from 'react-native-i18n'
+import UserMessages from './userMessages';
+import Message from './message';
+
 class Contact extends Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user_Id: this.props.userId,
+      name: this.props.name,
+      subject: "",
+      author: "",
+      content: "",
+      author_contact: "",
+      errors: [],
+    }
+  }
+
+  async _onPressSend(){
+      let response = await fetch(`https://simulnos.herokuapp.com/api/users/${this.state.user_Id}/messages`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: this.state.user_Id,
+            subject: this.state.subject,
+            author: this.state.author,
+            content: this.state.content,
+            author_contact: this.state.author_contact
+        })
+      })
+      let res = await response.json();
+        this.props.navigator.push({
+          title: I18n.t('message'),
+          component: Message,
+          passProps: { userId: this.state.user_Id, message: res.message, name: this.state.name},
+        })
+  }
+
   render() {
+    console.log(this.state.name);
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>Jim Smith</Text>
+        <Text style={styles.to}>{this.state.name}</Text>
         <Text style={styles.title}>
-          Leave me a message.
+          {I18n.t('contact')}
         </Text>
         <TextInput
+          onChangeText={ (val)=> this.setState({author: val}) }
           style={styles.searchInput}
-          placeholder='From'/>
-          <TextInput
-            style={styles.searchInput}
-            placeholder='Subject'/>
-          <TextInput
-            style={styles.searchInput}
-            placeholder='Message'/>
+          placeholder={I18n.t('from')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({author_contact: val}) }
+          style={styles.searchInput}
+          placeholder={I18n.t('contactInformation')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({subject: val}) }
+          style={styles.searchInput}
+          placeholder={I18n.t('subject')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({content: val}) }
+          style={styles.message}
+          placeholder={I18n.t('message')}/>
         <TouchableHighlight
+          onPress={() => this._onPressSend()}
           style={styles.button}
           underlayColor="white">
-            <Text style={styles.buttonText}>Send</Text>
+            <Text style={styles.buttonText}>{I18n.t('send')}</Text>
         </TouchableHighlight>
       </View>
     )
@@ -49,6 +99,16 @@ var styles = StyleSheet.create({
   },
   searchInput: {
     height: 50,
+    padding: 4,
+    marginRight: 5,
+    fontSize: 23,
+    borderWidth: 1,
+    borderColor: 'white',
+    borderRadius: 8,
+    color: 'white'
+  },
+  message: {
+    height: 200,
     padding: 4,
     marginRight: 5,
     fontSize: 23,
@@ -78,7 +138,7 @@ var styles = StyleSheet.create({
     alignSelf: 'flex-end',
     fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 200,
+    marginBottom: 10,
   },
 });
 
