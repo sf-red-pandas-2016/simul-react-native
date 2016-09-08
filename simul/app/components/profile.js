@@ -16,8 +16,6 @@ import UserMessages from './userMessages';
 import Contact from './contact';
 import userStories from './userStories';
 
-
-// <Text> {JSON.stringify(this.props.user)}</Text>
 class Profile extends Component{
 
   constructor(props) {
