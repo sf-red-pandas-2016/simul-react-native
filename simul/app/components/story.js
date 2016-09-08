@@ -43,6 +43,10 @@ class Story extends Component{
   }
 
   render() {
+    if (this.props.story.photo !== null){
+      var photo = this.props.story.photo
+    }
+
     return (
       <View style={styles.container}>
 
