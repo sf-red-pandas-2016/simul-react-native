@@ -48,13 +48,15 @@ class Story extends Component{
 
       <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
         <Text style={styles.buttonText}>
-        {this.state.user.name} Profile
+        {this.state.user.name + "'s " + I18n.t('profile')}
         </Text>
       </TouchableHighlight>
 
       <Text>Created at:</Text>
       <Text>{this.props.story.created_at}</Text>
+
       <Text style={styles.title}>{this.props.story.title}</Text>
+      <Image source={require('../images/istanbul-turkey.jpg')} style={{width: 400, height: 225}}/>
       <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
 
