@@ -95,7 +95,6 @@ class Profile extends Component{
              interactive={true}
              onChange={this.handleImageChange}
          />
-        <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
         <Text style={styles.newestStory}>{ recentStory }</Text>
