@@ -8,10 +8,11 @@ import {
   View,
   TouchableHighlight,
   Mapview,
+  ListView,
 } from 'react-native';
 
 import Avatar from 'react-native-interactive-avatar';
-import I18n from 'react-native-i18n'
+import I18n from 'react-native-i18n';
 import NewStory from './newStory';
 import UserMessages from './userMessages';
 import Contact from './contact';
@@ -48,7 +49,37 @@ class Profile extends Component{
     })
   }
 
+  _onPressFeaturedStory(){
+
+  }
+
+  _onPressStory(){
+
+  }
+
   latestStory() {
+      var recentStory = this.state.stories.slice(-1)[0]
+      return(
+      <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+
+
+        <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
+        <Text style={{color: 'white'}}>{recentStory.content}</Text>
+        </TouchableHighlight>
+
+        <Image source={{uri: recentStory.photo}} style={{width: 100, height: 100}}/>
+
+        <Text style={{textAlign: 'right'}}>-{recentStory.name}</Text>
+      </View>
+    )
+  }
+
+  _onPressStory(clickedStory) {
+    this.props.navigator.push({
+      title: I18n.t('story'),
+      component: Story,
+      passProps: {story: clickedStory},
+    })
   }
 
   _onPressUserStories() {
@@ -74,11 +105,16 @@ class Profile extends Component{
              size={'medium'}
              interactive={true}
              onChange={this.handleImageChange}
+
          />
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-        <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+        <View
+           style={styles.listItems}
+             <TouchableHighlight
+               onPress={ () => this._onPressStory(rowData)}>
+             </TouchableHighlight>}
+           renderHeader={ () => this.latestStory() } />
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
@@ -105,8 +141,6 @@ class Profile extends Component{
         <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
         <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
         </View>
-
-
 
 
         <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
@@ -176,6 +210,9 @@ var styles = StyleSheet.create({
   googleMap: {
     height: 200,
     margin: 40,
+  },
+  listItems: {
+    flex: 9.5,
   },
 
   });

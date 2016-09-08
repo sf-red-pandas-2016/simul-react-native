@@ -110,6 +110,7 @@ class Home extends Component{
                 <Text style={styles.listText}>{rowData.title}</Text>
               </TouchableHighlight>}
             renderHeader={ () => this.featuredStory() } />
+            
       </View>
     )
   }
