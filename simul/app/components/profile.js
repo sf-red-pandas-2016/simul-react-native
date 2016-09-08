@@ -7,6 +7,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 
 import Avatar from 'react-native-interactive-avatar';
@@ -25,6 +26,7 @@ class Profile extends Component{
       name: this.props.user.name,
       username: this.props.user.username,
       messages: this.props.messages,
+      // stories: this.props.stories,
     }
   }
 
@@ -45,6 +47,16 @@ class Profile extends Component{
   }
 
   latestStory() {
+    // var recentStory = this.state.userId.stories.slice(-1)[0]
+    return(
+    <View style={{backgroundColor: '#FFB30F', borderWidth: 10, height: 100, width: 100, borderColor: '#27c2dc', padding: 10}}>
+      <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
+      <Text style={{color: 'white'}}>{recentStory.content}</Text>
+      </TouchableHighlight>
+      <Text style={{textAlign: 'right'}}>{recentStory.name}</Text>
+    </View>
+  )
+
   }
 
   _onPressUserStories() {
@@ -66,22 +78,26 @@ class Profile extends Component{
 
 // fake person that works https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnl2wCrCFBw9PnHukDYg6weIBSIMdSi8vSguLE6tjaRcps8OOw
   render() {
-    if (this.props.user.photo !== null){
-      var photo = this.props.user.photo
+
+    var recentStory = this.props.stories.slice(-1)[0].content
+
+    if (recentStory.photo !== null) {
+      var photo = recentStory.photo
     }
+
     return (
       <View style={styles.container}>
         <Avatar
-               source={photo}
-               size={'medium'}
-               interactive={true}
-               onChange={this.handleImageChange}
-        />
-
+             source={'https://media2.giphy.com/media/sbLpwwHlgls8E/giphy.gif'}
+             size={'medium'}
+             interactive={true}
+             onChange={this.handleImageChange}
+         />
+        <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
-        <Text style={styles.newestStory}>"My day today was very interesting First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-        <Text style={styles.newestStoryArabic}>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
+        <Text style={styles.newestStory}>{ recentStory }</Text>
+        <Text style={styles.newestStoryArabic}></Text>
 
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
