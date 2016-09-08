@@ -19,7 +19,6 @@ class Search extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       searchString: '',
-      isLoading: false,
       stories: '?',
       dataSource: ds.cloneWithRows([]),
     };
@@ -35,6 +34,10 @@ class Search extends Component {
   console.log(this.state.searchString);
   }
 
+  // onPressSearchResult() {
+  //
+  // }
+
   async fetchData() {
       var url = 'https://simulnos.herokuapp.com/api'
       const response = await fetch(url)
@@ -46,27 +49,25 @@ class Search extends Component {
   }
 
   executeQuery(searchString) {
-  console.log(searchString);
-  this.setState({ isLoading: true });
 
   var storyobjects = this.state.stories
   var searchtext = this.state.searchString
   var regex = new RegExp(searchtext, 'gi')
   var resultarray = []
+  var searchresults = []
 
   for(var i=0; i < storyobjects.length; i++) {
-    console.log(storyobjects.length);
-    console.log(searchtext);
-    console.log(regex);
     var result = storyobjects[i].content.match(regex)
-    resultarray.push(result)
-    console.log(resultarray);
+    if (result !== null) {
+        resultarray.push(result);
+      }
+    // resultarray.forEach(result, index) {
+    //   searchresults.push(result);
+    //   }
     }
-    return resultarray;
-  }
+};
 
   render() {
-    // console.log('Search.render');
     return (
       <View style={styles.container}>
           <TextInput
@@ -86,7 +87,7 @@ class Search extends Component {
       //       dataSource={this.state.dataSource}
       //       renderRow={(rowData) =>
       //         <TouchableHighlight
-      //           onPress={ () => this._onPressStory(rowData)}>
+      //           onPress={ () => this.onPressSearchResult(rowData)}>
       //           <Text style={styles.listText}>{rowData.title}</Text>
       //           </TouchableHighlight>}
       //   />
@@ -101,8 +102,8 @@ const styles = StyleSheet.create({
     padding: 8,
     flexDirection: 'row',
     alignItems: 'center',
-    // backgroundColor: '#27c2dc',
   },
+
   input: {
     height: 36,
     padding: 4,
@@ -113,18 +114,15 @@ const styles = StyleSheet.create({
     borderColor: '#27C2DC',
     borderRadius: 8,
     color: '#48BBEC',
-    // height: 30,
-    // flex: 1,
-    // paddingHorizontal: 8,
-    // fontSize: 15,
     backgroundColor: '#FFFFFF',
-    // borderRadius: 2,
   },
+
   buttonText: {
   fontSize: 18,
   color: 'white',
   alignSelf: 'center'
   },
+
   button: {
     height: 36,
     flex: 1,
@@ -138,15 +136,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
 });
-
-// const Search = (props) => (
-//   <View style={styles.container}>
-//     <TextInput
-//       style={styles.input}
-//       placeholder={I18n.t('search')}
-//       onChangeText={(text) => console.log('searching for ', text)}
-//     />
-//   </View>
-// );
 
 module.exports = Search;
