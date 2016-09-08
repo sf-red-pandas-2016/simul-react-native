@@ -102,6 +102,8 @@ class Profile extends Component{
 
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
+
+
         <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
           <Text style={styles.buttonText}>
           {I18n.t('addStory')}

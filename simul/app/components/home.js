@@ -6,6 +6,7 @@ import {
   View,
   ListView,
   TouchableHighlight,
+  Image,
 } from 'react-native';
 
 import Search from './search';
@@ -70,12 +71,27 @@ class Home extends Component{
     })
   }
 
+  _onPressFeaturedStory() {
+  }
+
+  _onPressFeaturedProfile() {
+  }
+
   featuredStory() {
+
+    var recentStory = this.state.stories.slice(-1)[0];
+
       return(
         <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
-          <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
-          <Text>كان يوم لي اليوم مثيرة جدا للاهتمام. أولا استيقظت في وقت متأخر، وأنا لا يمكن أن تجد لي ملابس نظيفة وأمي</Text>
-          <Text style={{textAlign: 'right'}}>-Ahmed</Text>
+
+          <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
+            <Text style={{color: 'white'}}>{recentStory.content}</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
+            <Text style={{textAlign: 'right'}}>{}</Text>
+          </TouchableHighlight>
+
         </View>
       )
   }
@@ -87,6 +103,10 @@ class Home extends Component{
   }
 
   render() {
+    var recentStory = this.state.stories.slice(-1)[0];
+    if (recentStory.photo !== null) {
+      var photo = recentStory.photo
+    }
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
@@ -110,8 +130,9 @@ class Home extends Component{
                 <Text style={styles.listText}>{rowData.title}</Text>
               </TouchableHighlight>}
             renderHeader={ () => this.featuredStory() } />
-            
       </View>
+
+
     )
   }
 };
