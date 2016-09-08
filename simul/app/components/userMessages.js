@@ -6,6 +6,7 @@ import {
   View,
   ListView,
   TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 import Message from './message';
@@ -68,11 +69,16 @@ class UserMessages  extends Component{
 
 
 var styles = StyleSheet.create({
+  superContainer: {
+    flex: 1,
+    backgroundColor: '#27c2dc',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 60,
+    backgroundColor: '#27c2dc',
   },
   title: {
    flex: 2,

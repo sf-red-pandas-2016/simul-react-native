@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import I18n from 'react-native-i18n';
+import ImageUpload from './imageUpload';
 
 import {
   StyleSheet,
   Text,
   View,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 import I18n from 'react-native-i18n'
 import UserStories from './userStories';
 import Story from './story2';
+import ImageUpload from './imageUpload';
 
 class NewStory extends Component{
 
@@ -55,29 +59,49 @@ class NewStory extends Component{
         })
   }
 
+  _onPressAddPhoto() {
+    this.props.navigator.push({
+      title: I18n.t('photo'),
+      component: ImageUpload,
+      passProps: {userId: this.state.user_Id},
+    })
+  }
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-      <TextInput
-        onChangeText={ (val)=> this.setState({title: val}) }
-        style={styles.searchInput}
-        placeholder={I18n.t('subject')}/>
-      <TextInput
-        onChangeText={ (val)=> this.setState({content: val}) }
-        style={styles.message}
-        placeholder={I18n.t('content')}/>
-      <TouchableHighlight
-        onPress={() => this._onPressSend()}
-        style={styles.button}
-        underlayColor="white">
-          <Text style={styles.buttonText}>{I18n.t('send')}</Text>
-        </TouchableHighlight>
-      </View>
-    )
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.mainContainer}>
+        <TextInput
+          onChangeText={ (val)=> this.setState({title: val}) }
+          style={styles.searchInput}
+          placeholder={I18n.t('subject')}/>
+        <TextInput
+          onChangeText={ (val)=> this.setState({content: val}) }
+          style={styles.message}
+          placeholder={I18n.t('content')}/>
+          <TouchableHighlight
+            onPress={() => this._onPressAddPhoto()}
+            style={styles.button}
+            underlayColor="white">
+              <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
+          </TouchableHighlight>
+        <TouchableHighlight
+          onPress={() => this._onPressSend()}
+          style={styles.button}
+          underlayColor="white">
+            <Text style={styles.buttonText}>{I18n.t('post')}</Text>
+          </TouchableHighlight>
+        </View>
+      </ScrollView>
+
+      )
   }
 };
 var styles = StyleSheet.create({
+  superContainer: {
+   flex: 1,
+   backgroundColor: '#27c2dc',
+ },
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -91,7 +115,7 @@ var styles = StyleSheet.create({
     color: '#fff'
   },
   searchInput: {
-    height: 50,
+    height: 100,
     padding: 4,
     marginRight: 5,
     fontSize: 23,
