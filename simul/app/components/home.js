@@ -80,17 +80,24 @@ class Home extends Component{
   }
 
   featuredStory() {
+
+    var recentStory = this.state.stories.slice(-1)[0];
+    console.log(recentStory);
+
       return(
         <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+
+        <Image source={{uri: recentStory.photo }} style={{width: 350, height: 200}}/>
+
           <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
-            <Text style={{color: 'white'}}>"My day today was very interesting. First I woke up late and I couldn't find my clean clothes and my mom......"</Text>
+            <Text style={{color: 'white'}}>{recentStory.content}</Text>
           </TouchableHighlight>
 
-        <Image source={require('../images/istanbul-turkey.jpg')} style={{width: 100, height: 100}}/>
 
-        <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
-            <Text style={{textAlign: 'right'}}>-Ahmed</Text>
+          <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
+            <Text style={{textAlign: 'right'}}>{}</Text>
           </TouchableHighlight>
+
         </View>
       )
   }
