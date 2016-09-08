@@ -7,7 +7,8 @@ import {
   Text,
   View,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
 class NewStory extends Component{
@@ -27,25 +28,27 @@ class NewStory extends Component{
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <Text style={styles.title}>
-          {I18n.t('newStory')}
-        </Text>
-        <TextInput
-          style={styles.searchInput}
-          placeholder={I18n.t('writeStoryHere')}/>
-          <TouchableHighlight
-            onPress={() => this._onPressAddPhoto()}
-            style={styles.button}
-            underlayColor="white">
-              <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
-          </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.button}
-          underlayColor="white">
-            <Text style={styles.buttonText}>{I18n.t('post')}</Text>
-        </TouchableHighlight>
-      </View>
+      <ScrollView style={styles.superContainer}>
+          <View style={styles.mainContainer}>
+              <Text style={styles.title}>
+                {I18n.t('newStory')}
+              </Text>
+              <TextInput
+                style={styles.searchInput}
+                placeholder={I18n.t('writeStoryHere')}/>
+                <TouchableHighlight
+                  onPress={() => this._onPressAddPhoto()}
+                  style={styles.button}
+                  underlayColor="white">
+                    <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
+                </TouchableHighlight>
+              <TouchableHighlight
+                style={styles.button}
+                underlayColor="white">
+                  <Text style={styles.buttonText}>{I18n.t('post')}</Text>
+              </TouchableHighlight>
+          </View>
+      </ScrollView>
     )
   }
 };
