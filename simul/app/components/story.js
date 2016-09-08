@@ -47,7 +47,6 @@ class Story extends Component{
     if (this.props.story.photo !== null){
       var photo = this.props.story.photo
     }
-
     return (
       <ScrollView style={styles.superContainer}>
         <View style={styles.container}>
@@ -66,7 +65,6 @@ class Story extends Component{
           <Text style={styles.content}>{this.props.story.content}</Text>
         </View>
       </ScrollView>
-
     )
   }
 };
