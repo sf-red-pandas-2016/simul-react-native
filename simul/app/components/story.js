@@ -60,7 +60,7 @@ class Story extends Component{
       <Text>{this.props.story.created_at}</Text>
 
       <Text style={styles.title}>{this.props.story.title}</Text>
-      <Image source={require('../images/istanbul-turkey.jpg')} style={{width: 400, height: 225}}/>
+      <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
       <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
 
