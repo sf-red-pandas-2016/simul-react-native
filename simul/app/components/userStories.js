@@ -64,7 +64,7 @@ class UserStories extends Component{
           renderRow={(rowData) =>
             <View>
               <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
-              <TouchableHighlight onPress={ () => this._onPressStory()}>
+              <TouchableHighlight onPress={ () => this._onPressStory(rowData)}>
                 <Text style={styles.listText}> {rowData.title} </Text>
               </TouchableHighlight>
             </View>
