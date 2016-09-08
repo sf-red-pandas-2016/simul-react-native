@@ -11,19 +11,39 @@ import {
 } from 'react-native';
 
 class NewStory extends Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      userId: this.props.userId,
+    }
+  }
+  _onPressAddPhoto() {
+    this.props.navigator.push({
+      title: I18n.t('photo'),
+      component: ImageUpload,
+      passProps: {userId: this.state.userId},
+    })
+  }
+
   render() {
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}>
-          New story.
+          {I18n.t('newStory')}
         </Text>
         <TextInput
           style={styles.searchInput}
-          Test/>
+          placeholder={I18n.t('writeStoryHere')}/>
+          <TouchableHighlight
+            onPress={() => this._onPressAddPhoto()}
+            style={styles.button}
+            underlayColor="white">
+              <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
+          </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
           underlayColor="white">
-            <Text style={styles.buttonText}>Post</Text>
+            <Text style={styles.buttonText}>{I18n.t('post')}</Text>
         </TouchableHighlight>
       </View>
     )
