@@ -35,15 +35,6 @@ class Search extends Component {
   console.log(this.state.searchString);
   }
 
-  executeQuery(searchString) {
-  console.log(searchString);
-  this.setState({ isLoading: true });
-  //iterate through storries contents
-  //find a regex match for searchString
-  //grab all matches
-  //show matches
-  }
-
   async fetchData() {
       var url = 'https://simulnos.herokuapp.com/api'
       const response = await fetch(url)
@@ -54,8 +45,28 @@ class Search extends Component {
       stories: stories})
   }
 
+  executeQuery(searchString) {
+  console.log(searchString);
+  this.setState({ isLoading: true });
+
+  var storyobjects = this.state.stories
+  var searchtext = this.state.searchString
+  var regex = new RegExp(searchtext, 'gi')
+  var resultarray = []
+
+  for(var i=0; i < storyobjects.length; i++) {
+    console.log(storyobjects.length);
+    console.log(searchtext);
+    console.log(regex);
+    var result = storyobjects[i].content.match(regex)
+    resultarray.push(result)
+    console.log(resultarray);
+    }
+    return resultarray;
+  }
+
   render() {
-    console.log('Search.render');
+    // console.log('Search.render');
     return (
       <View style={styles.container}>
           <TextInput
@@ -66,18 +77,19 @@ class Search extends Component {
           <TouchableHighlight style={styles.button} onPress={ () => this.executeQuery(this.state.searchString)}>
             <Text style={styles.buttonText}>Go</Text>
           </TouchableHighlight>
-        </View>
+      </View>
 
       // <View style={styles.container}>
-      //   <ListView
-      //     style={styles.listItems}
-      //     dataSource={this.state.dataSource}
-      //     renderRow={(rowData) =>
-      //       <TouchableHighlight
-      //         onPress={ () => this._onPressStory(rowData)}>
-      //         <Text style={styles.listText}>{rowData.title}</Text>
-      //       </TouchableHighlight>}
-      //     />
+      //   <TextInput
+      //     <ListView
+      //       style={styles.listItems}
+      //       dataSource={this.state.dataSource}
+      //       renderRow={(rowData) =>
+      //         <TouchableHighlight
+      //           onPress={ () => this._onPressStory(rowData)}>
+      //           <Text style={styles.listText}>{rowData.title}</Text>
+      //           </TouchableHighlight>}
+      //   />
       // </View>
     )
   }
