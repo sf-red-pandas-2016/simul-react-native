@@ -7,12 +7,49 @@ import {
   TextInput,
   TouchableHighlight
 } from 'react-native';
+import UserStories from './userStories';
+import Story from './story';
 
 class NewStory extends Component{
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user_Id: this.props.userId,
+      name: this.props.name,
+      title: "",
+      content: "",
+      errors: [],
+    }
+  }
+
+  async _onPressSend(){
+      let response = await fetch(`https://simulnos.herokuapp.com/api/users/${this.state.user_Id}/stories`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: this.state.user_Id,
+            title: this.state.title,
+            content: this.state.content,
+        })
+      })
+      let res = await response.json();
+        this.props.navigator.push({
+          title: I18n.t('story'),
+          component: Story,
+          passProps: { userId: this.state.user_Id, story: res.story, name: this.state.name},
+        })
+  }
+
+
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>Jim Smith</Text>
+      <Text style={styles.to}>{this.state.name}</Text>
         <Text style={styles.title}>
           New story.
         </Text>

@@ -28,11 +28,6 @@ class Contact extends Component{
   }
 
   async _onPressSend(){
-    console.log(this.state.user_Id)
-    console.log(this.state.subject)
-    console.log(this.state.author)
-    console.log(this.state.content)
-    console.log(this.state.author_contact)
       let response = await fetch(`https://simulnos.herokuapp.com/api/users/${this.state.user_Id}/messages`, {
         method: 'POST',
         headers: {
@@ -48,7 +43,6 @@ class Contact extends Component{
         })
       })
       let res = await response.json();
-      console.log(res.message.id);
         this.props.navigator.push({
           title: I18n.t('message'),
           component: Message,
