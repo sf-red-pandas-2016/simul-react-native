@@ -52,6 +52,7 @@ I18n.translations = {
     upload: 'Upload',
     addImage: 'Add Image',
     go: 'Go',
+    searchDot: 'Search...'
   },
   ar: {
     login: 'دخول',
@@ -93,6 +94,7 @@ I18n.translations = {
     upload: 'تحميل',
     addImage: 'إضافة صورة',
     go: 'اذهب',
+    searchDot: 'بحث...',
   }
 }
 
