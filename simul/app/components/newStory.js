@@ -12,7 +12,6 @@ class NewStory extends Component{
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>Jim Smith</Text>
         <Text style={styles.title}>
           New story.
         </Text>
