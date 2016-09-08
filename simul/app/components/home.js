@@ -113,7 +113,7 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FDFEFE'}}>
           <TouchableHighlight onPress={ () => this._onPressLogin()}>
             <Text style={styles.navLeft}> {I18n.t('login')} </Text>
           </TouchableHighlight>
@@ -160,7 +160,7 @@ var styles = StyleSheet.create({
     color: 'black',
     textAlign: 'center',
     borderWidth: 2,
-    borderColor: '#27c2dc',
+    borderColor: 'white',
     borderRadius: 4,
     marginBottom: 5,
     padding: 10,
@@ -168,18 +168,18 @@ var styles = StyleSheet.create({
   },
   navLeft: {
     flex: .25,
-    color: 'black',
+    color: '#31d2cd',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F',
+    backgroundColor: 'white',
     textAlign: 'center',
     marginRight: 110,
     padding: 10,
   },
   navRight: {
     flex: .25,
-    color: 'black',
+    color: '#31d2cd',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F',
+    backgroundColor: 'white',
     textAlign: 'center',
     marginLeft: 110,
     padding: 10,

@@ -21,7 +21,8 @@ class Enter extends Component{
   _navigate() {
     this.props.navigator.push({
       title: I18n.t('home'),
-      component: Home
+      component: Home,
+      tintColor: "#31d2cd",
     })
   }
   render() {
@@ -45,8 +46,8 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 150,
+    height: 150,
   },
   title: {
    fontSize: 40,
@@ -55,7 +56,8 @@ var styles = StyleSheet.create({
    backgroundColor: 'white',
    padding: 10,
    borderRadius: 6,
-   fontFamily: 'Avenir-Roman'
+   fontFamily: 'Avenir-Roman',
+   color: '#4a4c4d',
   },
   enter: {
     fontSize: 25,
@@ -67,9 +69,9 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
     borderRadius: 6,
-    backgroundColor: '#27c2dc',
-    fontFamily: 'Avenir-Roman'
-
+    backgroundColor: '#31d2cd',
+    fontFamily: 'Avenir-Roman',
+    color: 'white',
   }
 });
 
