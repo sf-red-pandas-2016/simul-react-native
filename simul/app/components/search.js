@@ -72,11 +72,11 @@ class Search extends Component {
       <View style={styles.container}>
           <TextInput
             style={styles.input}
-            placeholder={I18n.t('searchDot')}
+            placeholder={I18n.t('Search')}
             onChangeText={this.onSearchTextChanged.bind(this)}
           />
           <TouchableHighlight style={styles.button} onPress={ () => this.executeQuery(this.state.searchString)}>
-            <Text style={styles.buttonText}>{I18n.t('go')}</Text>
+            <Text style={styles.buttonText}>Go</Text>
           </TouchableHighlight>
       </View>
 

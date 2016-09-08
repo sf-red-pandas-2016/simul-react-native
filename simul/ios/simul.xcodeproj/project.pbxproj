@@ -23,9 +23,12 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		33FB816460164C4FAF78ED4F /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1303449E852B4830B3A268D7 /* libRNI18n.a */; };
+<<<<<<< HEAD
 		AC7C1B1D23714FF28C22CB24 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCDB6CB1D0F4D9D82B8A3D6 /* libAirMaps.a */; };
+=======
 		47D93CF91D80D51000BCF865 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D93CF81D80D4CE00BCF865 /* libRCTCameraRoll.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+>>>>>>> 2342bb532892cf936818e15915c46c6890868246
 		9FCA7FDF79E2435AA406B5DC /* libRNUploader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D49D05C8D04D8DAF417593 /* libRNUploader.a */; };
 		4ECF83B238364C5FA23193BF /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44B9A65CE57F4008AA2D7B14 /* libRNImagePicker.a */; };
 /* End PBXBuildFile section */
