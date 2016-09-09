@@ -40,6 +40,7 @@ class UserMessages  extends Component{
   _onPressMessage(message) {
     this.props.navigator.push({
       title: I18n.t('message'),
+      tintColor: "#29c5da",
       component: Message,
       passProps: {message: message, userId: this.state.userId, name: this.state.name},
     })

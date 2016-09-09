@@ -27,12 +27,14 @@ class Story extends Component{
   _navigate() {
     this.props.navigator.push({
       title: I18n.t('home'),
+      tintColor: "#29c5da",
       component: Home
     })
   }
   _onPressProfile() {
       this.props.navigator.push({
         title: this.state.name,
+        tintColor: "#29c5da",
         component: Profile,
         passProps: {
            userId: this.state.user_Id,

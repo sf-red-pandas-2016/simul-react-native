@@ -46,6 +46,7 @@ class Contact extends Component{
         this.props.navigator.push({
           title: I18n.t('message'),
           component: Message,
+          tintColor: "#29c5da",
           passProps: { userId: this.state.user_Id, message: res.message, name: this.state.name},
         })
   }

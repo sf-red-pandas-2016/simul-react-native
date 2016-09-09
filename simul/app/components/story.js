@@ -38,6 +38,7 @@ class Story extends Component{
     api.getUser(this.props.story.user_id).then((res) => {
       this.props.navigator.push({
         title: res.user.username,
+        tintColor: "#29c5da",
         component: Profile,
         passProps: {user: res.user, messages: res.messages, stories: res.stories}
       })
@@ -52,18 +53,17 @@ class Story extends Component{
       <ScrollView style={styles.superContainer}>
         <View style={styles.container}>
 
-          <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
-            <Text style={styles.buttonText}>
-            {this.state.user.name + "'s " + I18n.t('profile')}
-            </Text>
-          </TouchableHighlight>
+        <Text style={styles.title}>{this.props.story.title.toUpperCase()}</Text>
+        <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
 
-          <Text>Created at:</Text>
-          <Text>{this.props.story.created_at}</Text>
+        <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
+        <Text style={styles.buttonText}>
+        {this.state.user.name + "'s " + I18n.t('profile')}
+        </Text>
+        </TouchableHighlight>
 
-          <Text style={styles.title}>{this.props.story.title}</Text>
-          <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
-          <Text style={styles.content}>{this.props.story.content}</Text>
+        <Text style={styles.content}>{this.props.story.content}</Text>
+
         </View>
       </ScrollView>
     )
@@ -85,10 +85,9 @@ var styles = StyleSheet.create({
     backgroundColor: '#27c2dc',
     // alignSelf: 'flex-start',
     alignItems: 'center',
-    marginBottom: 10,
-    marginTop: 100,
+    marginBottom: 20,
+    marginTop: 30,
     justifyContent: 'center',
-    borderRadius: 4
   },
   buttonText: {
     textAlign: 'center',
@@ -111,7 +110,7 @@ var styles = StyleSheet.create({
     color: '#4a4c4d',
     textAlign: 'center',
     padding: 5,
-    paddingTop: 15,
+    paddingTop: 5,
   },
 
 });

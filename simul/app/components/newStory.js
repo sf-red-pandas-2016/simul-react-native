@@ -47,6 +47,7 @@ class NewStory extends Component{
       console.log(res.story);
         this.props.navigator.push({
           title: I18n.t('story'),
+          tintColor: "#29c5da",
           component: Story,
           passProps: {
              story_created_at: res.story.created_at,
@@ -61,6 +62,7 @@ class NewStory extends Component{
   _onPressAddPhoto() {
     this.props.navigator.push({
       title: I18n.t('photo'),
+      tintColor: "#29c5da",
       component: ImageUpload,
       passProps: {userId: this.state.user_Id},
     })

@@ -45,6 +45,7 @@ class UserStories extends Component{
     console.log(clickedStory)
     this.props.navigator.push({
       title: I18n.t('story'),
+      tintColor: "#29c5da",
       component: Story,
       passProps: {story: clickedStory},
     })

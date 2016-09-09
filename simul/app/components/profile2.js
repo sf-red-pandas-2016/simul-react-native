@@ -47,6 +47,7 @@ class Profile extends Component{
       this.props.navigator.push({
         title: I18n.t('newStory'),
         component: NewStory,
+        tintColor: "#29c5da",
         passProps: {
           userId: this.state.userId,
           name: this.state.name,
@@ -58,6 +59,7 @@ class Profile extends Component{
   _onPressViewMessages(){
     this.props.navigator.push({
       title: I18n.t('messages'),
+      tintColor: "#29c5da",
       component: UserMessages,
       passProps: { userId: this.state.userId, name: this.state.name, messages: this.state.messages },
     })
@@ -69,6 +71,7 @@ class Profile extends Component{
   _onPressUserStories() {
     this.props.navigator.push({
       title: this.state.username,
+      tintColor: "#29c5da",
       component: userStories,
       passProps: { userId: this.state.userId, username: this.state.username, name: this.state.name },
     })
@@ -76,6 +79,7 @@ class Profile extends Component{
   _onPressContact(){
     this.props.navigator.push({
       title: I18n.t('contact'),
+      tintColor: "#29c5da",
       component: Contact,
       passProps: { userId: this.state.userId, name: this.state.name },
     })

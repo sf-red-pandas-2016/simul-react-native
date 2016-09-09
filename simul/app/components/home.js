@@ -93,7 +93,8 @@ class Home extends Component{
   _onPressUserStories() {
     this.props.navigator.push({
       title: I18n.t('stories'),
-      component: UserStories
+      component: UserStories,
+      tintColor: "#29c5da",
     })
   }
 
@@ -153,6 +154,7 @@ class Home extends Component{
 
         <Search />
 
+        <View style ={styles.list}>
         <ListView
             style={styles.listItems}
             dataSource={this.state.dataSource}
@@ -162,6 +164,7 @@ class Home extends Component{
                 <Text style={styles.listText}>{rowData.title}</Text>
               </TouchableHighlight>}
             renderHeader={ () => this.featuredStory() } />
+        </View>
         </View>
     )
   }
@@ -175,7 +178,6 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 60,
-    margin: 8,
   },
   title: {
     flex: .5,
@@ -185,7 +187,12 @@ var styles = StyleSheet.create({
   },
   listItems: {
     flex: 50,
+    // margin: 8
 
+  },
+  list: {
+    flex: 40,
+    padding: 8,
   },
   listText: {
     backgroundColor: '#29c5da',
