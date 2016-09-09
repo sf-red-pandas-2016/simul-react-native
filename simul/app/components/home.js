@@ -207,9 +207,9 @@ var styles = StyleSheet.create({
     borderColor: '#29c5da',
     marginTop: 5,
     marginBottom: 5,
-    padding: 5,
-    paddingLeft: 2,
-    paddingRight: 2,
+    padding: 6,
+    paddingLeft: 7,
+    paddingRight: 7,
     height: 50,
   },
   navLeft: {
