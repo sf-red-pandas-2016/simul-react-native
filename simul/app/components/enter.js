@@ -70,7 +70,6 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     flex: 1,
-    borderRadius: 6,
     backgroundColor: '#31d2cd',
     fontFamily: 'Avenir-Roman',
     color: 'white',

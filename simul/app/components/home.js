@@ -94,12 +94,12 @@ class Home extends Component{
       return(
         <View style={{backgroundColor: 'white' }}>
 
-        <Text style={{textAlign: 'right'}}></Text>
+        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>LATEST STORY</Text>
 
         <Image source={{uri: photo }} style={{width: 400, height: 225}}/>
 
           <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
-            <Text style={{color: '#4a4c4d', textAlign: 'center', padding: 5}}>{ recentStory.content }</Text>
+            <Text style={{color: '#4a4c4d', textAlign: 'center', padding: 5, fontFamily: 'Farah', fontSize: 16, paddingTop: 15, }}>{ recentStory.content }</Text>
           </TouchableHighlight>
 
         <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
@@ -149,6 +149,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingTop: 60,
     margin: 8,
   },
@@ -160,16 +162,20 @@ var styles = StyleSheet.create({
   },
   listItems: {
     flex: 50,
+
   },
   listText: {
-    backgroundColor: 'white',
-    color: 'black',
+    backgroundColor: '#29c5da',
+    fontFamily: 'Farah',
+    fontWeight: "normal",
+    fontSize: 18,
+    color: 'white',
     textAlign: 'center',
     borderWidth: 2,
-    borderColor: 'white',
-    borderRadius: 4,
+    borderColor: '#29c5da',
+    marginTop: 5,
     marginBottom: 5,
-    padding: 10,
+    padding: 5,
     height: 50,
   },
   navLeft: {

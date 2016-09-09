@@ -59,7 +59,7 @@ class Story extends Component{
       <Text>Created at:</Text>
       <Text>{this.props.story.created_at}</Text>
 
-      <Text style={styles.title}>{this.props.story.title}</Text>
+      <Text style={styles.title}>{this.props.story.title.toUpperCase()}</Text>
       <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
       <Text style={styles.content}>{this.props.story.content}</Text>
       </View>
@@ -75,6 +75,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 8,
   },
   button: {
     height: 50,
@@ -92,15 +93,22 @@ var styles = StyleSheet.create({
     color: 'white',
   },
   title: {
-   fontSize: 20,
+   fontFamily: 'Avenir-Roman',
+   color: '#6d6f6f',
+   fontSize: 28,
    alignSelf: 'center',
-   margin: 40
+   margin: 40,
   },
   content: {
     alignSelf: 'center',
-    fontSize: 21,
+    fontSize: 16,
+    fontFamily: 'Farah',
     marginTop: 10,
     marginBottom: 5,
+    color: '#4a4c4d',
+    textAlign: 'center',
+    padding: 5,
+    paddingTop: 15,
   },
 
 });
