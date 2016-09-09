@@ -52,30 +52,42 @@ var styles = StyleSheet.create({
   },
   title: {
    fontSize: 17,
-   alignSelf: 'center',
    fontWeight: 'bold',
-   margin: 40,
    backgroundColor: '#27c2dc',
+   marginTop: 10,
+   width: 400,
+   borderColor: 'white',
+   borderWidth: 1,
+   padding: 5,
+   alignSelf: 'flex-start',
   },
   from: {
     alignSelf: 'flex-start',
     fontSize: 15,
+    width: 400,
     fontStyle: 'italic',
-    marginTop: 10,
-    marginBottom: 5,
+    borderColor: 'white',
+    borderWidth: 1,
+    padding: 5
   },
   to: {
-    alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
     fontSize: 21,
     fontWeight: 'bold',
     marginTop: 10,
     marginBottom: 60,
+    padding: 5
   },
   content: {
     alignSelf: 'center',
     fontSize: 17,
-    marginTop: 10,
+    width: 400,
+    height: 300,
     marginBottom: 5,
+    borderColor: 'white',
+    borderWidth: 1,
+    alignSelf: 'flex-start',
+    padding: 5
   }
 });
 
