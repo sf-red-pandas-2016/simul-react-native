@@ -80,7 +80,7 @@ I18n.translations = {
     date: 'كان',
     subject: 'موضوع',
     content: 'محتوى',
-    senderContact: '',
+    senderContact: 'معلومات المرسل الاتصال',
     newStory: 'قصة جديدة',
     addStory: '+ قصة',
     contact: 'اتصال',
