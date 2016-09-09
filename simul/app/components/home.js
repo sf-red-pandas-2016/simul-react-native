@@ -19,9 +19,11 @@ import api from '../Utils/api.js';
 import I18n from 'react-native-i18n'
 
 class Home extends Component{
+
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
     this.state = {
       stories: '?',
       dataSource: ds.cloneWithRows(['harry', 'potter']),
@@ -49,6 +51,27 @@ class Home extends Component{
       tintColor: "#29c5da",
     })
   }
+
+  handleSubmit(){
+    var note = this.state.note;
+    this.setState({
+      note: ''
+    });
+    api.addNote(this.props.userInfo.login, note)
+      .then((data) => {
+        api.getNotes(this.props.userInfo.login)
+          .then((data) => {
+            this.setState({
+              dataSource: this.ds.cloneWithRows(data)
+            })
+          });
+      })
+      .catch((error) => {
+        console.log('Request failed', error);
+        this.setState({error})
+      });
+  }
+
 
   _onPressRegister() {
     this.props.navigator.push({

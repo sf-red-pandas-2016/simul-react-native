@@ -51,6 +51,8 @@ I18n.translations = {
     addPhoto: '+ Photo',
     upload: 'Upload',
     addImage: 'Add Image',
+    go: 'Go',
+    searchDot: 'Search...'
   },
   ar: {
     login: 'دخول',
@@ -75,10 +77,10 @@ I18n.translations = {
     createAccount: 'إصنع حساب',
     inbox: 'صندوق الوارد',
     from: 'من',
-    date: 'كان',
+    date: 'تاريخ',
     subject: 'موضوع',
     content: 'محتوى',
-    senderContact: '',
+    senderContact: 'معلومات المرسل الاتصال',
     newStory: 'قصة جديدة',
     addStory: '+ قصة',
     contact: 'اتصال',
@@ -86,11 +88,13 @@ I18n.translations = {
     about: 'عن',
     storiesBy: 'قصص من',
     post: 'تابع',
-    writeStoryHere: 'إرسال قصتك هنا.',
-    photo: 'تصوير',
+    writeStoryHere: 'اكتب قصتك هنا',
+    photo: 'صورة',
     addPhoto: '+ صورة',
     upload: 'تحميل',
     addImage: 'إضافة صورة',
+    go: 'اذهب',
+    searchDot: 'بحث...',
   }
 }
 

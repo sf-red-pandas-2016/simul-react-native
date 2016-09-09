@@ -7,33 +7,78 @@ import {
   Text,
   View,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 
+import UserStories from './userStories';
+import Story from './story2';
+
+
 class NewStory extends Component{
+
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
-      userId: this.props.userId,
+      user_Id: this.props.userId,
+      name: this.props.name,
+      username: this.props.username,
+      title: "",
+      content: "",
+      errors: [],
     }
   }
+
+  async _onPressSend(){
+      let response = await fetch(`https://simulnos.herokuapp.com/api/users/${this.state.user_Id}/stories`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: this.state.user_Id,
+            title: this.state.title,
+            content: this.state.content,
+        })
+      })
+      let res = await response.json();
+      console.log(res.story);
+        this.props.navigator.push({
+          title: I18n.t('story'),
+          component: Story,
+          passProps: {
+             story_created_at: res.story.created_at,
+             story_title: res.story.title,
+             story_content: res.story.content,
+             userId: this.state.user_Id,
+             name: this.state.name,
+           },
+        })
+  }
+
   _onPressAddPhoto() {
     this.props.navigator.push({
       title: I18n.t('photo'),
       component: ImageUpload,
-      passProps: {userId: this.state.userId},
+      passProps: {userId: this.state.user_Id},
     })
   }
 
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <Text style={styles.title}>
-          {I18n.t('newStory')}
-        </Text>
+      <ScrollView style={styles.superContainer}>
+        <View style={styles.mainContainer}>
         <TextInput
+          onChangeText={ (val)=> this.setState({title: val}) }
           style={styles.searchInput}
-          placeholder={I18n.t('writeStoryHere')}/>
+          placeholder={I18n.t('subject')}/>
+        <TextInput
+          multiline = {true}
+          onChangeText={ (val)=> this.setState({content: val}) }
+          style={styles.message}
+          placeholder={I18n.t('content')}/>
           <TouchableHighlight
             onPress={() => this._onPressAddPhoto()}
             style={styles.button}
@@ -41,15 +86,22 @@ class NewStory extends Component{
               <Text style={styles.buttonText}>+ {I18n.t('photo')}</Text>
           </TouchableHighlight>
         <TouchableHighlight
+          onPress={() => this._onPressSend()}
           style={styles.button}
           underlayColor="white">
             <Text style={styles.buttonText}>{I18n.t('post')}</Text>
-        </TouchableHighlight>
-      </View>
-    )
+          </TouchableHighlight>
+        </View>
+      </ScrollView>
+
+      )
   }
 };
 var styles = StyleSheet.create({
+  superContainer: {
+   flex: 1,
+   backgroundColor: '#27c2dc',
+ },
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -63,14 +115,24 @@ var styles = StyleSheet.create({
     color: '#fff'
   },
   searchInput: {
-    height: 100,
-    padding: 4,
-    marginRight: 5,
-    fontSize: 23,
+    height: 50,
+    marginTop: 5,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
+    marginRight: 2,
+    marginLeft: 2,
+  },
+  message: {
+    height: 200,
+    padding: 4,
+    fontSize: 15,
+    borderWidth: 1,
+    borderColor: 'white',
+    color: 'white',
+    marginRight: 2,
+    marginLeft: 2,
+    marginTop: 2,
   },
   buttonText: {
     fontSize: 18,
@@ -91,9 +153,10 @@ var styles = StyleSheet.create({
   },
   to: {
     alignSelf: 'flex-end',
+    marginTop: 10,
     fontSize: 21,
     fontWeight: 'bold',
-    marginBottom: 200,
+    marginBottom: 10,
   },
 });
 

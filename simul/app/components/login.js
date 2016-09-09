@@ -58,10 +58,6 @@ class Login extends Component{
     return (
       <View style={styles.container}>
 
-        <Text>
-        {I18n.t('login')}
-        </Text>
-
         <TextInput
           onChangeText={ (val)=> this.setState({username: val}) }
           style={styles.input} placeholder={I18n.t('username')}
@@ -89,6 +85,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "#29c5da",
   },
   title: {
    fontSize: 20,
@@ -101,17 +98,24 @@ var styles = StyleSheet.create({
     padding: 4,
     fontSize: 15,
     borderWidth: 1,
-    borderColor: '#48bbec'
+    borderColor: 'white'
   },
   button: {
-    height: 50,
-    backgroundColor: '#48BBEC',
-    alignSelf: 'stretch',
+    height: 45,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 8,
+    marginBottom: 10,
     marginTop: 10,
+    alignSelf: 'stretch',
     justifyContent: 'center'
   },
   buttonText: {
-    textAlign: 'center',
+    fontSize: 18,
+    color: '#111',
+    alignSelf: 'center'
   },
 });
 
