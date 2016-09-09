@@ -22,7 +22,9 @@ class Enter extends Component{
     this.props.navigator.push({
       title: I18n.t('home'),
       component: Home,
-      tintColor: "#31d2cd",
+      tintColor: "#29c5da",
+
+
     })
   }
   render() {
@@ -57,7 +59,7 @@ var styles = StyleSheet.create({
    padding: 10,
    borderRadius: 6,
    fontFamily: 'Avenir-Roman',
-   color: '#4a4c4d',
+   color: '#6d6f6f',
   },
   enter: {
     fontSize: 25,

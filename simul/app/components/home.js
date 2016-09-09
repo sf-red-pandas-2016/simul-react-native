@@ -45,14 +45,16 @@ class Home extends Component{
   _onPressLogin() {
     this.props.navigator.push({
       title: I18n.t('login'),
-      component: Login
+      component: Login,
+      tintColor: "#29c5da",
     })
   }
 
   _onPressRegister() {
     this.props.navigator.push({
       title: I18n.t('register'),
-      component: Register
+      component: Register,
+      tintColor: "#29c5da",
     })
   }
 
@@ -60,6 +62,7 @@ class Home extends Component{
     this.props.navigator.push({
       title: I18n.t('story'),
       component: Story,
+      tintColor: "#29c5da",
       passProps: {story: clickedStory},
     })
   }
@@ -89,12 +92,14 @@ class Home extends Component{
     console.log(recentStory);
 
       return(
-        <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+        <View style={{backgroundColor: 'white' }}>
 
-        <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
+        <Text style={{textAlign: 'right'}}></Text>
+
+        <Image source={{uri: photo }} style={{width: 400, height: 225}}/>
 
           <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
-            <Text style={{color: 'white'}}>{ recentStory.content }</Text>
+            <Text style={{color: '#4a4c4d', textAlign: 'center', padding: 5}}>{ recentStory.content }</Text>
           </TouchableHighlight>
 
         <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
@@ -145,6 +150,7 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
     paddingTop: 60,
+    margin: 8,
   },
   title: {
     flex: .5,
@@ -153,7 +159,7 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   listItems: {
-    flex: 9.5,
+    flex: 50,
   },
   listText: {
     backgroundColor: 'white',
@@ -168,7 +174,7 @@ var styles = StyleSheet.create({
   },
   navLeft: {
     flex: .25,
-    color: '#31d2cd',
+    color: '#29c5da',
     fontFamily: 'Farah',
     backgroundColor: 'white',
     textAlign: 'center',
@@ -177,7 +183,7 @@ var styles = StyleSheet.create({
   },
   navRight: {
     flex: .25,
-    color: '#31d2cd',
+    color: '#29c5da',
     fontFamily: 'Farah',
     backgroundColor: 'white',
     textAlign: 'center',

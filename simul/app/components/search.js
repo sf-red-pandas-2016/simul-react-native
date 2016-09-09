@@ -97,7 +97,7 @@ class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
+    padding: 2,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     flex: 4,
     fontSize: 18,
     borderWidth: 1,
-    borderColor: '#31d2cd',
+    borderColor: '#29c5da',
     color: '#48BBEC',
     backgroundColor: '#FFFFFF',
   },
