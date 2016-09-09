@@ -124,7 +124,8 @@ var styles = StyleSheet.create({
     padding: 4,
     fontSize: 15,
     borderWidth: 1,
-    borderColor: 'white'
+    borderColor: 'white',
+    color: 'white',
   },
   button: {
     height: 45,
