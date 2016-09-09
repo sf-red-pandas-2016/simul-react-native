@@ -70,6 +70,7 @@ class Contact extends Component{
           style={styles.subject}
           placeholder={I18n.t('subject')}/>
         <TextInput
+          multiline = {true}
           onChangeText={ (val)=> this.setState({content: val}) }
           style={styles.message}
           placeholder={I18n.t('message')}/>
