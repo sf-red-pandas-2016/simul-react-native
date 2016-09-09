@@ -118,7 +118,7 @@ class Home extends Component{
       return(
         <View style={{backgroundColor: 'white' }}>
 
-        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>LATEST STORY</Text>
+        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>{I18n.t('latestStory')}</Text>
 
         <Image source={{uri: photo }} style={{width: 400, height: 225}}/>
 
@@ -201,11 +201,15 @@ var styles = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     textAlign: 'center',
+    alignItems: 'center',
+    letterSpacing: 0.5,
     borderWidth: 2,
     borderColor: '#29c5da',
     marginTop: 5,
     marginBottom: 5,
-    padding: 5,
+    padding: 6,
+    paddingLeft: 7,
+    paddingRight: 7,
     height: 50,
   },
   navLeft: {
