@@ -114,24 +114,24 @@ var styles = StyleSheet.create({
     color: '#fff'
   },
   searchInput: {
-    height: 100,
-    padding: 4,
-    marginRight: 5,
-    fontSize: 23,
+    height: 50,
+    marginTop: 5,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
+    marginRight: 2,
+    marginLeft: 2,
   },
   message: {
     height: 200,
     padding: 4,
-    marginRight: 5,
-    fontSize: 23,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
+    color: 'white',
+    marginRight: 2,
+    marginLeft: 2,
+    marginTop: 2,
   },
   buttonText: {
     fontSize: 18,
