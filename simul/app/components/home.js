@@ -118,7 +118,7 @@ class Home extends Component{
       return(
         <View style={{backgroundColor: 'white' }}>
 
-        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>LATEST STORY</Text>
+        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>{I18n.t('latestStory')}</Text>
 
         <Image source={{uri: photo }} style={{width: 400, height: 225}}/>
 
