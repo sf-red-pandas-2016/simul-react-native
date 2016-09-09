@@ -81,6 +81,7 @@ class Profile extends Component{
 // fake person that works https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnl2wCrCFBw9PnHukDYg6weIBSIMdSi8vSguLE6tjaRcps8OOw
   render() {
 
+
     var recentStory = this.props.stories.slice(-1)[0].content
 
     if (this.props.user.photo !== null) {
@@ -98,9 +99,18 @@ class Profile extends Component{
          />
         <Text style={styles.title}>{this.props.user.name + "'s " + I18n.t('profile')}</Text>
 
+
         <Text style={styles.newestStory}>{ recentStory }</Text>
         <Text style={styles.newestStoryArabic}></Text>
 
+        <View style={styles.personalInfo}>
+        <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
+        <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
+        <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
+        <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
+        <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
+        <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
+        </View>
           <TouchableHighlight onPress={() => this._onPressAddStory()} style={styles.button}>
             <Text style={styles.buttonText}>
             {I18n.t('addStory')}
@@ -117,14 +127,6 @@ class Profile extends Component{
             <Text style={styles.buttonText}> {this.props.user.name + "'s " + I18n.t('stories')} </Text>
           </TouchableHighlight>
 
-          <View style={styles.personalInfo}>
-          <Text style={styles.personalInfoHeading}> {I18n.t('about')} {this.props.user.name}: </Text>
-          <Text style={styles.personalInfoLocation}> Location: {this.props.user.location}  </Text>
-          <Text style={styles.personalInfoResources}> Resources: {this.props.user.resource_request} </Text>
-          <Text style={styles.personalInfoSeeking}> Seeking: {this.props.user.seeking} </Text>
-          <Text style={styles.personalInfoSkills}> Skills: {this.props.user.skills} </Text>
-          <Text style={styles.personalInfoBio}> Bio: {this.props.user.bio} </Text>
-          </View>
 
           <TouchableHighlight onPress={() => this._onPressContact()} style={styles.button}>
             <Text style={styles.buttonText}>
@@ -176,13 +178,15 @@ var styles = StyleSheet.create({
   },
   personalInfoHeading: {
     textAlign: 'left',
-    marginBottom: 20
+    marginBottom: 5,
+    fontSize: 12,
   },
   personalInfoLocation: {
     fontSize: 10,
   },
   personalInfoResources: {
     fontSize: 10,
+    alignSelf: 'flex-start'
   },
   personalInfoSeeking: {
     fontSize: 10,
@@ -193,7 +197,10 @@ var styles = StyleSheet.create({
   personalInfoBio: {
     fontSize: 10,
   },
-
+  personalInfo: {
+    alignSelf: 'center',
+    margin: 8,
+  },
   });
 
 module.exports = Profile;

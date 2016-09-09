@@ -125,7 +125,6 @@ var styles = StyleSheet.create({
     borderColor: 'white',
     marginRight: 2,
     marginLeft: 2,
-
   },
   buttonText: {
     fontSize: 18,

@@ -94,10 +94,14 @@ var styles = StyleSheet.create({
     padding: 10,
     color: 'white',
   },
-  title: {
-   fontSize: 20,
-   alignSelf: 'center',
-   margin: 40
+  subject: {
+    height: 50,
+    marginTop: 5,
+    fontSize: 15,
+    borderWidth: 1,
+    borderColor: 'white',
+    marginRight: 2,
+    marginLeft: 2,
   },
   content: {
     alignSelf: 'center',
