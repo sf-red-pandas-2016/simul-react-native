@@ -99,42 +99,41 @@ class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8,
+    padding: 2,
     flexDirection: 'row',
     alignItems: 'center',
   },
 
   input: {
-    height: 36,
-    padding: 4,
-    marginRight: 5,
+    height: 34,
+    padding: 5,
+    marginRight: 8,
     flex: 4,
     fontSize: 18,
     borderWidth: 1,
-    borderColor: '#27C2DC',
-    borderRadius: 8,
+    borderColor: '#29c5da',
     color: '#48BBEC',
     backgroundColor: '#FFFFFF',
   },
 
-  buttonText: {
-  fontSize: 18,
-  color: 'white',
-  alignSelf: 'center'
-  },
-
-  button: {
-    height: 36,
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#27C2DC',
-    borderColor: '#27C2DC',
-    borderWidth: 1,
-    borderRadius: 8,
-    marginBottom: 10,
-    alignSelf: 'stretch',
-    justifyContent: 'center'
-  },
+  // buttonText: {
+  // fontSize: 18,
+  // color: 'white',
+  // alignSelf: 'center'
+  // },
+  //
+  // button: {
+  //   height: 36,
+  //   flex: 1,
+  //   flexDirection: 'row',
+  //   backgroundColor: '#27C2DC',
+  //   borderColor: '#27C2DC',
+  //   borderWidth: 1,
+  //   borderRadius: 8,
+  //   marginBottom: 10,
+  //   alignSelf: 'stretch',
+  //   justifyContent: 'center'
+  // },
 });
 
 module.exports = Search;

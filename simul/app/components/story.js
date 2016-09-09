@@ -78,6 +78,7 @@ var styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 8,
   },
   button: {
     height: 50,
@@ -95,15 +96,22 @@ var styles = StyleSheet.create({
     color: 'white',
   },
   title: {
-   fontSize: 20,
+   fontFamily: 'Avenir-Roman',
+   color: '#6d6f6f',
+   fontSize: 28,
    alignSelf: 'center',
-   margin: 40
+   margin: 40,
   },
   content: {
     alignSelf: 'center',
-    fontSize: 21,
+    fontSize: 16,
+    fontFamily: 'Farah',
     marginTop: 10,
     marginBottom: 5,
+    color: '#4a4c4d',
+    textAlign: 'center',
+    padding: 5,
+    paddingTop: 15,
   },
 
 });
