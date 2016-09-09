@@ -47,7 +47,8 @@ class Home extends Component{
   _onPressLogin() {
     this.props.navigator.push({
       title: I18n.t('login'),
-      component: Login
+      component: Login,
+      tintColor: "#29c5da",
     })
   }
 
@@ -75,7 +76,8 @@ class Home extends Component{
   _onPressRegister() {
     this.props.navigator.push({
       title: I18n.t('register'),
-      component: Register
+      component: Register,
+      tintColor: "#29c5da",
     })
   }
 
@@ -83,6 +85,7 @@ class Home extends Component{
     this.props.navigator.push({
       title: I18n.t('story'),
       component: Story,
+      tintColor: "#29c5da",
       passProps: {story: clickedStory},
     })
   }
@@ -112,12 +115,14 @@ class Home extends Component{
     console.log(recentStory);
 
       return(
-        <View style={{backgroundColor: '#FFB30F', borderWidth: 3, borderColor: '#27c2dc', padding: 10}}>
+        <View style={{backgroundColor: 'white' }}>
 
-        <Image source={{uri: photo }} style={{width: 400, height: 220}}/>
+        <Text style={{textAlign: 'left', fontFamily: 'Avenir-Roman', fontSize: 28, color: '#6d6f6f', padding: 5 }}>LATEST STORY</Text>
+
+        <Image source={{uri: photo }} style={{width: 400, height: 225}}/>
 
           <TouchableHighlight onPress={ () => this._onPressFeaturedStory()}>
-            <Text style={{color: 'white'}}>{ recentStory.content }</Text>
+            <Text style={{color: '#4a4c4d', textAlign: 'center', padding: 5, fontFamily: 'Farah', fontSize: 16, paddingTop: 15, }}>{ recentStory.content }</Text>
           </TouchableHighlight>
 
         <TouchableHighlight onPress={ () => this._onPressFeaturedProfile()}>
@@ -136,7 +141,7 @@ class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FFB30F'}}>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FDFEFE'}}>
           <TouchableHighlight onPress={ () => this._onPressLogin()}>
             <Text style={styles.navLeft}> {I18n.t('login')} </Text>
           </TouchableHighlight>
@@ -167,7 +172,10 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingTop: 60,
+    margin: 8,
   },
   title: {
     flex: .5,
@@ -176,33 +184,37 @@ var styles = StyleSheet.create({
     textAlign: 'center',
   },
   listItems: {
-    flex: 9.5,
+    flex: 50,
+
   },
   listText: {
-    backgroundColor: 'white',
-    color: 'black',
+    backgroundColor: '#29c5da',
+    fontFamily: 'Farah',
+    fontWeight: "normal",
+    fontSize: 18,
+    color: 'white',
     textAlign: 'center',
     borderWidth: 2,
-    borderColor: '#27c2dc',
-    borderRadius: 4,
+    borderColor: '#29c5da',
+    marginTop: 5,
     marginBottom: 5,
-    padding: 10,
+    padding: 5,
     height: 50,
   },
   navLeft: {
     flex: .25,
-    color: 'black',
+    color: '#29c5da',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F',
+    backgroundColor: 'white',
     textAlign: 'center',
     marginRight: 110,
     padding: 10,
   },
   navRight: {
     flex: .25,
-    color: 'black',
+    color: '#29c5da',
     fontFamily: 'Farah',
-    backgroundColor: '#FFB30F',
+    backgroundColor: 'white',
     textAlign: 'center',
     marginLeft: 110,
     padding: 10,

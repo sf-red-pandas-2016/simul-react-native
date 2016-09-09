@@ -141,7 +141,7 @@ var styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   to: {
     alignSelf: 'flex-start',
