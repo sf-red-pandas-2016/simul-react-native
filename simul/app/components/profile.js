@@ -173,9 +173,18 @@ var styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
+    color: 'white',
   },
   newestStory: {
-  backgroundColor: 'lightgrey',
+    alignSelf: 'center',
+    fontSize: 16,
+    fontFamily: 'Farah',
+    marginTop: 10,
+    marginBottom: 5,
+    color: '#4a4c4d',
+    textAlign: 'center',
+    padding: 5,
+    paddingTop: 5,
   },
   newestStoryArabic: {
     backgroundColor: 'lightgrey',
@@ -183,27 +192,33 @@ var styles = StyleSheet.create({
   personalInfoHeading: {
     textAlign: 'left',
     marginBottom: 5,
-    fontSize: 12,
+    fontSize: 16,
   },
   personalInfoLocation: {
-    fontSize: 10,
+    fontSize: 16,
+    marginTop: 10,
   },
   personalInfoResources: {
-    fontSize: 10,
-    alignSelf: 'flex-start'
+    fontSize: 16,
+    alignSelf: 'flex-start',
+    marginTop: 10,
   },
   personalInfoSeeking: {
-    fontSize: 10,
+    fontSize: 16,
+    marginTop: 10,
   },
   personalInfoSkills: {
-    fontSize: 10,
+    fontSize: 16,
+    marginTop: 10,
   },
   personalInfoBio: {
-    fontSize: 10,
+    fontSize: 16,
+    marginTop: 10,
   },
   personalInfo: {
     alignSelf: 'center',
     margin: 8,
+    backgroundColor: 'lightgrey',
   },
   });
 
