@@ -51,12 +51,11 @@ class Contact extends Component{
   }
 
   render() {
-    console.log(this.state.name);
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.to}>{this.state.name}</Text>
+
         <Text style={styles.title}>
-          {I18n.t('contact')}
+          {I18n.t('contact') + " " + this.state.name}
         </Text>
         <TextInput
           onChangeText={ (val)=> this.setState({author: val}) }
@@ -68,7 +67,7 @@ class Contact extends Component{
           placeholder={I18n.t('contactInformation')}/>
         <TextInput
           onChangeText={ (val)=> this.setState({subject: val}) }
-          style={styles.searchInput}
+          style={styles.subject}
           placeholder={I18n.t('subject')}/>
         <TextInput
           onChangeText={ (val)=> this.setState({content: val}) }
@@ -89,7 +88,8 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#27c2dc'
+    backgroundColor: "#29c5da",
+
   },
   title: {
     marginBottom: 20,
@@ -99,23 +99,33 @@ var styles = StyleSheet.create({
   },
   searchInput: {
     height: 50,
-    padding: 4,
-    marginRight: 5,
-    fontSize: 23,
+    marginTop: 5,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
+    marginRight: 2,
+    marginLeft: 2,
   },
   message: {
     height: 200,
     padding: 4,
-    marginRight: 5,
-    fontSize: 23,
+    fontSize: 15,
     borderWidth: 1,
     borderColor: 'white',
-    borderRadius: 8,
-    color: 'white'
+    color: 'white',
+    marginRight: 2,
+    marginLeft: 2,
+    marginTop: 2,
+  },
+  subject: {
+    height: 50,
+    marginTop: 5,
+    fontSize: 15,
+    borderWidth: 1,
+    borderColor: 'white',
+    marginRight: 2,
+    marginLeft: 2,
+
   },
   buttonText: {
     fontSize: 18,
@@ -130,13 +140,12 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     marginBottom: 10,
-    marginTop: 10,
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
   to: {
-    alignSelf: 'flex-end',
-    fontSize: 21,
+    alignSelf: 'flex-start',
+    fontSize: 10,
     fontWeight: 'bold',
     marginBottom: 10,
   },
