@@ -53,17 +53,16 @@ class Story extends Component{
       <ScrollView style={styles.superContainer}>
         <View style={styles.container}>
 
-        <Text style={styles.title}>{this.props.story.title.toUpperCase()}</Text>
-        <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
+          <Text style={styles.title}>{this.props.story.title.toUpperCase()}</Text>
+          <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
 
-        <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
-        <Text style={styles.buttonText}>
-        {this.state.user.name + "'s " + I18n.t('profile')}
-        </Text>
-        </TouchableHighlight>
+          <Text style={styles.content}>{this.props.story.content}</Text>
 
-        <Text style={styles.content}>{this.props.story.content}</Text>
-
+          <TouchableHighlight onPress={this._onPressProfile.bind(this)} style={styles.button}>
+            <Text style={styles.buttonText}>
+            {this.state.user.name + "'s " + I18n.t('profile')}
+            </Text>
+          </TouchableHighlight>
         </View>
       </ScrollView>
     )
@@ -94,6 +93,7 @@ var styles = StyleSheet.create({
     padding: 10,
     color: 'white',
   },
+
   title: {
    fontFamily: 'Avenir-Roman',
    color: '#6d6f6f',

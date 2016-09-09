@@ -55,17 +55,17 @@ class UserStories extends Component{
     return (
       <ScrollView style={styles.superContainer}>
         <View style={styles.container}>
-          <Text style={{marginTop: 25}}>{I18n.t('storiesBy') + " " + this.state.name}</Text>
+          <Text style={{marginTop: 25, fontWeight: 'bold'}}>{I18n.t('storiesBy') + " " + this.state.name}</Text>
 
           <ListView
             style={styles.listItems}
             dataSource={this.state.dataSource}
             renderRow={(rowData) =>
               <View>
-                <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
                 <TouchableHighlight onPress={ () => this._onPressStory(rowData)}>
                   <Text style={styles.listText}> {rowData.title} </Text>
                 </TouchableHighlight>
+                <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
               </View>
             }
           />
@@ -91,11 +91,24 @@ var styles = StyleSheet.create({
    alignSelf: 'center',
    margin: 40
   },
+  listItems: {
+    flex: 50,
+
+  },
   listText: {
-    fontSize: 20,
-    flex: 2,
+    backgroundColor: '#29c5da',
+    fontFamily: 'Farah',
+    fontWeight: "normal",
+    fontSize: 18,
+    color: 'white',
     textAlign: 'center',
-  }
+    borderWidth: 2,
+    borderColor: '#29c5da',
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 5,
+    height: 50,
+  },
 });
 
 module.exports = UserStories;

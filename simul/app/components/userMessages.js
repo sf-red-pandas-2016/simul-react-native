@@ -55,11 +55,11 @@ class UserMessages  extends Component{
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
             <View>
-              <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
               <TouchableHighlight onPress={ () =>
                 this._onPressMessage(rowData)}>
                 <Text style={styles.listText}> {rowData.subject} </Text>
               </TouchableHighlight>
+              <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
             </View>
           }
         />
@@ -72,14 +72,13 @@ class UserMessages  extends Component{
 var styles = StyleSheet.create({
   superContainer: {
     flex: 1,
-    backgroundColor: '#27c2dc',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 60,
-    backgroundColor: '#27c2dc',
+    backgroundColor: 'white',
   },
   title: {
    flex: 2,
@@ -88,17 +87,31 @@ var styles = StyleSheet.create({
    margin: 40
   },
   to: {
-    alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
     fontSize: 21,
     fontWeight: 'bold',
     marginTop: 10,
     marginBottom: 60,
   },
+  listItems: {
+    flex: 50,
+
+  },
   listText: {
-    fontSize: 20,
-    flex: 2,
+    backgroundColor: '#29c5da',
+    fontFamily: 'Farah',
+    fontWeight: "normal",
+    fontSize: 18,
+    color: 'white',
     textAlign: 'center',
-  }
+    borderWidth: 2,
+    borderColor: '#29c5da',
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 5,
+    height: 50,
+  },
+
 });
 
 module.exports = UserMessages;
