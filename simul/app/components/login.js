@@ -98,6 +98,7 @@ var styles = StyleSheet.create({
     padding: 4,
     fontSize: 15,
     borderWidth: 1,
+    color: 'white',
     borderColor: 'white'
   },
   button: {
