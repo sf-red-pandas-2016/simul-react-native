@@ -49,17 +49,17 @@ class UserMessages  extends Component{
     render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.to}>{this.state.name}</Text>
+        <Text style={styles.to}>{this.state.name.toUpperCase()}</Text>
         <ListView
           style={styles.listItems}
           dataSource={this.state.dataSource}
           renderRow={(rowData) =>
             <View>
+            <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
               <TouchableHighlight onPress={ () =>
                 this._onPressMessage(rowData)}>
                 <Text style={styles.listText}> {rowData.subject} </Text>
               </TouchableHighlight>
-              <Text style={{textAlign: 'center', color: '#27c2dc'}}>  {rowData.created_at} </Text>
             </View>
           }
         />
@@ -87,11 +87,11 @@ var styles = StyleSheet.create({
    margin: 40
   },
   to: {
-    alignSelf: 'flex-start',
-    fontSize: 21,
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 60,
+    fontFamily: 'Avenir-Roman',
+    color: '#6d6f6f',
+    fontSize: 28,
+    textAlign: 'center',
+    margin: 40,
   },
   listItems: {
     flex: 50,
