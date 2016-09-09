@@ -61,7 +61,7 @@ class Story extends Component{
           <Text>Created at:</Text>
           <Text>{this.props.story.created_at}</Text>
 
-          <Text style={styles.title}>{this.props.story.title.toUpperCase()}</Text>
+          <Text style={styles.title}>{this.props.story.title.toUpperCase}</Text>
           <Image source={{uri: photo}} style={{width: 400, height: 225}}/>
           <Text style={styles.content}>{this.props.story.content}</Text>
         </View>
