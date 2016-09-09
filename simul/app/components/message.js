@@ -24,6 +24,7 @@ class Message extends Component{
   _navigate() {
     this.props.navigator.push({
       title: I18n.t('home'),
+      tintColor: "#29c5da",
       component: Home
     })
   }

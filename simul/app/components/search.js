@@ -76,7 +76,7 @@ class Search extends Component {
             onChangeText={this.onSearchTextChanged.bind(this)}
           />
           <TouchableHighlight style={styles.button} onPress={ () => this.executeQuery(this.state.searchString)}>
-            <Text style={styles.buttonText}>{I18n.t('go')}</Text>
+            <Text style={styles.buttonText}></Text>
           </TouchableHighlight>
       </View>
 
@@ -99,15 +99,15 @@ class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 2,
+    padding: 8,
     flexDirection: 'row',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
 
   input: {
     height: 34,
     padding: 5,
-    marginRight: 8,
+    // marginRight: 8,
     flex: 4,
     fontSize: 18,
     borderWidth: 1,
