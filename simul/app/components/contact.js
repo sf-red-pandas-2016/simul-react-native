@@ -97,7 +97,8 @@ var styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 25,
     textAlign: 'center',
-    color: '#fff'
+    color: '#fff',
+    fontFamily: 'Avenir-Roman'
   },
   searchInput: {
     height: 50,
@@ -107,6 +108,8 @@ var styles = StyleSheet.create({
     borderColor: 'white',
     marginRight: 2,
     marginLeft: 2,
+    color: 'white',
+    padding: 5,
   },
   message: {
     height: 200,
@@ -130,7 +133,7 @@ var styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: '#111',
+    color: '#29c5da',
     alignSelf: 'center'
   },
   button: {
@@ -139,7 +142,6 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: 'white',
     borderWidth: 1,
-    borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
     justifyContent: 'center',

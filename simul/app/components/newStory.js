@@ -138,7 +138,7 @@ var styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: '#111',
+    color: '#29c5da',
     alignSelf: 'center'
   },
   button: {
