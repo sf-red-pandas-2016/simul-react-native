@@ -126,7 +126,6 @@ var styles = StyleSheet.create({
     borderColor: 'white',
     marginRight: 2,
     marginLeft: 2,
-
   },
   buttonText: {
     fontSize: 18,
@@ -142,7 +141,7 @@ var styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   to: {
     alignSelf: 'flex-start',

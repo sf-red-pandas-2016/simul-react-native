@@ -32,12 +32,12 @@ class Message extends Component{
     console.log(this.state.message.author)
     return (
       <View style={styles.container}>
-        <Text style={styles.to}>{this.state.name}</Text>
-        <Text style={styles.from}>{I18n.t('from')} {this.state.message.author}</Text>
-        <Text style={styles.from}>{I18n.t('senderContact')} {this.state.message.author_contact}</Text>
-        <Text style={styles.from}>{I18n.t('date')} {this.state.message.created_at}</Text>
-        <Text style={styles.title}>{I18n.t('subject')} {this.state.message.subject}</Text>
-        <Text style={styles.content}>{this.state.message.content}</Text>
+          <Text style={styles.to}>{this.state.name}</Text>
+          <Text style={styles.from}>{I18n.t('from')} {this.state.message.author}</Text>
+          <Text style={styles.from}>{I18n.t('senderContact')} {this.state.message.author_contact}</Text>
+          <Text style={styles.from}>{I18n.t('date')} {this.state.message.created_at}</Text>
+          <Text style={styles.title}>{I18n.t('subject')} {this.state.message.subject}</Text>
+          <Text style={styles.content}>{this.state.message.content}</Text>
       </View>
     )
   }

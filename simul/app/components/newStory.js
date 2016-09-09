@@ -145,7 +145,6 @@ var styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: 'white',
     borderWidth: 1,
-    borderRadius: 8,
     marginBottom: 10,
     marginTop: 10,
     alignSelf: 'stretch',
