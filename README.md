@@ -6,4 +6,4 @@ Team:
 * @nitescun - Nicolae Nitescu
 
 
-https://www.youtube.com/watch?v=FBOoUpEqcio 
+[![Simul](https://imgur.com/a/0PGUy)](https://www.youtube.com/watch?v=tfqIyB3vSNg "Simul")
