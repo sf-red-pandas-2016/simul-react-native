@@ -1,9 +1,10 @@
 # simul-react-native
-Team:
+## Team:
 * @hypatiah - Danielle Hassid
 * @justinbryeans - Justin Bryeans
 * @omaiki - Oshoke Maiki
 * @nitescun - Nicolae Nitescu
+* [![Simul](http://i.imgur.com/IgEQCnM.png)]
 
 
 [![Simul](http://i.imgur.com/VEzskv3.png)](https://www.youtube.com/watch?v=tfqIyB3vSNg "Simul")
