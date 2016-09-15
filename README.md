@@ -1,6 +1,6 @@
 # Simul
 ## Team
-[@hypatiah](https://github.com/hypatiah) Danielle Hassid | [@omaiki](https://github.com/omaiki) Oshoke Maiki | [@nitescun](https://github.com/nitescun) Nicolae Nitescu | [@justinbryeans](https://github.com/justinbryeans) Justin Bryeans   
+[@hypatiah](https://github.com/hypatiah)       | [@omaiki](https://github.com/omaiki)             | [@nitescun](https://github.com/nitescun)       | [@justinbryeans](https://github.com/justinbryeans)     
  ![Team](http://i.imgur.com/IgEQCnM.png?1)
 
 ## Demo
