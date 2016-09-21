@@ -1,7 +1,7 @@
 # Simul
 #### A visibility and resource sharing mobile platform for refugees, where a user can share everyday stories, request specific resources and be messaged. Simul aims to provide a safe space for people to share their experiences and connect with other refugees and the local and international community. Simul's first person story platform hopes to raise awareness and understanding and to strengthen participation in relief efforts for the refugee crisis.
 
-#### Built for both iOS and Android using React Native with a Ruby on Rails backend and a PostrgreSql database. 
+#### Built for both iOS and Android using React Native with a Ruby on Rails backend and a PostrgreSql database. Simul implements internationalization and localization, meaning it can automatically detect your phone's language and render the site in both Arabic and English accordingly. 
 
 ####Simul's backend repo: [Simul API](https://github.com/sf-red-pandas-2016/simul-api) 
 
